@@ -1,0 +1,66 @@
+
+@media (max-width: 780px) {
+
+    .hero-background-image {
+        background-image: url(../../assets/images/mobile/mobile-2-hero-background.jpg);
+    }
+    
+    header {
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        width: 100vw;
+    }
+
+    .header-buttons {
+        padding: 1rem;
+    }
+
+    .hamburger-icon {
+        font-size: 33px;
+    }
+
+    .header-logo {
+        display: none;
+    }
+
+    .cart-button {
+        font-size: 28px;
+    }
+
+    footer {
+        height: 60px;
+    }
+
+    .footer-buttons {
+        justify-content: space-around;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .footer-socials {
+    display: flex;
+    font-size: 25px;
+    }
+
+    .footer-socials i {
+    font-size: 25px;
+    }   
+
+}
+
+@media (min-width: 780px) {
+    .header-logo-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 470px) {
+    .hero-background-image {
+        background-image: url(../../assets/images/mobile/mobile-1-hero-background.jpg);
+    }
+}

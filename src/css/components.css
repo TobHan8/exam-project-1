@@ -1,0 +1,128 @@
+
+nav a {
+    margin: 2rem;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 30%;
+}
+
+.header-logo {
+    transition: 0.3s ease;
+}
+
+.cart-button {
+    font-size: 40px;
+    transition: 0.3s ease;
+}
+
+.hamburger-icon:hover,
+.header-logo:hover,
+.cart-button:hover {
+    opacity: 30%;
+}
+
+/* ### CAROUSEL ### */
+
+.carousel-container {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800px;
+    height: 250px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.carousel-left-btn,
+.carousel-right-btn {
+    height: 100px;
+    width: 50px;
+}
+
+.carousel-left-btn i,
+.carousel-right-btn i {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-right-btn {
+    margin-left: auto;
+}
+
+.carousel-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: var(--color-secondary);
+    border: 1rem solid var(--color-secondary);
+    box-shadow: var(--outer-shadow-large);
+}
+.carousel-product-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    padding-top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-secondary);
+}
+
+.carousel-image-container {
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.carousel-image-container:hover {
+    opacity: 30%;
+    cursor: pointer;
+}
+
+.carousel-image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-desc-container {
+    height: 120px;
+    width: 100%;
+    background-color: var(--color-tertiary);
+}
+
+.add-to-cart-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--outer-shadow-small);
+    transition: 0.3s, ease;
+}
+
+.add-to-cart-btn:hover {
+    opacity: 33%;
+}
+
+.footer-buttons a {
+    transition: 0.3s ease;
+}
+
+.footer-buttons a:hover {
+    opacity: 30%;
+}
+
+.footer-socials i {
+    font-size: 1.5em;
+}

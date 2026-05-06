@@ -1,0 +1,31 @@
+:root {
+
+  /* --- MAIN COLORS FROM DESIGN PROJECT --- */
+  --color-primary: #D3BE25;
+  --color-secondary: #000000;
+  --color-tertiary: #CBAC38;
+  --color-red: #d32f2f;
+  --color-white: #ffffff;
+  --color-grey: #f5f5f5;
+
+  --font-main: 'Segoe UI', sans-serif;
+
+  /* --- SHADOWS --- */
+  --inner-shadow-small: inset 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  --inner-shadow-large: inset 8px 8px 8px 0px rgba(0, 0, 0, 0.5);
+  --outer-shadow-small: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  --outer-shadow-large: 8px 8px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+header,
+footer {
+  color: var(--color-primary);
+  background: var(--color-secondary);
+}
+
+header a,
+header i,
+footer a,
+footer i {
+  color: var(--color-primary);
+}

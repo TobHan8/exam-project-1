@@ -1,0 +1,214 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font-main);
+}
+
+header {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    background-color: var(--color-secondary);
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+}
+
+.hamburger-icon {
+    display: block;
+    font-size: 2em;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* HIDES CHECKBOX THAT TRIGGERS HAMBURGER MENU TO OPEN --- */
+#menu-checkbox {
+  display: none;
+}
+
+#menu-checkbox:checked ~ nav {
+  max-height: 600px;
+  overflow: auto;
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  top: 100%;
+  left: 0;
+  width: 400px;
+  background: var(--color-secondary);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 25;
+}
+
+
+.hero-container {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.hero-background-image {
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-background-image {
+  background-image: url(../../assets/images/desktop/desktop-laptop-background.jpg);
+  background-position: bottom center;
+}
+
+.loading-indicator {
+    display: block;
+    position: fixed;
+    top: 15%;
+    left: 5%;
+    font-size: 2em;
+    color: var(--color-primary);
+}
+
+.title-container {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+/* ### INDEX PAGE / ALL PRODUCTS PAGE ### */
+
+.all-products-container {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    gap: 2rem;
+    height: auto;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: var(--color-secondary);
+    border: 2rem solid var(--color-secondary);
+    box-shadow: var(--outer-shadow-large);
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    padding-top: 0;
+    height: 300px;
+    width: 300px;
+    background-color: var(--color-white);
+}
+
+.product-image-container {
+    height: 160px;
+    width: 300px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.product-image-container:hover {
+    opacity: 30%;
+    cursor: pointer;
+}
+
+.product-image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-desc-container {
+    height: 140px;
+    width: 300px;
+    background-color: var(--color-tertiary);
+    object-fit: contain;
+    box-shadow: var(--inner-shadow-small);
+}
+
+.desc-container-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    height: 70px;
+}
+
+.desc-container-bottom {
+    display: flex;
+    flex-shrink: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    height: 70px;
+}
+
+.product-desc-container span {
+    font-size: 12px;
+    color: var(--color-secondary);
+}
+
+.price-span {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+strong {
+    color: red;
+    font-size: 15px;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+footer {
+    display: flex;
+    position: relative;
+    background-color: var(--color-secondary);
+    height: 100px;
+    margin-top: auto;
+}
+
+.footer-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 3rem;
+    font-size: 1.5em;
+}
