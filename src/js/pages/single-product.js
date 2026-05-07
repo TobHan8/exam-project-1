@@ -20,6 +20,7 @@ function displaySingleProduct(product) {
 
     const shareBtn = document.createElement('button');
     shareBtn.classList.add('share-btn');
+    shareBtn.ariaLabel = 'Click to copy the link to this product';
     imgContainer.appendChild(shareBtn);
 
     const shareIcon = document.createElement('i')
@@ -90,6 +91,7 @@ function displaySingleProduct(product) {
     const addToCartBtn = document.createElement("button");
     addToCartBtn.classList.add("add-to-cart-btn");
     addToCartBtn.textContent = "ADD TO CART";
+    addToCartBtn.ariaLabel = 'Click to add this product to the cart';
     bottomContainer.appendChild(addToCartBtn);
 
     shareBtn.addEventListener('click', async () => { // Asynchronous programming added for Clipboard API

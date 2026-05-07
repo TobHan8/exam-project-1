@@ -4,6 +4,8 @@ import { fetchAllProducts } from '../api.js';
 
 import { addToCart, isOnSale } from "../utils.js";
 
+import { displayCart } from '../pages/cart.js'
+
 async function main() {
     const allProductsData = await fetchAllProducts();
     displayCarousel(allProductsData);
@@ -14,10 +16,12 @@ let currentIndex = 0;
 const numberOfProducts = 3;
 
 function displayCarousel(allProductsData) {
+
     const discountedProducts = allProductsData.filter(product => isOnSale(product));
 
     const carouselLeftBtn = document.createElement('button');
     carouselLeftBtn.id = 'left-btn';
+    carouselLeftBtn.ariaLabel = 'Click to view previous products on sale';
     carouselLeftBtn.classList.add('carousel-left-btn');
     carouselContainer.appendChild(carouselLeftBtn);
 
@@ -27,6 +31,7 @@ function displayCarousel(allProductsData) {
 
     const carouselRightBtn = document.createElement('button');
     carouselRightBtn.id = 'right-btn';
+    carouselRightBtn.ariaLabel = 'Click to view next products on sale';
     carouselRightBtn.classList.add('carousel-right-btn');
 
     const gridContainer = document.createElement('div');
@@ -96,10 +101,12 @@ function displayCarousel(allProductsData) {
         const addToCartBtn = document.createElement("button");
         addToCartBtn.classList.add("carousel-add-to-cart-btn");
         addToCartBtn.textContent = "ADD TO CART";
+        addToCartBtn.ariaLabel = 'Click to add this product to the cart';
         descContainer.appendChild(addToCartBtn);
 
         addToCartBtn.addEventListener("click", () => {
             addToCart(product);
+            displayCart();
         });    
     });
 }

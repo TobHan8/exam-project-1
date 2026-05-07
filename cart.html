@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content=width=device-width, initial-scale=1.0>
-    <title>Home | Online Shop</title>
+    <title>Cart | Online Shop</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="https://kit.fontawesome.com/71249f71bc.js" crossorigin="anonymous"></script>
-    <script defer type="module" src="src/js/pages/index.js"></script>
+    <script defer type="module" src="src/js/pages/cart.js"></script>
     <script defer type="module" src="src/js/components/carousel.js"></script>
 </head>
 
@@ -28,7 +28,7 @@
             <img src="assets/images/mobile/mobile-logo.png" alt="Online Shop clickable logo">
           </a>
 
-          <a href="checkout.html" class="cart-button" aria-label="Shopping cart">
+          <a href="cart.html" class="cart-button" aria-label="Shopping cart">
             <i class="fas fa-shopping-cart"></i>
           </a>
 
@@ -55,7 +55,7 @@
       <div class="carousel-container" id="carousel-container"></div>
 
       <div class="cart-container" id="cart-container">
-        <div class="title-container">
+        <div id="title-container" class="title-container">
             <h1>REVIEW ITEMS IN CART</h1>
         </div>
         <p class="loading-indicator" id="loading-indicator">Loading...</p>
