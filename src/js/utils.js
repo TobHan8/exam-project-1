@@ -73,3 +73,8 @@ export function displayToast(message, type) {
     toastElement.remove();
   }, 3000);
 }
+
+// Check if item is on sale or has reduced price
+export function isOnSale(product) {
+  return product.discountedPrice < product.price;
+}

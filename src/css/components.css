@@ -29,10 +29,12 @@ nav a:hover {
     z-index: 2;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 800px;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
     height: 250px;
     margin: auto;
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -40,16 +42,21 @@ nav a:hover {
 .carousel-right-btn {
     height: 100px;
     width: 50px;
+    border: none;
+    background-color: var(--color-secondary);
+    box-shadow: var(--outer-shadow-large);
 }
 
 .carousel-left-btn i,
 .carousel-right-btn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
     height: 100%;
     width: 100%;
-}
-
-.carousel-right-btn {
-    margin-left: auto;
+    color: var(--color-primary);
+    cursor: pointer;
 }
 
 .carousel-grid-container {
@@ -68,8 +75,8 @@ nav a:hover {
     flex-direction: column;
     padding: 0rem;
     padding-top: 0;
-    height: 100%;
-    width: 100%;
+    height: 228px;
+    width: 220px;
     background-color: var(--color-secondary);
 }
 
@@ -93,10 +100,52 @@ nav a:hover {
 }
 
 .carousel-desc-container {
+    display: flex;
+    flex-direction: column;
     height: 120px;
     width: 100%;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-tertiary);
+    box-shadow: var(--inner-shadow-small);
+    gap: 1rem;
 }
+
+.carousel-price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.carousel-price-span {
+    text-decoration: line-through;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.carousel-price-strong {
+    font-size: 22px;
+    
+}
+
+.carousel-add-to-cart-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 10px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--outer-shadow-small);
+    transition: 0.3s, ease;
+}
+
+.carousel-add-to-cart-btn:hover {
+    opacity: 33%;
+}
+
 
 .add-to-cart-btn {
     background-color: var(--color-secondary);

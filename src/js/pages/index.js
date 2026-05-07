@@ -58,7 +58,7 @@ function displayAllProducts(allProductsData) {
     descContainerBottom.appendChild(priceSpan);
     
     const priceStrong = document.createElement("strong");
-    priceStrong.textContent = `${product.price}$`;
+    priceStrong.textContent = `${product.discountedPrice}$`;
     priceSpan.textContent = "Price: ";
     priceSpan.appendChild(priceStrong);
     

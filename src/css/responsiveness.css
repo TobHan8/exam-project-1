@@ -1,4 +1,12 @@
 
+
+@media (max-width: 1200px) {
+
+    .all-products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 780px) {
 
     .hero-background-image {
@@ -28,6 +36,14 @@
 
     .cart-button {
         font-size: 28px;
+    }
+
+    .carousel-container {
+        display: none;
+    }
+
+    .all-products-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     footer {

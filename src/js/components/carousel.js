@@ -2,6 +2,8 @@ import { carouselContainer } from '../constants.js';
 
 import { fetchAllProducts } from '../api.js';
 
+import { addToCart, isOnSale } from "../utils.js";
+
 async function main() {
     const allProductsData = await fetchAllProducts();
     displayCarousel(allProductsData);
@@ -12,6 +14,7 @@ let currentIndex = 0;
 const numberOfProducts = 3;
 
 function displayCarousel(allProductsData) {
+    const discountedProducts = allProductsData.filter(product => isOnSale(product));
 
     const carouselLeftBtn = document.createElement('button');
     carouselLeftBtn.id = 'left-btn';
@@ -19,12 +22,12 @@ function displayCarousel(allProductsData) {
     carouselContainer.appendChild(carouselLeftBtn);
 
     const leftArrow = document.createElement('i');
-    leftArrow.class = 'fa-solid fa-circle-arrow-left';
+    leftArrow.classList.add('fa-solid', 'fa-circle-arrow-left');
     carouselLeftBtn.appendChild(leftArrow);
 
     const carouselRightBtn = document.createElement('button');
     carouselRightBtn.id = 'right-btn';
-    carouselLeftBtn.classList.add('carousel-right-btn');
+    carouselRightBtn.classList.add('carousel-right-btn');
 
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('carousel-grid-container');
@@ -32,28 +35,31 @@ function displayCarousel(allProductsData) {
     carouselContainer.appendChild(carouselRightBtn);
 
     const rightArrow = document.createElement('i');
-    rightArrow.class = 'fa-solid fa-circle-arrow-right';
+    rightArrow.classList.add('fa-solid', 'fa-circle-arrow-right');
     carouselRightBtn.appendChild(rightArrow);
 
 
     document.getElementById('left-btn').addEventListener('click', () => {
         if (currentIndex === 0) {
-            currentIndex = allProductsData.length - numberOfProducts;
+            currentIndex = discountedProducts.length - numberOfProducts;
         } else {
             currentIndex = currentIndex - 1;
         }
+        carouselNavigation();
     });
 
     document.getElementById('right-btn').addEventListener('click', () => {
-        if (currentIndex >= allProductsData.length - numberOfProducts) {
+        if (currentIndex >= discountedProducts.length - numberOfProducts) {
             currentIndex = 0;
         } else {
             currentIndex = currentIndex + 1;
         }
+        carouselNavigation();
     });
 
+    
+    discountedProducts.forEach(product => {
 
-    allProductsData.forEach(product => {
         const carouselProductContainer = document.createElement('div');
         carouselProductContainer.classList.add('carousel-product-container');
         gridContainer.appendChild(carouselProductContainer);
@@ -72,13 +78,29 @@ function displayCarousel(allProductsData) {
         descContainer.classList.add('carousel-desc-container');
         carouselProductContainer.appendChild(descContainer);
 
-        const descContainerTop = document.createElement('div');
-        descContainerTop.classList.add('carousel-desc-container-top');
-        descContainer.appendChild(descContainerTop);
+        const priceContainer = document.createElement('div');
+        priceContainer.classList.add('carousel-price-container');
+        descContainer.appendChild(priceContainer);
 
-        const title = document.createElement('h3');
-        title.textContent = product.title;
-        descContainerTop.appendChild(title);
+        const priceSpan = document.createElement("span");
+        priceSpan.classList.add('carousel-price-span');
+        priceSpan.textContent = `${product.price}$`;
+        priceContainer.appendChild(priceSpan);
+
+        const priceStrong = document.createElement("strong");
+        priceStrong.classList.add('carousel-price-strong');
+        priceStrong.textContent = `${product.discountedPrice}$`;
+        priceContainer.appendChild(priceStrong);
+        
+
+        const addToCartBtn = document.createElement("button");
+        addToCartBtn.classList.add("carousel-add-to-cart-btn");
+        addToCartBtn.textContent = "ADD TO CART";
+        descContainer.appendChild(addToCartBtn);
+
+        addToCartBtn.addEventListener("click", () => {
+            addToCart(product);
+        });    
     });
 }
 
