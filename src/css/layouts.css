@@ -209,6 +209,7 @@ strong {
 }
 
 .single-product-img-container {
+    position: relative;
     width: 633px;
     height: 560px;
     overflow: hidden;

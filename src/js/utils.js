@@ -74,7 +74,7 @@ export function displayToast(message, type) {
   }, 3000);
 }
 
-// Check if item is on sale or has reduced price
+// Check if item is on sale / has reduced price
 export function isOnSale(product) {
   return product.discountedPrice < product.price;
 }

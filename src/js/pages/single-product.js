@@ -3,7 +3,7 @@ import { fetchSingleProduct } from "../api.js";
 
 import { singleProductContainer } from "../constants.js";
 
-import { addToCart, isOnSale } from "../utils.js";
+import { addToCart, displayToast, isOnSale } from "../utils.js";
 
 //Main program function
 async function main() {
@@ -17,6 +17,14 @@ function displaySingleProduct(product) {
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("single-product-img-container");
     singleProductContainer.appendChild(imgContainer);
+
+    const shareBtn = document.createElement('button');
+    shareBtn.classList.add('share-btn');
+    imgContainer.appendChild(shareBtn);
+
+    const shareIcon = document.createElement('i')
+    shareIcon.classList.add('fa-solid', 'fa-share-from-square')
+    shareBtn.appendChild(shareIcon);
 
     const img = document.createElement("img");
     img.src = product.image.url;
@@ -83,6 +91,15 @@ function displaySingleProduct(product) {
     addToCartBtn.classList.add("add-to-cart-btn");
     addToCartBtn.textContent = "ADD TO CART";
     bottomContainer.appendChild(addToCartBtn);
+
+    shareBtn.addEventListener('click', async () => { // Asynchronous programming added for Clipboard API
+        try {
+            await navigator.clipboard.writeText(window.location.href); // Use of Clipboard API to copy URL from window object
+            displayToast('Product link copied to clipboard!', 'success');
+        } catch (error) {
+            displayToast('Failed to copy product link to clipboard! Try again later.')
+        }
+    });
 
     addToCartBtn.addEventListener("click", () => {
     addToCart(product);
