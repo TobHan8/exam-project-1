@@ -36,7 +36,7 @@ function displayAllProducts(allProductsData) {
     descContainerTop.classList.add('desc-container-top');
     descContainer.appendChild(descContainerTop);
 
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.textContent = product.title;
     descContainerTop.appendChild(title);
 

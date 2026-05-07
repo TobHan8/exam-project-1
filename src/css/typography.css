@@ -1,11 +1,22 @@
-h1 {
+h1, h2, h3, p, span, strong {
     font-family: var(--font-main);
+}
+
+h1 {
     color: var(--color-primary);
 }
 
 h2 {
-    margin: 0;
-    margin-top: 10px;
     font-family: var(--font-main);
+    font-size: 30px;
+}
+
+h3 {
     font-size: 20px;
+    margin-bottom: 5px;
+    
+}
+
+p {
+  font-size: 20px;
 }
