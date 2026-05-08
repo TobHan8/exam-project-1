@@ -23,6 +23,40 @@ nav a:hover {
     opacity: 30%;
 }
 
+
+/* ### TOAST ### */
+
+.toast-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 8rem;
+    right: 2rem;
+    width: 300px;
+    height: 150px;
+}
+
+.toast {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2rem;
+    color: var(--color-secondary);
+    padding: 2rem;
+
+}
+
+.toast.success {
+    background-color: var(--color-primary);
+}
+
+.toast.error {
+    background-color: red;
+    color: var(--color-white);
+}
+
+
 /* ### CAROUSEL ### */
 
 .carousel-container {

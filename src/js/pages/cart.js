@@ -1,4 +1,4 @@
-import { removeFromCart,
+import { removeFromCart, addToCart, removeAll, 
         calculateSingleProductTotalPrice, 
         calculateTotalQuantity, 
         calculateTotalPrice } from "../utils.js";
@@ -7,10 +7,18 @@ import { removeFromCart,
 export async function displayCart () {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartMainContainer = document.getElementById("cart-container");
-    cartMainContainer.innerHTML = ""; //Clears the cart container
+    cartMainContainer.innerHTML = ""; //Clears the cart container // Fix title container
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    cartMainContainer.appendChild(titleContainer);
+    const title = document.createElement('h1');
+    title.id = 'title';
+    titleContainer.appendChild(title);
 
     //If the cart is empty
     if (cart.length === 0) {
+
+        title.textContent = 'THE CART IS EMPTY';
 
         const emptyCartContentContainer = document.createElement("div")
         emptyCartContentContainer.classList.add("empty-cart-content-container");
@@ -26,7 +34,7 @@ export async function displayCart () {
         emptyCartContentContainer.appendChild(continueLink);
 
         const continueBtn = document.createElement("button");
-        continueBtn.classList.add("continue-btn");
+        continueBtn.classList.add("add-to-cart-btn");
         continueBtn.textContent = "SEE ALL PRODUCTS";
         continueLink.appendChild(continueBtn);
 
@@ -34,6 +42,8 @@ export async function displayCart () {
     } else {
         const totalQuantity = calculateTotalQuantity(cart);
         const totalPrice = calculateTotalPrice(cart);
+
+        title.textContent = 'REVIEW ITEMS IN CART';
 
         const cartContentContainer = document.createElement("div");
         cartContentContainer.classList.add("cart-content-container");
@@ -60,10 +70,11 @@ export async function displayCart () {
         confirmationLink.href = "confirmation.html";
         cartContentRightContainer.appendChild(confirmationLink);
         
-        const proceedBtn = document.createElement("button"); //Add attributes later on
-        proceedBtn.classList.add("proceed-btn");
-        proceedBtn.textContent = "CONFIRM ORDER";
-        confirmationLink.appendChild(proceedBtn);
+        const checkoutBtn = document.createElement("button"); //Add attributes later on
+        checkoutBtn.classList.add("add-to-cart-btn");
+        checkoutBtn.ariaLabel = 'Click to continue to checkout';
+        checkoutBtn.textContent = "CHECKOUT";
+        confirmationLink.appendChild(checkoutBtn);
 
         cart.forEach(product => {
             const cartProductContainer = document.createElement("div");
@@ -77,30 +88,70 @@ export async function displayCart () {
             const cartProductImg = document.createElement("img");
             cartProductImg.src = product.image.url;
             cartProductImg.alt = product.image.alt;
-            cartProductContainer.appendChild(cartProductImg);
+            cartProductImgContainer.appendChild(cartProductImg);
 
             const cartProductSideContainer = document.createElement("div");
             cartProductSideContainer.classList.add("cart-product-side-container");
             cartProductContainer.appendChild(cartProductSideContainer);
 
-            const productTitle = document.createElement("h2");
+            const productTitle = document.createElement("h3");
             productTitle.textContent = product.title;
             cartProductSideContainer.appendChild(productTitle);
-
-            const productQuantity = document.createElement("span");
-            productQuantity.textContent = "Quantity: " + product.quantity;
-            cartProductSideContainer.appendChild(productQuantity);
 
             const productPrice = document.createElement("span");
             productPrice.textContent = `Price: ${calculateSingleProductTotalPrice(product)}$`;
             cartProductSideContainer.appendChild(productPrice);
 
             const removeBtn = document.createElement("button");
-            removeBtn.textContent = "REMOVE";
+            removeBtn.classList.add('remove-btn');
+            removeBtn.ariaLabel = 'Click to remove product completely';
             cartProductSideContainer.appendChild(removeBtn);
+            
+            const removeIcon = document.createElement('i');
+            removeIcon.classList.add('fa-solid', 'fa-xmark');
+            removeBtn.appendChild(removeIcon);
+
+            const quantityContainer = document.createElement('div');
+            quantityContainer.classList.add('quantity-container');
+            cartProductSideContainer.appendChild(quantityContainer);
+
+            const decrementBtn = document.createElement('button');
+            decrementBtn.classList.add('quantity-btns');
+            decrementBtn.ariaLabel = 'Click to decrease quantity';
+            quantityContainer.appendChild(decrementBtn);
+
+            const decrementIcon = document.createElement('i');
+            decrementIcon.classList.add('fa-solid', 'fa-minus');
+            decrementBtn.appendChild(decrementIcon);
+
+            const productQuantity = document.createElement("span");
+            productQuantity.textContent = product.quantity;
+            quantityContainer.appendChild(productQuantity);
+
+            const incrementBtn = document.createElement('button');
+            incrementBtn.classList.add('quantity-btns');
+            incrementBtn.ariaLabel = 'Click to increase quantity';
+            quantityContainer.appendChild(incrementBtn);
+
+            const incrementIcon = document.createElement('i');
+            incrementIcon.classList.add('fa-solid', 'fa-plus');
+            incrementBtn.appendChild(incrementIcon);
+
 
             removeBtn.addEventListener("click", () => {
+                removeAll(product); //Removes selected product
+                cartProductContainer.remove(); //Removes selected product container from cart
+                displayCart(); //Displays cart again, loops to remove existingCart above
+            });
+
+            decrementBtn.addEventListener("click", () => {
                 removeFromCart(product); //Removes selected product
+                cartProductContainer.remove(); //Removes selected product container from cart
+                displayCart(); //Displays cart again, loops to remove existingCart above
+            });
+
+            incrementBtn.addEventListener("click", () => {
+                addToCart(product); //Removes selected product
                 cartProductContainer.remove(); //Removes selected product container from cart
                 displayCart(); //Displays cart again, loops to remove existingCart above
             });
@@ -108,6 +159,8 @@ export async function displayCart () {
         });
 
     }
+
+
 }
 
 //Calling function to start program

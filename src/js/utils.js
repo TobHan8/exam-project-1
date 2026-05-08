@@ -8,7 +8,7 @@ export function addToCart(product) {
   //If the item already is in cart, increase quantity by +1
   if (existingItem) {
     existingItem.quantity += 1;
-    displayToast("1x " + product.title + " has been added to cart!", "success");
+    displayToast(existingItem.quantity + "x " + product.title + " has been added to cart!", "success");
   } else {
     //If not, push key values with quantity set to 1
     cart.push({ ...product, quantity: 1 });
@@ -30,7 +30,7 @@ export function removeFromCart(product) {
   if (existingItem.quantity > 1) {
     existingItem.quantity -= 1;
     localStorage.setItem("cart", JSON.stringify(cart));
-    displayToast("1x " + product.title + " has been removed from the cart.", "error");
+    displayToast( "1x " + product.title + " has been removed from the cart.", "error");
 
     //If not, filter item from array and store array as string value in local storage
   } else {
@@ -38,6 +38,16 @@ export function removeFromCart(product) {
     localStorage.setItem("cart", JSON.stringify(cartUpdated));
     displayToast(product.title + " has been removed from cart.", "error");
   }
+}
+
+// Remove all quantities of selected product from cart
+export function removeAll(product) {
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const cartUpdated = cart.filter(item => item.id !== product.id);
+  localStorage.setItem("cart", JSON.stringify(cartUpdated));
+  displayToast(product.quantity + 'x ' + product.title + " has been removed from cart.", "error");
 }
 
 //parseFloat with .toFixed to only display 2 decimal points in price float value
