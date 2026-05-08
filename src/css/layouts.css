@@ -407,11 +407,19 @@ strong {
     background-color: var(--color-tertiary);
 }
 
-.checkout-btn {
+
+/* ### REGISTER PAGE ### */
+
+.register-container {
+    display: grid;
+    width: 700px;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: var(--color-secondary);
+    border: 30px solid var(--color-secondary);
 
 }
-
-
 
 
 /* ### FOOTER ### */

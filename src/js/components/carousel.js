@@ -106,7 +106,9 @@ function displayCarousel(allProductsData) {
 
         addToCartBtn.addEventListener("click", () => {
             addToCart(product);
-            displayCart();
+            if (document.getElementById('cart-container')) {
+                displayCart();
+            }
         });    
     });
 }

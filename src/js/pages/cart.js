@@ -3,26 +3,28 @@ import { removeFromCart, addToCart, removeAll,
         calculateTotalQuantity, 
         calculateTotalPrice } from "../utils.js";
 
+import { cartContainer } from '../constants.js';
+
+
 //Display items in cart function
 export async function displayCart () {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartMainContainer = document.getElementById("cart-container");
-    cartMainContainer.innerHTML = ""; //Clears the cart container // Fix title container
-    const titleContainer = document.createElement('div');
-    titleContainer.classList.add('title-container');
-    cartMainContainer.appendChild(titleContainer);
-    const title = document.createElement('h1');
-    title.id = 'title';
-    titleContainer.appendChild(title);
+    cartContainer.innerHTML = ""; //Clears the cart container //
 
     //If the cart is empty
     if (cart.length === 0) {
 
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('title-container');
+        cartContainer.appendChild(titleContainer);
+        const title = document.createElement('h1');
+        title.id = 'title';
         title.textContent = 'THE CART IS EMPTY';
+        titleContainer.appendChild(title);
 
         const emptyCartContentContainer = document.createElement("div")
         emptyCartContentContainer.classList.add("empty-cart-content-container");
-        cartMainContainer.appendChild(emptyCartContentContainer);
+        cartContainer.appendChild(emptyCartContentContainer);
 
         const clickBelowMessage = document.createElement("span");
         clickBelowMessage.classList.add("click-below-span");
@@ -43,11 +45,17 @@ export async function displayCart () {
         const totalQuantity = calculateTotalQuantity(cart);
         const totalPrice = calculateTotalPrice(cart);
 
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('title-container');
+        cartContainer.appendChild(titleContainer);
+        const title = document.createElement('h1');
+        title.id = 'title';
         title.textContent = 'REVIEW ITEMS IN CART';
+        titleContainer.appendChild(title);
 
         const cartContentContainer = document.createElement("div");
         cartContentContainer.classList.add("cart-content-container");
-        cartMainContainer.appendChild(cartContentContainer);
+        cartContainer.appendChild(cartContentContainer);
 
         const cartContentLeftContainer = document.createElement("div");
         cartContentLeftContainer.classList.add("cart-content-left-container");
@@ -164,4 +172,6 @@ export async function displayCart () {
 }
 
 //Calling function to start program
-displayCart();
+if (document.getElementById('cart-container')) {
+    displayCart();
+}
