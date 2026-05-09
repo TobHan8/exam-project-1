@@ -2,8 +2,11 @@
 import {
   ALL_PRODUCTS_URL,
   SINGLE_PRODUCT_URL,
+  AUTH_REGISTER_URL,
   loadingIndicator
 } from "./constants.js";
+
+import { formData } from './pages/register.js';
 
 import { displayToast } from "./utils.js";
 
@@ -74,4 +77,26 @@ export async function fetchSingleProduct() {
         loadingIndicator.style.display = "none"; //Hide loading indicator with CSS property display: none
     }
   }
+}
+
+// Function for posting user registration
+export async function registerUser (formData) {
+    try {
+        const postOption = {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        const response = await fetch(AUTH_REGISTER_URL, postOption);
+
+    } catch (error) {
+    
+    } finally {
+        if (loadingIndicator) {
+            loadingIndicator.style.display = "none"; //Hide loading indicator with CSS property display: none
+        }
+    }
 }

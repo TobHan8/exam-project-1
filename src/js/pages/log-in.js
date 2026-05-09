@@ -1,44 +1,46 @@
 import { loginContainer } from '../constants.js';
+import { displayToast } from '../utils.js';
 
 function displayLogin() {
     const loginContainer = document.getElementById('login-container');
 
-    const formContainer = document.createElement('div');
+    const formContainer = document.createElement('form');
     formContainer.classList.add('form-container');
     loginContainer.appendChild(formContainer);
 
-    const formGroup = document.createElement('div');
-    formGroup.classList.add('form-group');
-    formContainer.appendChild(formGroup)
+    const form = document.createElement('div');
+    formGroup.classList.add('form');
+    form.id = 'register-form';
+    formContainer.appendChild(form)
 
     const emailLabel = document.createElement('label');
     emailLabel.htmlFor = 'email';
     emailLabel.textContent = 'Email';
-    formGroup.appendChild(emailLabel);
+    form.appendChild(emailLabel);
 
     const emailInput = document.createElement('input');
     emailInput.id = 'email';
     emailInput.name = 'email';
     emailInput.type = 'email';
     emailInput.placeholder = 'example@email.com';
-    formGroup.appendChild(emailInput);
+    form.appendChild(emailInput);
 
     const passwordLabel = document.createElement('label');
     passwordLabel.htmlFor = 'password';
     passwordLabel.textContent = 'Password';
-    formGroup.appendChild(passwordLabel);
+    form.appendChild(passwordLabel);
 
     const passwordInput = document.createElement('input');
     passwordInput.id = 'password';
     passwordInput.name = 'password';
     passwordInput.type = 'password';
     passwordInput.placeholder = 'Choose a password';
-    formGroup.appendChild(passwordInput);
+    form.appendChild(passwordInput);
 
     const loginBtn = document.createElement('button');
     loginBtn.classList.add('add-to-cart-btn');
     loginBtn.textContent = 'SUBMIT';
-    formGroup.appendChild(loginBtn);
+    form.appendChild(loginBtn);
 
     const registerLink = document.createElement('a');
     registerLink.classList.add('login-link');

@@ -6,61 +6,62 @@ function displayRegister() {
     formContainer.classList.add('form-container');
     registerContainer.appendChild(formContainer);
 
-    const formGroup = document.createElement('div');
-    formGroup.classList.add('form-group');
-    formContainer.appendChild(formGroup)
+    const form = document.createElement('form');
+    form.classList.add('form-group');
+    form.id = 'register-form';
+    formContainer.appendChild(form)
 
     const usernameLabel = document.createElement('label');
     usernameLabel.htmlFor = 'username';
     usernameLabel.textContent = 'Username';
-    formGroup.appendChild(usernameLabel);
+    form.appendChild(usernameLabel);
 
     const usernameInput = document.createElement('input');
     usernameInput.id = 'username';
     usernameInput.name = 'username';
     usernameInput.placeholder = 'Select a username';
-    formGroup.appendChild(usernameInput);
+    form.appendChild(usernameInput);
 
     const emailLabel = document.createElement('label');
     emailLabel.htmlFor = 'email';
     emailLabel.textContent = 'Email';
-    formGroup.appendChild(emailLabel);
+    form.appendChild(emailLabel);
 
     const emailInput = document.createElement('input');
     emailInput.id = 'email';
     emailInput.name = 'email';
     emailInput.type = 'email';
     emailInput.placeholder = 'example@email.com';
-    formGroup.appendChild(emailInput);
+    form.appendChild(emailInput);
 
     const passwordLabel = document.createElement('label');
     passwordLabel.htmlFor = 'password';
     passwordLabel.textContent = 'Password';
-    formGroup.appendChild(passwordLabel);
+    form.appendChild(passwordLabel);
 
     const passwordInput = document.createElement('input');
     passwordInput.id = 'password';
     passwordInput.name = 'password';
     passwordInput.type = 'password';
     passwordInput.placeholder = 'Choose a password';
-    formGroup.appendChild(passwordInput);
+    form.appendChild(passwordInput);
 
     const password2Label = document.createElement('label');
     password2Label.htmlFor = 'password2';
     password2Label.textContent = 'Confirm password';
-    formGroup.appendChild(password2Label);
+    form.appendChild(password2Label);
 
     const password2Input = document.createElement('input');
     password2Input.id = 'password2';
     password2Input.name = 'password2';
     password2Input.type = 'password';
     password2Input.placeholder = 'Repeat password';
-    formGroup.appendChild(password2Input);
+    form.appendChild(password2Input);
 
     const submitBtn = document.createElement('button');
     submitBtn.classList.add('add-to-cart-btn');
     submitBtn.textContent = 'SUBMIT';
-    formGroup.appendChild(submitBtn);
+    form.appendChild(submitBtn);
 
     const logInLink = document.createElement('a');
     logInLink.classList.add('login-link');
@@ -74,5 +75,30 @@ function displayRegister() {
 
 }
 
-displayRegister();
+const registerForm = document.getElementById('register-form');
+export const formData = new FormData();
 
+function validatePassword(password, password2) {
+    if (password !== password2) {
+        return false;
+    } else {
+        return true;
+    } 
+}
+
+export async function registerMain() {
+    displayRegister();
+
+    registerForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (!validatePassword(formData.get('password'), formData.get('password2'))) {
+            displayToast('Passwords do not match. Please try again.', 'error');
+            return;
+        } else {
+            displayToast('Account registered! Please log in to your new account', 'success');
+        }
+    });
+}
+
+registerMain();

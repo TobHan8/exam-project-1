@@ -1,6 +1,8 @@
+// API URL
 export const BASE_API_URL = "https://v2.api.noroff.dev";
 export const ALL_PRODUCTS_URL = `${BASE_API_URL}/online-shop`;
 export const SINGLE_PRODUCT_URL = `${ALL_PRODUCTS_URL}/`;
+export const AUTH_REGISTER_URL = `${BASE_API_URL}/auth/register`;
 
 // Static HTML containers
 export const carouselContainer = document.getElementById('carousel-container');

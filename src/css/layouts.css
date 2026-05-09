@@ -461,6 +461,12 @@ input {
     gap: 30px;
 }
 
+.form-group button {
+    width: fit-content;
+    align-self: center;
+}
+
+
 .login-text {
     color: var(--color-secondary);
 }
