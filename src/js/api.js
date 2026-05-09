@@ -6,8 +6,6 @@ import {
   loadingIndicator
 } from "./constants.js";
 
-import { formData } from './pages/register.js';
-
 import { displayToast } from "./utils.js";
 
 //Network Error class
@@ -91,9 +89,19 @@ export async function registerUser (formData) {
         };
 
         const response = await fetch(AUTH_REGISTER_URL, postOption);
-
+        if (!response.ok) {
+            throw new HttpError(response.status);
+        }
+        const json = await response.json();
+        return json.data;
     } catch (error) {
-    
+        if (error instanceof HttpError) {
+        displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
+        } else if (error instanceof NetworkError) {
+        displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
+        } else {
+        displayToast("Something went wrong. Unknown Error. Please try again.", "error");
+        }
     } finally {
         if (loadingIndicator) {
             loadingIndicator.style.display = "none"; //Hide loading indicator with CSS property display: none

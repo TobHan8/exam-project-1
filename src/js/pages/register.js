@@ -1,5 +1,9 @@
 import { registerContainer } from '../constants.js';
 
+import { registerUser } from '../api.js';
+
+import { displayToast } from '../utils.js';
+
 
 function displayRegister() {
     const formContainer = document.createElement('div');
@@ -17,21 +21,22 @@ function displayRegister() {
     form.appendChild(usernameLabel);
 
     const usernameInput = document.createElement('input');
-    usernameInput.id = 'username';
-    usernameInput.name = 'username';
+    usernameInput.id = 'name';
+    usernameInput.name = 'name';
+    usernameInput.type = 'text';
     usernameInput.placeholder = 'Select a username';
     form.appendChild(usernameInput);
 
     const emailLabel = document.createElement('label');
     emailLabel.htmlFor = 'email';
-    emailLabel.textContent = 'Email';
+    emailLabel.textContent = 'Email (valid Noroff address)';
     form.appendChild(emailLabel);
 
     const emailInput = document.createElement('input');
     emailInput.id = 'email';
     emailInput.name = 'email';
     emailInput.type = 'email';
-    emailInput.placeholder = 'example@email.com';
+    emailInput.placeholder = 'example.stud@noroff.no';
     form.appendChild(emailInput);
 
     const passwordLabel = document.createElement('label');
@@ -75,30 +80,58 @@ function displayRegister() {
 
 }
 
-const registerForm = document.getElementById('register-form');
-export const formData = new FormData();
+function validateUsername(name) {
+    if (name.length > 20 ) {
+        displayToast('Error!', 'Username must be 20 characters or below. Please try again', 'error');
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validateEmail(email) {
+    if (email.endsWith('@stud.noroff.no')) {
+        return true;
+    } else {
+        displayToast('Error!', 'Invalid email address! Must be a valid @stud.noroff.no address. Please try again.', 'error');
+        return false;
+    }
+}
 
 function validatePassword(password, password2) {
     if (password !== password2) {
+        displayToast('Error!', 'Passwords do not match. Please try again.', 'error');
+        return false;
+    } else if (password.length < 8) {
+        displayToast('Error!', 'Password must be at least 8 characters long. Please try again.', 'error');
         return false;
     } else {
         return true;
     } 
 }
 
-export async function registerMain() {
+async function registerMain() {
     displayRegister();
+
+    const registerForm = document.getElementById('register-form');
 
     registerForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        if (!validatePassword(formData.get('password'), formData.get('password2'))) {
-            displayToast('Passwords do not match. Please try again.', 'error');
-            return;
+        const formData = new FormData(event.target);
+        const formObject = Object.fromEntries(formData);
+
+        if (!validatePassword(formData.get('password'), formData.get('password2')) 
+            || (!validateEmail(formData.get('email'))) 
+            || (!validateUsername(formData.get('name')))) {
+            return
         } else {
-            displayToast('Account registered! Please log in to your new account', 'success');
+            registerUser(formObject);
+            displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
+
         }
     });
 }
 
 registerMain();
+

@@ -11,5 +11,7 @@ export const singleProductContainer = document.getElementById("single-product-co
 export const cartContainer = document.getElementById("cart-container");
 export const registerContainer = document.getElementById('register-container');
 export const loginContainer = document.getElementById('login-container');
+export const toastContainer = document.getElementById('toast-container');
+
 export const loadingIndicator = document.getElementById ("loading-indicator");
 export const addToCartBtn = document.getElementById("add-to-cart-btn");

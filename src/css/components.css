@@ -34,26 +34,66 @@ nav a:hover {
     position: fixed;
     top: 8rem;
     right: 2rem;
-    width: 300px;
-    height: 150px;
+    width: 350px;
+    height: 200px;
+    padding: 15px;
+    border: 15px solid var(--color-secondary);
+    background-color: var(--color-primary);
+    box-shadow: var(--inner-shadow-small), var(--outer-shadow-large);
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    border: none;
+    background: transparent;
+    transition: 0.3s, ease;
+}
+
+.close-btn i {
+    font-size: 20px;
+    text-shadow:color(from color srgb r g b); /* Fix this later, cant use box-shadow */
+}
+
+.close-btn:hover {
+    opacity: 30%;
+    cursor: pointer;
 }
 
 .toast {
-    font-size: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    word-break: break-word;
     font-weight: bold;
-    line-height: 2rem;
+    gap: 20px;
+
+
+}
+
+.toast-title {
+    font-size: 20px;
+}
+
+.toast-tile.success {
     color: var(--color-secondary);
-    padding: 2rem;
-
+    text-align: center;
 }
 
-.toast.success {
-    background-color: var(--color-primary);
+.toast-title.error {
+    color: red;
 }
 
-.toast.error {
-    background-color: red;
-    color: var(--color-white);
+.toast-title.removed {
+    color: red;
+}
+
+.toast-message {
+    color: var(--color-secondary);
+    font-weight: normal;
 }
 
 
