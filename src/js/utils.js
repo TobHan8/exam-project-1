@@ -127,3 +127,23 @@ export function displayToast(title, message, type) {
 export function isOnSale(product) {
   return product.discountedPrice < product.price;
 }
+
+// Function to store access token to localstorage (acts as current session token)
+export function setSessionToken(key, value) {
+  localStorage.setItem(key, value);
+}
+
+// Get sessionToken from localStorage as object
+export function getSessionToken(sessionToken) {
+  localStorage.getItem(JSON.parse('sessionToken'));
+}
+
+// Set the logged in user details as currentUser in localStorage
+export function setCurrentUser(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+// Get currentUser from localStorage returned as object
+export function getCurrentUser(currentUser) {
+  localStorage.getItem(JSON.parse('currentUser'));
+}

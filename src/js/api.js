@@ -7,7 +7,7 @@ import {
   loadingIndicator
 } from "./constants.js";
 
-import { displayToast } from "./utils.js";
+import { displayToast, setCurrentUser, setSessionToken } from "./utils.js";
 
 //Network Error class
 class NetworkError extends Error {
@@ -110,23 +110,7 @@ export async function registerUser (formData) {
     }
 }
 
- export async function storeToken(key, value) {
-    try { 
-        localStorage.setItem(key, value);
-    } catch (error) {
-        displayToast('Error!', 'Failed to store access token', 'error');
-    }
-}
-
-export async function getToken(key) {
-    try { 
-        localStorage.getItem(key);
-    } catch (error) {
-        displayToast('Error!', 'No access token found', 'error');
-    }
-}
-
-// Function for posting user login request
+// Function for posting user login request and handling the response
 export async function loginUser (formData) {
     try {
         const postOption = {
@@ -142,8 +126,21 @@ export async function loginUser (formData) {
             throw new HttpError(response.status);
         }
         const json = await response.json();
-        const accessToken = json.data.accessToken;
-        storeToken('accessToken', accessToken);
+        
+        const name = json.data.name;
+        const email = json.data.email;
+        const token = json.data.accessToken;
+
+        const loggedInUser = {
+            name,
+            email,
+            token
+        };
+
+        setSessionToken('sessionToken', token); // Store sessionToken in localStorage
+        setCurrentUser('currentUser', loggedInUser); // Store currentUser in localStorage
+
+        return json.data;
     } catch (error) {
         if (error instanceof HttpError) {
         displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");

@@ -1,6 +1,6 @@
 import { loginContainer } from '../constants.js';
 import { displayToast } from '../utils.js';
-import { loginUser, storeToken } from '../api.js';
+import { loginUser } from '../api.js';
 
 function displayLogin() {
     const loginContainer = document.getElementById('login-container');
@@ -69,6 +69,7 @@ async function loginMain() {
         const formObject = Object.fromEntries(formData);
 
         loginUser(formObject);
+
         displayToast('Success!', 'You have been logged in.', 'success');
 
     });
