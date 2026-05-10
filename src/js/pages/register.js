@@ -25,6 +25,7 @@ function displayRegister() {
     usernameInput.name = 'name';
     usernameInput.type = 'text';
     usernameInput.placeholder = 'Select a username';
+    usernameInput.required = true;
     form.appendChild(usernameInput);
 
     const emailLabel = document.createElement('label');
@@ -37,6 +38,7 @@ function displayRegister() {
     emailInput.name = 'email';
     emailInput.type = 'email';
     emailInput.placeholder = 'example.stud@noroff.no';
+    emailInput.required = true;
     form.appendChild(emailInput);
 
     const passwordLabel = document.createElement('label');
@@ -49,6 +51,7 @@ function displayRegister() {
     passwordInput.name = 'password';
     passwordInput.type = 'password';
     passwordInput.placeholder = 'Choose a password';
+    passwordInput.required = true;
     form.appendChild(passwordInput);
 
     const password2Label = document.createElement('label');
@@ -61,6 +64,7 @@ function displayRegister() {
     password2Input.name = 'password2';
     password2Input.type = 'password';
     password2Input.placeholder = 'Repeat password';
+    password2Input.required = true;
     form.appendChild(password2Input);
 
     const submitBtn = document.createElement('button');

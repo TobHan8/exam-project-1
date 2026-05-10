@@ -3,6 +3,7 @@ import {
   ALL_PRODUCTS_URL,
   SINGLE_PRODUCT_URL,
   AUTH_REGISTER_URL,
+  AUTH_LOGIN_URL,
   loadingIndicator
 } from "./constants.js";
 
@@ -77,7 +78,7 @@ export async function fetchSingleProduct() {
   }
 }
 
-// Function for posting user registration
+// Function for posting user registration request
 export async function registerUser (formData) {
     try {
         const postOption = {
@@ -94,6 +95,55 @@ export async function registerUser (formData) {
         }
         const json = await response.json();
         return json.data;
+    } catch (error) {
+        if (error instanceof HttpError) {
+        displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
+        } else if (error instanceof NetworkError) {
+        displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
+        } else {
+        displayToast("Something went wrong. Unknown Error. Please try again.", "error");
+        }
+    } finally {
+        if (loadingIndicator) {
+            loadingIndicator.style.display = "none"; //Hide loading indicator with CSS property display: none
+        }
+    }
+}
+
+ export async function storeToken(key, value) {
+    try { 
+        localStorage.setItem(key, value);
+    } catch (error) {
+        displayToast('Error!', 'Failed to store access token', 'error');
+    }
+}
+
+export async function getToken(key) {
+    try { 
+        localStorage.getItem(key);
+    } catch (error) {
+        displayToast('Error!', 'No access token found', 'error');
+    }
+}
+
+// Function for posting user login request
+export async function loginUser (formData) {
+    try {
+        const postOption = {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        const response = await fetch(AUTH_LOGIN_URL, postOption);
+        if (!response.ok) {
+            throw new HttpError(response.status);
+        }
+        const json = await response.json();
+        const accessToken = json.data.accessToken;
+        storeToken('accessToken', accessToken);
     } catch (error) {
         if (error instanceof HttpError) {
         displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
