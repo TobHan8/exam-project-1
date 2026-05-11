@@ -40,3 +40,12 @@ input {
 .checkout-title-containers {
     margin-bottom: 15px;
 }
+
+.success-span1 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.success-span2 {
+    font-size: 18px;
+}
