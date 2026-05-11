@@ -20,3 +20,23 @@ h3 {
 p {
   font-size: 20px;
 }
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: -25px;
+}
+
+input {
+    height: 40px;
+    width: 220px;
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 10px;
+    box-shadow: var(--inner-shadow-small), var(--outer-shadow-xtrasmall);
+    border: 1px solid #4D4D4D;
+}
+
+.checkout-title-containers {
+    margin-bottom: 15px;
+}
