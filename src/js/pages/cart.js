@@ -1,7 +1,7 @@
 import { removeFromCart, addToCart, removeAll, 
         calculateSingleProductTotalPrice, 
         calculateTotalQuantity, 
-        calculateTotalPrice } from "../utils.js";
+        calculateTotalPrice, isLoggedIn, getCurrentUser, getSessionToken } from "../utils.js";
 
 import { cartContainer } from '../constants.js';
 
@@ -73,16 +73,20 @@ export async function displayCart () {
         totalPriceSpan.textContent = "Total price: " + totalPrice + "$";
         cartContentRightContainer.appendChild(totalPriceSpan);
 
-        const confirmationLink = document.createElement("a");
-        confirmationLink.classList.add("confirmation-link");
-        confirmationLink.href = "confirmation.html";
-        cartContentRightContainer.appendChild(confirmationLink);
         
-        const checkoutBtn = document.createElement("button"); //Add attributes later on
+        const checkoutBtn = document.createElement("button");
         checkoutBtn.classList.add("add-to-cart-btn");
         checkoutBtn.ariaLabel = 'Click to continue to checkout';
         checkoutBtn.textContent = "CHECKOUT";
-        confirmationLink.appendChild(checkoutBtn);
+        cartContentRightContainer.appendChild(checkoutBtn);
+
+        checkoutBtn.addEventListener('click', () => {
+            if (isLoggedIn(getCurrentUser(), getSessionToken())) {
+                navigation.navigate('/checkout.html');
+            } else {
+                return
+            }
+        });
 
         cart.forEach(product => {
             const cartProductContainer = document.createElement("div");

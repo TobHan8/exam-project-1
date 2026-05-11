@@ -135,7 +135,8 @@ export function setSessionToken(key, value) {
 
 // Get sessionToken from localStorage as object
 export function getSessionToken(sessionToken) {
-  localStorage.getItem(JSON.parse('sessionToken'));
+  const currentSessionToken = localStorage.getItem('sessionToken');
+  return currentSessionToken;
 }
 
 // Set the logged in user details as currentUser in localStorage
@@ -145,5 +146,19 @@ export function setCurrentUser(key, value) {
 
 // Get currentUser from localStorage returned as object
 export function getCurrentUser(currentUser) {
-  localStorage.getItem(JSON.parse('currentUser'));
+  const currentUserObject = JSON.parse(localStorage.getItem('currentUser'));
+  return currentUserObject;
+}
+
+// Check if user is logged in and that accessToken matches sessionToken 
+export function isLoggedIn(getCurrentUser, getSessionToken) {
+  const userToken = getCurrentUser.token;
+  const sessionToken = getSessionToken;
+
+  if (userToken !== sessionToken) {
+    displayToast('Must be logged in!', 'Please log in to continue to checkout', 'error');
+    return false
+  } else {
+    return true
+  }
 }

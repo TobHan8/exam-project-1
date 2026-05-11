@@ -13,6 +13,7 @@ export const cartContainer = document.getElementById("cart-container");
 export const registerContainer = document.getElementById('register-container');
 export const loginContainer = document.getElementById('login-container');
 export const toastContainer = document.getElementById('toast-container');
+export const checkoutContainer = document.getElementById('checkout-container');
 
 export const loadingIndicator = document.getElementById ("loading-indicator");
 export const addToCartBtn = document.getElementById("add-to-cart-btn");

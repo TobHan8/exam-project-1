@@ -417,6 +417,7 @@ strong {
     padding: 30px;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--inner-shadow-large);
 }
 
 .form-group {
@@ -426,6 +427,32 @@ strong {
     gap: 30px;
     justify-content: flex-start;
 }
+
+
+/* ### CHECKOUT PAGE ### */
+
+.checkout-container {
+    z-index: 2;
+    display: flex;
+    justify-items: center;
+    max-width: 1200px;
+    gap: 30px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: var(--color-secondary);
+    border: 2rem solid var(--color-secondary);
+    box-shadow: var(--outer-shadow-large);
+
+}
+
+.checkout-title-containers {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    text-align: center;
+}
+
 
 label {
     font-size: 15px;
