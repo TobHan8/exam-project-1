@@ -1,4 +1,4 @@
-// API URL
+// API URLs
 export const BASE_API_URL = "https://v2.api.noroff.dev";
 export const ALL_PRODUCTS_URL = `${BASE_API_URL}/online-shop`;
 export const SINGLE_PRODUCT_URL = `${ALL_PRODUCTS_URL}/`;
@@ -19,5 +19,7 @@ export const successContainer = document.getElementById('success-container');
 // Static HTML elements
 export const footer = document.getElementById('footer');
 
+// Dynamic elements
+export const header = document.getElementById('header');
 export const loadingIndicator = document.getElementById ("loading-indicator");
 export const addToCartBtn = document.getElementById("add-to-cart-btn");

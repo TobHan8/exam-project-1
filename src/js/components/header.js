@@ -1,7 +1,9 @@
-//import { logOut } from '../../js/log-out.js';
+import { header, footer, successContainer } from '../constants.js';
+
+import { isLoggedIn, getCurrentUser, getSessionToken, logOut } from '../utils.js';
  
-function displayHeader (isLoggedIn) {
-    const header = document.getElementById('header');
+function displayHeader() {
+
 
     const headerButtons = document.createElement('div');
     headerButtons.classList.add('header-buttons');
@@ -48,7 +50,7 @@ function displayHeader (isLoggedIn) {
         homeLinkIcon.class = 'fa-solid fa-house';
         homeLink.appendChild(homeLinkIcon); 
 
-        if (!isLoggedIn) {
+        if (!isLoggedIn(getCurrentUser()), getSessionToken()) {
             const logInLink = document.createElement('a');
             logInLink.href = 'log-in.html';
             nav.appendChild(logInLink);
@@ -90,3 +92,16 @@ function displayHeader (isLoggedIn) {
         }
 
 }
+
+function test() {
+    const logoutBtn = document.createElement('logout-btn');
+    logoutBtn.classList.add('add-to-cart-btn');
+    logoutBtn.textContent = 'LOG OUT';
+    successContainer.appendChild(logoutBtn);
+
+    logoutBtn.addEventListener('click', () => {
+    logOut();
+    });
+}
+
+test();

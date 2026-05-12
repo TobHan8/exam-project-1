@@ -134,8 +134,9 @@ async function registerMain() {
             return
 
         } else {
+            
             const apiReq =  await registerUser(formObject);
-            console.log(apiReq);
+    
             if (apiReq) {
                 displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
                 setTimeout(() => {

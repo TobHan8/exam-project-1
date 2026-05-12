@@ -152,13 +152,18 @@ export function getCurrentUser(currentUser) {
 
 // Check if user is logged in and that accessToken matches sessionToken 
 export function isLoggedIn(getCurrentUser, getSessionToken) {
+
   const userToken = getCurrentUser.token;
   const sessionToken = getSessionToken;
 
   if (userToken !== sessionToken) {
-    displayToast('Must be logged in!', 'Please log in to continue to checkout', 'error');
     return false
   } else {
     return true
   }
+}
+
+export function logOut() {
+  localStorage.removeItem('currentUser');
+  localStorage.removeItem('sessionToken');
 }

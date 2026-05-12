@@ -9,7 +9,7 @@ function displayCheckout() {
 
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
     if (!loginCheck) {
-        displayToast('Error!', 'You must be logged in to view this page', 'error');
+        displayToast('Must be logged in!', 'Please log in to continue to checkout', 'error');
         loadingIndicator.style.display = 'none';
         checkoutContainer.style.display = 'none';
         footer.style.position = 'absolute';
