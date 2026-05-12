@@ -1,11 +1,25 @@
-import { checkoutContainer, loadingIndicator } from '../constants.js';
+import { checkoutContainer, loadingIndicator, footer } from '../constants.js';
 
 import { calculateTotalQuantity, 
     calculateTotalPrice, 
-    calculateSingleProductTotalPrice, } from '../utils.js';
+    calculateSingleProductTotalPrice, isLoggedIn, 
+    getCurrentUser, getSessionToken, displayToast } from '../utils.js';
 
-    function displayCheckout() {
+function displayCheckout() {
 
+    const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
+    if (!loginCheck) {
+        displayToast('Error!', 'You must be logged in to view this page', 'error');
+        loadingIndicator.style.display = 'none';
+        checkoutContainer.style.display = 'none';
+        footer.style.position = 'absolute';
+        footer.style.bottom = '0';
+        footer.style.width = '100vw';
+        setTimeout(() => {
+            navigation.navigate('/login.html');
+        }, 2000);
+
+    } else {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const totalPrice = calculateTotalPrice(cart);
 
@@ -29,7 +43,7 @@ import { calculateTotalQuantity,
 
         const shippingForm = document.createElement('form');
         shippingForm.classList.add('form-group');
-        shippingForm.id = 'checkout-form';
+        shippingForm.id = 'shipping-form';
         shippingFormContainer.appendChild(shippingForm);
 
         const emailLabel = document.createElement('label');
@@ -52,8 +66,10 @@ import { calculateTotalQuantity,
         const phoneInput = document.createElement('input');
         phoneInput.id = 'phone';
         phoneInput.name = 'phone';
-        phoneInput.type = 'number';
-        phoneInput.placeholder = '00 47 00 00 00 00';
+        phoneInput.type = 'tel';
+        phoneInput.placeholder = '0047 00 00 00 00';
+        phoneInput.maxLength = '12';
+        phoneInput.pattern = '[0-9]{12}';
         phoneInput.required = true;
         shippingForm.appendChild(phoneInput);
 
@@ -67,6 +83,7 @@ import { calculateTotalQuantity,
         firstnameInput.name = 'firstname';
         firstnameInput.type = 'text';
         firstnameInput.placeholder = 'Ola';
+        firstnameInput.pattern = '[a-zA-Z]+';
         firstnameInput.required = true;
         shippingForm.appendChild(firstnameInput);
 
@@ -80,6 +97,7 @@ import { calculateTotalQuantity,
         surnameInput.name = 'surname';
         surnameInput.type = 'text';
         surnameInput.placeholder = 'Normann';
+        surnameInput.pattern = '[a-zA-Z]+';
         surnameInput.required = true;
         shippingForm.appendChild(surnameInput);
 
@@ -92,6 +110,7 @@ import { calculateTotalQuantity,
         addr1Input.name = 'addr1';
         addr1Input.type = 'text';
         addr1Input.placeholder = 'Osloveien 1';
+        addr1Input.pattern = '[\\w ]+';
         addr1Input.required = true;
         shippingForm.appendChild(addr1Input);
 
@@ -100,9 +119,10 @@ import { calculateTotalQuantity,
         shippingForm.appendChild(addr2Label);
 
         const addr2Input = document.createElement('input');
-        addr2Input.id = 'addr2';
-        addr2Input.name = 'addr2';
-        addr2Input.type = 'text';
+        addr2Label.id = 'addr2';
+        addr2Label.name = 'addr2';
+        addr2Label.type = 'text';
+        addr2Label.pattern = '[\\w ]+';
         addr2Input.placeholder = '1A';
         addr2Input.required = false;
         shippingForm.appendChild(addr2Input);
@@ -123,6 +143,7 @@ import { calculateTotalQuantity,
         cityInput.name = 'city';
         cityInput.type = 'text';
         cityInput.placeholder = 'Oslo';
+        cityInput.pattern = '[a-zA-Z]+';
         cityInput.required = true;
         cityContainer.appendChild(cityInput);
 
@@ -136,8 +157,10 @@ import { calculateTotalQuantity,
         const postalInput = document.createElement('input');
         postalInput.id = 'postal';
         postalInput.name = 'postal';
-        postalInput.type = 'number';
+        postalInput.type = 'text';
         postalInput.placeholder = '0000';
+        postalInput.maxLength = '4';
+        postalInput.pattern = '[0-9]{4}';
         postalInput.required = true;
         postalContainer.appendChild(postalInput);
 
@@ -159,7 +182,7 @@ import { calculateTotalQuantity,
 
         const paymentForm = document.createElement('form');
         paymentForm.classList.add('form-group');
-        paymentForm.id = 'checkout-form';
+        paymentForm.id = 'payment-form';
         paymentFormContainer.appendChild(paymentForm);
 
         const paymentCards = document.createElement('img')
@@ -175,6 +198,7 @@ import { calculateTotalQuantity,
         ownerInput.name = 'card-owner';
         ownerInput.type = 'text';
         ownerInput.placeholder = 'Ola Normann';
+        ownerInput.pattern = '[a-zA-Z ]+';
         ownerInput.required = true;
         paymentForm.appendChild(ownerInput);
 
@@ -185,8 +209,10 @@ import { calculateTotalQuantity,
         const cardNumberInput = document.createElement('input');
         cardNumberInput.id = 'card-number';
         cardNumberInput.name = 'card-number';
-        cardNumberInput.type = 'number';
-        cardNumberInput.placeholder = '0000';
+        cardNumberInput.type = 'text';
+        cardNumberInput.placeholder = '0000 0000 0000 0000';
+        cardNumberInput.maxLength = '16';
+        cardNumberInput.pattern = '[0-9]{16}';
         cardNumberInput.required = true;
         paymentForm.appendChild(cardNumberInput);
 
@@ -204,8 +230,10 @@ import { calculateTotalQuantity,
         const expirationInput = document.createElement('input');
         expirationInput.id = 'expiration';
         expirationInput.name = 'expiration';
-        expirationInput.type = 'number';
+        expirationInput.type = 'text';
         expirationInput.placeholder = 'MM/YY';
+        expirationInput.maxLength = '4';
+        expirationInput.pattern = '[0-9]{4}';
         expirationInput.required = true;
         expirationContainer.appendChild(expirationInput);
 
@@ -219,8 +247,10 @@ import { calculateTotalQuantity,
         const cvcInput = document.createElement('input');
         cvcInput.id = 'cvc';
         cvcInput.name = 'cvc';
-        cvcInput.type = 'number';
+        cvcInput.type = 'text';
         cvcInput.placeholder = '000';
+        cvcInput.maxLength = '3';
+        cvcInput.pattern = '[0-9]{3}';
         cvcInput.required = true;
         cvcContainer.appendChild(cvcInput);
         
@@ -241,14 +271,13 @@ import { calculateTotalQuantity,
         summaryFormContainer.classList.add('form-container');
         summaryContainer.appendChild(summaryFormContainer);
 
-        const summaryForm = document.createElement('form');
-        summaryForm.classList.add('form-group');
-        summaryForm.id = 'checkout-form';
-        summaryFormContainer.appendChild(summaryForm);
+        const summaryGroup = document.createElement('div');
+        summaryGroup.classList.add('summary-group');
+        summaryFormContainer.appendChild(summaryGroup);
 
         const summaryField = document.createElement('div');
         summaryField.classList.add('summary-field');
-        summaryForm.appendChild(summaryField);
+        summaryGroup.appendChild(summaryField);
 
         const summaryLeft = document.createElement('div');
         summaryLeft.classList.add('summary-left-right');
@@ -285,34 +314,40 @@ import { calculateTotalQuantity,
 
         const completeBtn = document.createElement('button');
         completeBtn.textContent = 'COMPLETE PURCHASE';
+        completeBtn.id = 'complete-btn';
+        completeBtn.htmlFor = 'checkout-form';
         completeBtn.classList.add('add-to-cart-btn');
-        summaryForm.appendChild(completeBtn);
-
-
-
-        
-
-        
-
-
-
-
-
-        
-    }
+        summaryGroup.appendChild(completeBtn);
+    }     
+}
 
 
 function checkoutMain() {
+    
     displayCheckout();
 
-    const checkoutForm = document.getElementById('checkout-form');
+    const shippingForm = document.getElementById('shipping-form');
+    const paymentForm = document.getElementById('payment-form');
+    const completeBtn = document.getElementById('complete-btn');
 
-    checkoutForm.addEventListener('submit', (event) => {
+    completeBtn.addEventListener('click', (event) => {
         event.preventDefault();
 
-        const formData = new FormData(event.target);
+       if (!shippingForm.checkValidity()) {
+        shippingForm.reportValidity();
+        displayToast('Error!', 'Make sure to fill in correct details', 'error');
+        return
+       }
 
-        navigation.navigate('/confirmation.html');
+       if (!paymentForm.checkValidity()) {
+        paymentForm.reportValidity();
+        displayToast('Error!', 'Make sure to fill in correct details', 'error');
+        return
+       }
+        setTimeout(() => {
+            navigation.navigate('/success.html');
+        }, 2000);
+
     });
 }
 

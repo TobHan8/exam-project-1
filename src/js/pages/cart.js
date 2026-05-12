@@ -1,7 +1,8 @@
 import { removeFromCart, addToCart, removeAll, 
         calculateSingleProductTotalPrice, 
         calculateTotalQuantity, 
-        calculateTotalPrice, isLoggedIn, getCurrentUser, getSessionToken } from "../utils.js";
+        calculateTotalPrice, isLoggedIn, getCurrentUser, getSessionToken, 
+        displayToast} from "../utils.js";
 
 import { cartContainer } from '../constants.js';
 
@@ -84,6 +85,7 @@ export async function displayCart () {
             if (isLoggedIn(getCurrentUser(), getSessionToken())) {
                 navigation.navigate('/checkout.html');
             } else {
+                displayToast('Not logged in!', 'You must be logged in to continue', 'error');
                 return
             }
         });

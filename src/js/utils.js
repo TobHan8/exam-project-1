@@ -135,7 +135,7 @@ export function setSessionToken(key, value) {
 
 // Get sessionToken from localStorage as object
 export function getSessionToken(sessionToken) {
-  const currentSessionToken = localStorage.getItem('sessionToken');
+  const currentSessionToken = localStorage.getItem('sessionToken') || [];
   return currentSessionToken;
 }
 
@@ -146,7 +146,7 @@ export function setCurrentUser(key, value) {
 
 // Get currentUser from localStorage returned as object
 export function getCurrentUser(currentUser) {
-  const currentUserObject = JSON.parse(localStorage.getItem('currentUser'));
+  const currentUserObject = JSON.parse(localStorage.getItem('currentUser')) || [];
   return currentUserObject;
 }
 

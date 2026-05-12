@@ -25,6 +25,7 @@ function displayRegister() {
     usernameInput.name = 'name';
     usernameInput.type = 'text';
     usernameInput.placeholder = 'Select a username';
+    usernameInput.maxLength = 20;
     usernameInput.required = true;
     form.appendChild(usernameInput);
 
@@ -84,7 +85,7 @@ function displayRegister() {
 
 }
 
-function validateUsername(name) {
+function validateUsername(name) { // Maxlength applied to input - Find way to filter for symbols here or in input instead
     if (name.length > 20 ) {
         displayToast('Error!', 'Username must be 20 characters or below. Please try again', 'error');
         return false;
@@ -129,10 +130,18 @@ async function registerMain() {
             || (!validateEmail(formData.get('email'))) 
             || (!validateUsername(formData.get('name')))) {
             return
-        } else {
-            registerUser(formObject);
-            displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
 
+        } else {
+            const apiReq =  await registerUser(formObject);
+            if (apiReq) {
+                displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
+                setTimeout(() => {
+                    navigation.navigate('/login.html');
+                }, 2000);
+                
+            } else {
+                return
+            }
         }
     });
 }

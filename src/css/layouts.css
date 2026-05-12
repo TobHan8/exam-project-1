@@ -429,6 +429,14 @@ strong {
     justify-content: flex-start;
 }
 
+.summary-group {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
 
 /* ### CHECKOUT PAGE ### */
 
@@ -570,7 +578,7 @@ footer {
     position: relative;
     background-color: var(--color-secondary);
     height: 100px;
-    margin-top: auto;
+    margin-top: 2rem;
 }
 
 .footer-buttons {

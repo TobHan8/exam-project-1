@@ -91,10 +91,14 @@ export async function registerUser (formData) {
 
         const response = await fetch(AUTH_REGISTER_URL, postOption);
         if (!response.ok) {
-            throw new HttpError(response.status);
+            const errorJson = await response.json();
+            const errorMessage = errorJson.errors[0].message;
+            throw new HttpError(errorMessage);
         }
+
         const json = await response.json();
         return json.data;
+
     } catch (error) {
         if (error instanceof HttpError) {
         displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
@@ -123,27 +127,32 @@ export async function loginUser (formData) {
 
         const response = await fetch(AUTH_LOGIN_URL, postOption);
         if (!response.ok) {
-            throw new HttpError(response.status);
+            const errorJson = await response.json();
+            const errorMessage = errorJson.errors[0].message;
+            throw new HttpError(errorMessage);
         }
+
         const json = await response.json();
+        if (response.ok) {
+            const name = json.data.name;
+            const email = json.data.email;
+            const token = json.data.accessToken;
+
+            const loggedInUser = {
+                name,
+                email,
+                token
+            };
+
+            setSessionToken('sessionToken', token); // Store sessionToken in localStorage
+            setCurrentUser('currentUser', loggedInUser); // Store currentUser in localStorage
+        }
         
-        const name = json.data.name;
-        const email = json.data.email;
-        const token = json.data.accessToken;
-
-        const loggedInUser = {
-            name,
-            email,
-            token
-        };
-
-        setSessionToken('sessionToken', token); // Store sessionToken in localStorage
-        setCurrentUser('currentUser', loggedInUser); // Store currentUser in localStorage
 
         return json.data;
     } catch (error) {
         if (error instanceof HttpError) {
-        displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
+        displayToast('Failed to log in!', error.statusCode, "error");
         } else if (error instanceof NetworkError) {
         displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
         } else {

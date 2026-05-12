@@ -57,6 +57,24 @@ function displayLogin() {
 
 }
 
+function validateEmail(email) {
+    if (email.endsWith('@stud.noroff.no')) {
+        return true;
+    } else {
+        displayToast('Error!', 'Invalid email address! Must be a valid @stud.noroff.no address. Please try again.', 'error');
+        return false;
+    }
+}
+
+function validatePassword(password) {
+    if (password.length < 8) {
+        displayToast('Error!', 'Password must be at least 8 characters long. Please try again.', 'error');
+        return false;
+    } else {
+        return true;
+    } 
+}
+
 async function loginMain() {
     displayLogin();
 
@@ -68,12 +86,23 @@ async function loginMain() {
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData);
 
-        loginUser(formObject);
+        if (!validateEmail(formData.get('email'))
+            || (!validatePassword(formData.get('password')))) {
+            return
 
-        displayToast('Success!', 'You have been logged in.', 'success');
-
+        } else {
+            const apiReq = await loginUser(formObject);
+            if (apiReq) {
+                displayToast('Success!', 'You have been logged in.', 'success');
+                setTimeout(() => {
+                    navigation.navigate('/cart.html');
+                }, 2000);
+                
+            } else {
+                return
+            }
+        }
     });
-
 }
 
 loginMain();
