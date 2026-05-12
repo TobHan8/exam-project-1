@@ -1,4 +1,4 @@
-import { loginContainer } from '../constants.js';
+import { loginContainer, loadingIndicator } from '../constants.js';
 import { displayToast } from '../utils.js';
 import { loginUser } from '../api.js';
 
@@ -16,7 +16,7 @@ function displayLogin() {
 
     const emailLabel = document.createElement('label');
     emailLabel.htmlFor = 'email';
-    emailLabel.textContent = 'Email';
+    emailLabel.textContent = 'Email (valid Noroff address)';
     form.appendChild(emailLabel);
 
     const emailInput = document.createElement('input');
@@ -54,7 +54,6 @@ function displayLogin() {
     registerText.classList.add('login-text');
     registerText.textContent = 'Need an an account? Click here to register';
     registerLink.appendChild(registerText);
-
 }
 
 function validateEmail(email) {
@@ -83,6 +82,8 @@ async function loginMain() {
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        loadingIndicator.style.display = 'flex';
+
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData);
 
@@ -97,7 +98,7 @@ async function loginMain() {
                 setTimeout(() => {
                     navigation.navigate('/cart.html');
                 }, 2000);
-                
+
             } else {
                 return
             }

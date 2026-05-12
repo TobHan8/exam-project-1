@@ -1,11 +1,12 @@
-import { registerContainer } from '../constants.js';
+import { loadingIndicator, registerContainer } from '../constants.js';
 
 import { registerUser } from '../api.js';
 
-import { displayToast } from '../utils.js';
+import { displayToast, isLoggedIn, getCurrentUser, getSessionToken } from '../utils.js';
 
 
 function displayRegister() {
+    
     const formContainer = document.createElement('div');
     formContainer.classList.add('form-container');
     registerContainer.appendChild(formContainer);
@@ -25,7 +26,8 @@ function displayRegister() {
     usernameInput.name = 'name';
     usernameInput.type = 'text';
     usernameInput.placeholder = 'Select a username';
-    usernameInput.maxLength = 20;
+    usernameInput.maxLength = '20';
+    usernameInput.pattern = '[\\w_]+';
     usernameInput.required = true;
     form.appendChild(usernameInput);
 
@@ -52,6 +54,7 @@ function displayRegister() {
     passwordInput.name = 'password';
     passwordInput.type = 'password';
     passwordInput.placeholder = 'Choose a password';
+    passwordInput.minLength = '8';
     passwordInput.required = true;
     form.appendChild(passwordInput);
 
@@ -65,6 +68,7 @@ function displayRegister() {
     password2Input.name = 'password2';
     password2Input.type = 'password';
     password2Input.placeholder = 'Repeat password';
+    password2Input.minLength = '8';
     password2Input.required = true;
     form.appendChild(password2Input);
 
@@ -83,15 +87,12 @@ function displayRegister() {
     logInText.textContent = 'Already have an account? Click here to log in';
     logInLink.appendChild(logInText);
 
-}
+    usernameInput.addEventListener('input', () => {
+        if (!usernameInput.checkValidity()) {
+            displayToast('Attention!', 'Username can only be letters, numbers and underscores', 'error');
+        }
+    });
 
-function validateUsername(name) { // Maxlength applied to input - Find way to filter for symbols here or in input instead
-    if (name.length > 20 ) {
-        displayToast('Error!', 'Username must be 20 characters or below. Please try again', 'error');
-        return false;
-    } else {
-        return true;
-    }
 }
 
 function validateEmail(email) {
@@ -123,22 +124,24 @@ async function registerMain() {
     registerForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        loadingIndicator.style.display = 'flex';
+
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData);
 
         if (!validatePassword(formData.get('password'), formData.get('password2')) 
-            || (!validateEmail(formData.get('email'))) 
-            || (!validateUsername(formData.get('name')))) {
+            || (!validateEmail(formData.get('email')))) {
             return
 
         } else {
             const apiReq =  await registerUser(formObject);
+            console.log(apiReq);
             if (apiReq) {
                 displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
                 setTimeout(() => {
                     navigation.navigate('/login.html');
                 }, 2000);
-                
+
             } else {
                 return
             }
