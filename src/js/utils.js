@@ -10,7 +10,7 @@ export function addToCart(product) {
   //If the item already is in cart, increase quantity by +1
   if (existingItem) {
     existingItem.quantity += 1;
-    displayToast('Item quantity added!', existingItem.quantity + "x " + product.title + " in the cart!", "success");
+    displayToast('Quantity added!', existingItem.quantity + "x " + product.title + " in the cart!", "success");
   } else {
     //If not, push key values with quantity set to 1
     cart.push({ ...product, quantity: 1 });

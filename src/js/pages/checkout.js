@@ -1,7 +1,7 @@
 import { checkoutContainer, loadingIndicator, footer } from '../constants.js';
 
 import { calculateTotalQuantity, 
-    calculateTotalPrice, 
+    calculateTotalPrice, removeAll,
     calculateSingleProductTotalPrice, isLoggedIn, 
     getCurrentUser, getSessionToken, displayToast } from '../utils.js';
 
@@ -345,6 +345,7 @@ function checkoutMain() {
         return
        }
         loadingIndicator.style.display = 'flex';
+        removeAll();
         setTimeout(() => {
             navigation.navigate('/success.html');
         }, 2000);

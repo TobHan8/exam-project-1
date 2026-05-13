@@ -73,6 +73,7 @@ export async function displayCart () {
 
         removeAllBtn.addEventListener('click', () => {
             removeAll();
+            displayToast('Removed all!', 'The cart is now empty', 'removed');
             displayCart();
         });
 

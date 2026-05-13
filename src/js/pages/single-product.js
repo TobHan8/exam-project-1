@@ -97,9 +97,9 @@ function displaySingleProduct(product) {
     shareBtn.addEventListener('click', async () => { // Asynchronous programming added for Clipboard API
         try {
             await navigator.clipboard.writeText(window.location.href); // Use of Clipboard API to copy URL from window object
-            displayToast('Product link copied to clipboard!', 'success');
+            displayToast('Success!', 'Product link copied to clipboard!', 'success');
         } catch (error) {
-            displayToast('Failed to copy product link to clipboard! Try again later.')
+            displayToast('Error!','Failed to copy product link to clipboard! Try again later.')
         }
     });
 
