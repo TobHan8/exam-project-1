@@ -388,6 +388,24 @@ nav a:hover {
     font-size: 30px;
 }
 
+.remove-all-button {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 10px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--outer-shadow-xtrasmall);
+    transition: 0.3s, ease;
+}
+
+.remove-all-button:hover {
+    opacity: 33%;
+    cursor: pointer;
+}
+
 .footer-buttons a {
     transition: 0.3s ease;
 }

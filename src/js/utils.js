@@ -43,13 +43,17 @@ export function removeFromCart(product) {
 }
 
 // Remove all quantities of selected product from cart
-export function removeAll(product) {
+export function removeAllQuantity(product) {
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const cartUpdated = cart.filter(item => item.id !== product.id);
   localStorage.setItem("cart", JSON.stringify(cartUpdated));
   displayToast('Item removed!', product.quantity + 'x ' + product.title + " has been removed from cart.", "removed");
+}
+
+export function removeAll() {
+  localStorage.setItem('cart', '[]');
 }
 
 //parseFloat with .toFixed to only display 2 decimal points in price float value

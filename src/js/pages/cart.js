@@ -1,4 +1,4 @@
-import { removeFromCart, addToCart, removeAll, 
+import { removeFromCart, addToCart, removeAll, removeAllQuantity, 
         calculateSingleProductTotalPrice, 
         calculateTotalQuantity, 
         calculateTotalPrice, isLoggedIn, getCurrentUser, getSessionToken, 
@@ -65,6 +65,16 @@ export async function displayCart () {
         const cartContentRightContainer = document.createElement("div");
         cartContentRightContainer.classList.add("cart-content-right-container");
         cartContentContainer.appendChild(cartContentRightContainer);
+
+        const removeAllBtn = document.createElement('button');
+        removeAllBtn.classList.add('remove-all-button');
+        removeAllBtn.textContent = 'REMOVE ALL';
+        cartContentRightContainer.appendChild(removeAllBtn);
+
+        removeAllBtn.addEventListener('click', () => {
+            removeAll();
+            displayCart();
+        });
 
         const totalItemsSpan = document.createElement("span");
         totalItemsSpan.textContent = "Total items in cart: " + totalQuantity;
@@ -153,7 +163,7 @@ export async function displayCart () {
 
 
             removeBtn.addEventListener("click", () => {
-                removeAll(product); //Removes selected product
+                removeAllQuantity(product); //Removes selected product
                 cartProductContainer.remove(); //Removes selected product container from cart
                 displayCart(); //Displays cart again, loops to remove existingCart above
             });

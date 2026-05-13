@@ -344,6 +344,7 @@ function checkoutMain() {
         displayToast('Error!', 'Make sure to fill in correct details', 'error');
         return
        }
+        loadingIndicator.style.display = 'flex';
         setTimeout(() => {
             navigation.navigate('/success.html');
         }, 2000);

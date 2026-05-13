@@ -101,7 +101,7 @@ export async function registerUser (formData) {
 
     } catch (error) {
         if (error instanceof HttpError) {
-        displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
+        displayToast('Server error!', `${error.statusCode}. Please try again later.`, "error");
         } else if (error instanceof NetworkError) {
         displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
         } else {
