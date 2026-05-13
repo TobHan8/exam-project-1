@@ -10,7 +10,7 @@ export function addToCart(product) {
   //If the item already is in cart, increase quantity by +1
   if (existingItem) {
     existingItem.quantity += 1;
-    displayToast('Item quantity added!', existingItem.quantity + "x " + product.title + " has been added to cart!", "success");
+    displayToast('Item quantity added!', existingItem.quantity + "x " + product.title + " in the cart!", "success");
   } else {
     //If not, push key values with quantity set to 1
     cart.push({ ...product, quantity: 1 });
@@ -166,4 +166,8 @@ export function isLoggedIn(getCurrentUser, getSessionToken) {
 export function logOut() {
   localStorage.removeItem('currentUser');
   localStorage.removeItem('sessionToken');
+  displayToast('Success!', 'You have been logged out', 'success');
+  setTimeout(() => {
+    navigation.navigate('/index.html');
+  },2000);
 }

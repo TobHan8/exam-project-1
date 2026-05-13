@@ -18,52 +18,6 @@ header {
     margin-bottom: 2rem;
 }
 
-.header-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 2rem;
-}
-
-.hamburger-icon {
-    display: block;
-    font-size: 2em;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-/* HIDES CHECKBOX THAT TRIGGERS HAMBURGER MENU TO OPEN --- */
-#menu-checkbox {
-  display: none;
-}
-
-#menu-checkbox:checked ~ nav {
-  max-height: 600px;
-  overflow: auto;
-}
-
-nav {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5rem;
-  top: 100%;
-  left: 0;
-  width: 400px;
-  background: var(--color-secondary);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  z-index: 25;
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-primary);
-}
-
-
 .hero-container {
   z-index: -1;
   position: fixed;
