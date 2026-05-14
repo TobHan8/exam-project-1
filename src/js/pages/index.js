@@ -3,7 +3,7 @@ import { allProductsContainer } from "../constants.js";
 
 import { fetchAllProducts } from "../api.js";
 
-import { addToCart } from "../utils.js";
+import { addToCart, isOnSale } from "../utils.js";
 
 //Main function to call the return of json.data from the API call
 async function main() {
@@ -29,12 +29,13 @@ function displayAllProducts(allProductsData) {
 
     const imageLink = document.createElement("a");
     imageLink.href = `single-product.html?id=${product.id}`;
+    imageLink.ariaLabel = `Click for more details on ${product.title}`;
     imageLink.classList.add("product-image-container");
     productContainer.appendChild(imageLink);
 
     const img = document.createElement("img");
     img.src = product.image.url;
-    img.alt = product.image.alt;
+    img.alt = `${product.description}`;
     imageLink.appendChild(img);
 
     const descContainer = document.createElement("div");
@@ -49,30 +50,28 @@ function displayAllProducts(allProductsData) {
     title.textContent = product.title;
     descContainerTop.appendChild(title);
 
-    const detailsLink = document.createElement("a");
-    detailsLink.href = `single-product.html?id=${product.id}`;
-    descContainerTop.appendChild(detailsLink);
-
-    const detailsSpan = document.createElement("span");
-    detailsSpan.classList.add("more-details");
-    detailsSpan.textContent = "Click for more details";
-    detailsLink.appendChild(detailsSpan);
-
     const descContainerBottom = document.createElement('div');
     descContainerBottom.classList.add('desc-container-bottom');
     descContainer.appendChild(descContainerBottom);
 
     const priceSpan = document.createElement("span");
     priceSpan.classList.add('price-span');
+    priceSpan.textContent = 'Price: ';
     descContainerBottom.appendChild(priceSpan);
-    
-    const priceStrong = document.createElement("strong");
-    priceStrong.textContent = `${product.discountedPrice}$`;
-    priceSpan.textContent = "Price: ";
-    priceSpan.appendChild(priceStrong);
+
+    const discountedProduct = isOnSale(product);
+
+    if (discountedProduct) {
+        const priceStrong = document.createElement("strong");
+        priceStrong.textContent = `${product.discountedPrice}$`;
+        priceSpan.appendChild(priceStrong);
+
+    } else {
+        priceSpan.textContent = `Price: ${product.price}$`;
+    }
     
     const addToCartBtn = document.createElement("button");
-    addToCartBtn.classList.add("add-to-cart-btn");
+    addToCartBtn.classList.add("add-to-cart-btn-medium");
     addToCartBtn.textContent = "ADD TO CART";
     descContainerBottom.appendChild(addToCartBtn);
 

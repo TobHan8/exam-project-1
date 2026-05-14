@@ -330,39 +330,45 @@ nav a:hover {
     
 }
 
-.carousel-add-to-cart-btn {
+.add-to-cart-btn-small,
+.add-to-cart-btn-medium,
+.add-to-cart-btn-large {
     background-color: var(--color-secondary);
     color: var(--color-white);
-    padding: 10px 15px;
-    font-size: 10px;
     font-weight: bold;
     border-radius: 50px;
     border: none;
-    cursor: pointer;
-    box-shadow: var(--outer-shadow-small);
     transition: 0.3s ease;
+}
+
+.add-to-cart-btn-small:hover,
+.add-to-cart-btn-medium:hover,
+.add-to-cart-btn-large:hover {
+    opacity: 30%;
+    cursor: pointer;
+}
+
+.add-to-cart-btn-small {
+    padding: var(--button-padding-small);
+    font-size: var(--button-text-small);
+    box-shadow: var(--outer-shadow-xtrasmall);
 }
 
 .carousel-add-to-cart-btn:hover {
-    opacity: 33%;
+    opacity: 30%;
 }
 
 
-.add-to-cart-btn {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: 15px 20px;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
+.add-to-cart-btn-medium {
+    padding: var(--button-padding-medium);
+    font-size: var(--button-text-medium);
     box-shadow: var(--outer-shadow-small);
-    transition: 0.3s ease;
 }
 
-.add-to-cart-btn:hover {
-    opacity: 33%;
+.add-to-cart-btn-large {
+    padding: var(--button-padding-large);
+    font-size: var(--button-text-large);
+    box-shadow: var(--outer-shadow-small);
 }
 
 .share-btn {

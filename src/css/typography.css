@@ -13,14 +13,13 @@ h2 {
 
 h3 {
     font-size: 20px;
-    margin-bottom: 5px;
+    text-align: center;
     
 }
 
 p {
   font-size: 20px;
 }
-
 
 
 label {
@@ -39,10 +38,34 @@ input {
     border: 1px solid #4D4D4D;
 }
 
+strong {
+    color: red;
+}
+
+/* ### INDEX PAGE ### */
+
+.product-desc-container span {
+    color: var(--color-secondary);
+}
+
+.price-span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price-span strong {
+    font-size: 20px;
+}
+
+
+/* ### CHECKOUT PAGE ### */
+
 .checkout-title-containers {
-    margin-bottom: 15px;
     margin-top: -30px;
 }
+
+
+/* ### SUCCESS PAGE ### */
 
 .success-span1 {
     font-weight: bold;
@@ -52,6 +75,9 @@ input {
 .success-span2 {
     font-size: 18px;
 }
+
+
+/* ### PROFILE PAGE ### */
 
 .profile-title-span {
     font-weight: bold;

@@ -71,12 +71,13 @@ function displayCarousel(allProductsData) {
 
         const imageLink = document.createElement('a');
         imageLink.href = `single-product.html?id=${product.id}`;
+        imageLink.ariaLabel = `Click for more details on ${product.title}`;
         imageLink.classList.add('carousel-image-container');
         carouselProductContainer.appendChild(imageLink);
 
         const img = document.createElement('img');
         img.src = product.image.url;
-        img.alt = product.image.alt;
+        img.alt = `${product.description}`;
         imageLink.appendChild(img);
 
         const descContainer = document.createElement('div');
@@ -99,7 +100,7 @@ function displayCarousel(allProductsData) {
         
 
         const addToCartBtn = document.createElement("button");
-        addToCartBtn.classList.add("carousel-add-to-cart-btn");
+        addToCartBtn.classList.add("add-to-cart-btn-small");
         addToCartBtn.textContent = "ADD TO CART";
         addToCartBtn.ariaLabel = 'Click to add this product to the cart';
         descContainer.appendChild(addToCartBtn);

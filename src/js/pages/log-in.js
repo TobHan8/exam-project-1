@@ -75,7 +75,7 @@ function displayLogin() {
             form.appendChild(passwordInput);
 
             const loginBtn = document.createElement('button');
-            loginBtn.classList.add('add-to-cart-btn');
+            loginBtn.classList.add('add-to-cart-btn-medium');
             loginBtn.textContent = 'LOG IN';
             form.appendChild(loginBtn);
 

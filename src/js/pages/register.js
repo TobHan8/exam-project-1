@@ -104,7 +104,7 @@ function displayRegister() {
     form.appendChild(password2Input);
 
     const submitBtn = document.createElement('button');
-    submitBtn.classList.add('add-to-cart-btn');
+    submitBtn.classList.add('add-to-cart-btn-medium');
     submitBtn.textContent = 'SUBMIT';
     form.appendChild(submitBtn);
 

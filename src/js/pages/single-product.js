@@ -119,7 +119,7 @@ function displaySingleProduct(product) {
     }
     
     const addToCartBtn = document.createElement("button");
-    addToCartBtn.classList.add("add-to-cart-btn");
+    addToCartBtn.classList.add("add-to-cart-btn-large");
     addToCartBtn.textContent = "ADD TO CART";
     addToCartBtn.ariaLabel = 'Click to add this product to the cart';
     bottomContainer.appendChild(addToCartBtn);

@@ -52,7 +52,7 @@ export async function displayCart () {
 
         const clickBelowMessage = document.createElement("span");
         clickBelowMessage.classList.add("click-below-span");
-        clickBelowMessage.textContent = "Click below to see all products:";
+        clickBelowMessage.textContent = "Click below to see all products";
         emptyCartContentContainer.appendChild(clickBelowMessage);
 
         const continueLink = document.createElement("a");
@@ -60,7 +60,7 @@ export async function displayCart () {
         emptyCartContentContainer.appendChild(continueLink);
 
         const continueBtn = document.createElement("button");
-        continueBtn.classList.add("add-to-cart-btn");
+        continueBtn.classList.add("add-to-cart-btn-large");
         continueBtn.textContent = "SEE ALL PRODUCTS";
         continueLink.appendChild(continueBtn);
 
@@ -133,7 +133,7 @@ export async function displayCart () {
 
         
         const checkoutBtn = document.createElement("button");
-        checkoutBtn.classList.add("add-to-cart-btn");
+        checkoutBtn.classList.add("add-to-cart-btn-medium");
         checkoutBtn.ariaLabel = 'Click to continue to checkout';
         checkoutBtn.textContent = "CHECKOUT";
         cartContentRightContainer.appendChild(checkoutBtn);

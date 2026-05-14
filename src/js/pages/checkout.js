@@ -346,7 +346,7 @@ function displayCheckout() {
         completeBtn.textContent = 'COMPLETE PURCHASE';
         completeBtn.id = 'complete-btn';
         completeBtn.htmlFor = 'checkout-form';
-        completeBtn.classList.add('add-to-cart-btn');
+        completeBtn.classList.add('add-to-cart-btn-medium');
         summaryGroup.appendChild(completeBtn);
     }     
 }
