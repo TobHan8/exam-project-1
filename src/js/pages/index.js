@@ -13,6 +13,15 @@ async function main() {
 
 //Display the products for the user by creating HTML via the DOM
 function displayAllProducts(allProductsData) {
+
+  const titleContainer = document.createElement('div');
+  titleContainer.classList.add('index-title-container');
+  allProductsContainer.appendChild(titleContainer);
+
+  const title = document.createElement('h1');
+  title.textContent = 'BROWSE ALL PRODUCTS';
+  titleContainer.appendChild(title);
+
   allProductsData.forEach(product => {
     const productContainer = document.createElement("div");
     productContainer.classList.add("product-container");

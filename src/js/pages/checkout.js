@@ -3,7 +3,7 @@ import { checkoutContainer, loadingIndicator, footer } from '../constants.js';
 import { calculateTotalQuantity, 
     calculateTotalPrice, removeAll,
     calculateSingleProductTotalPrice, isLoggedIn, 
-    getCurrentUser, getSessionToken, displayToast } from '../utils.js';
+    getCurrentUser, getSessionToken, displayToast, navigateBack } from '../utils.js';
 
 function displayCheckout() {
 
@@ -24,6 +24,36 @@ function displayCheckout() {
         const totalPrice = calculateTotalPrice(cart);
 
         loadingIndicator.style.display = 'none';
+
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('title-container');
+        checkoutContainer.appendChild(titleContainer);
+    
+        const backButtonContainer = document.createElement('div');
+        backButtonContainer.classList.add('back-button-container');
+        titleContainer.appendChild(backButtonContainer);
+    
+        const backBtn = document.createElement('button');
+        backBtn.classList.add('back-button');
+        backBtn.textContent = 'BACK';
+        backBtn.ariaLabel = 'Click to go back to previous page';
+        backButtonContainer.appendChild(backBtn);
+    
+        backBtn.addEventListener('click', () => {
+            navigateBack();
+        });
+    
+        const titleMiddleContainer = document.createElement('div');
+        titleMiddleContainer.classList.add('title-middle-container');
+        titleContainer.appendChild(titleMiddleContainer);
+    
+        const h1 = document.createElement('h1');
+        h1.textContent = 'FILL OUT DETAILS';
+        titleMiddleContainer.appendChild(h1);
+    
+        const titleRightContainer = document.createElement('div');
+        titleRightContainer.classList.add('title-right-container');
+        titleContainer.appendChild(titleRightContainer);
 
         const shippingContainer = document.createElement('div');
         shippingContainer.classList.add('checkout-form-containers', 'shipping-container');

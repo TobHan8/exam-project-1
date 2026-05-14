@@ -3,7 +3,7 @@ import { fetchSingleProduct } from "../api.js";
 
 import { singleProductContainer } from "../constants.js";
 
-import { addToCart, displayToast, isOnSale } from "../utils.js";
+import { addToCart, displayToast, isOnSale, navigateBack } from "../utils.js";
 
 //Main program function
 async function main() {
@@ -13,6 +13,36 @@ async function main() {
 
 //Function to display single product via HTML elements
 function displaySingleProduct(product) {
+
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    singleProductContainer.appendChild(titleContainer);
+
+    const backButtonContainer = document.createElement('div');
+    backButtonContainer.classList.add('back-button-container');
+    titleContainer.appendChild(backButtonContainer);
+
+    const backBtn = document.createElement('button');
+    backBtn.classList.add('back-button');
+    backBtn.textContent = 'BACK';
+    backBtn.ariaLabel = 'Click to go back to previous page';
+    backButtonContainer.appendChild(backBtn);
+
+    backBtn.addEventListener('click', () => {
+        navigateBack();
+    });
+
+    const titleMiddleContainer = document.createElement('div');
+    titleMiddleContainer.classList.add('title-middle-container');
+    titleContainer.appendChild(titleMiddleContainer);
+
+    const h1 = document.createElement('h1');
+    h1.textContent = 'PRODUCT DETAILS';
+    titleMiddleContainer.appendChild(h1);
+
+    const titleRightContainer = document.createElement('div');
+    titleRightContainer.classList.add('title-right-container');
+    titleContainer.appendChild(titleRightContainer);
 
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("single-product-img-container");

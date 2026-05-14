@@ -175,3 +175,11 @@ export function logOut() {
     navigation.navigate('/index.html');
   },2000);
 }
+
+export async function navigateBack() {
+  if (navigation.canGoBack) {
+    await navigation.back().finished;
+  } else {
+    displayToast('Error!', 'You cannot go back from here', 'error');
+  }
+}

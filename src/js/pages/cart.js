@@ -2,7 +2,7 @@ import { removeFromCart, addToCart, removeAll, removeAllQuantity,
         calculateSingleProductTotalPrice, 
         calculateTotalQuantity, 
         calculateTotalPrice, isLoggedIn, getCurrentUser, getSessionToken, 
-        displayToast} from "../utils.js";
+        displayToast, navigateBack } from "../utils.js";
 
 import { cartContainer } from '../constants.js';
 
@@ -18,10 +18,33 @@ export async function displayCart () {
         const titleContainer = document.createElement('div');
         titleContainer.classList.add('title-container');
         cartContainer.appendChild(titleContainer);
+
+        const backButtonContainer = document.createElement('div');
+        backButtonContainer.classList.add('back-button-container');
+        titleContainer.appendChild(backButtonContainer);
+    
+        const backBtn = document.createElement('button');
+        backBtn.classList.add('back-button');
+        backBtn.textContent = 'BACK';
+        backBtn.ariaLabel = 'Click to go back to previous page';
+        backButtonContainer.appendChild(backBtn);
+    
+        backBtn.addEventListener('click', () => {
+            navigateBack();
+        });
+    
+        const titleMiddleContainer = document.createElement('div');
+        titleMiddleContainer.classList.add('title-middle-container');
+        titleContainer.appendChild(titleMiddleContainer);
+    
         const title = document.createElement('h1');
         title.id = 'title';
         title.textContent = 'THE CART IS EMPTY';
-        titleContainer.appendChild(title);
+        titleMiddleContainer.appendChild(title);
+    
+        const titleRightContainer = document.createElement('div');
+        titleRightContainer.classList.add('title-right-container');
+        titleContainer.appendChild(titleRightContainer);
 
         const emptyCartContentContainer = document.createElement("div")
         emptyCartContentContainer.classList.add("empty-cart-content-container");
@@ -49,10 +72,33 @@ export async function displayCart () {
         const titleContainer = document.createElement('div');
         titleContainer.classList.add('title-container');
         cartContainer.appendChild(titleContainer);
+
+        const backButtonContainer = document.createElement('div');
+        backButtonContainer.classList.add('back-button-container');
+        titleContainer.appendChild(backButtonContainer);
+    
+        const backBtn = document.createElement('button');
+        backBtn.classList.add('back-button');
+        backBtn.textContent = 'BACK';
+        backBtn.ariaLabel = 'Click to go back to previous page';
+        backButtonContainer.appendChild(backBtn);
+    
+        backBtn.addEventListener('click', () => {
+            navigateBack();
+        });
+    
+        const titleMiddleContainer = document.createElement('div');
+        titleMiddleContainer.classList.add('title-middle-container');
+        titleContainer.appendChild(titleMiddleContainer);
+    
         const title = document.createElement('h1');
         title.id = 'title';
         title.textContent = 'REVIEW ITEMS IN CART';
-        titleContainer.appendChild(title);
+        titleMiddleContainer.appendChild(title);
+
+        const titleRightContainer = document.createElement('div');
+        titleRightContainer.classList.add('title-right-container');
+        titleContainer.appendChild(titleRightContainer);
 
         const cartContentContainer = document.createElement("div");
         cartContentContainer.classList.add("cart-content-container");

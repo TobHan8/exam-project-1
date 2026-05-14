@@ -4,6 +4,14 @@ function displaySuccess() {
 
     loadingIndicator.style.display = 'none';
 
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('success-title-container');
+    successContainer.appendChild(titleContainer);
+
+    const h1 = document.createElement('h1');
+    h1.textContent = 'SUCCESS!';
+    titleContainer.appendChild(h1);
+
     const successContentContainer = document.createElement('div');
     successContentContainer.classList.add('succ-content-container');
     successContainer.appendChild(successContentContainer);

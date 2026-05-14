@@ -1,9 +1,37 @@
-import { loginContainer, loadingIndicator } from '../constants.js';
-import { displayToast } from '../utils.js';
+import { loginContainer, loadingIndicator, titleContainer } from '../constants.js';
+import { displayToast, navigateBack } from '../utils.js';
 import { loginUser } from '../api.js';
 
 function displayLogin() {
-    const loginContainer = document.getElementById('login-container');
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    loginContainer.appendChild(titleContainer)
+
+    const backButtonContainer = document.createElement('div');
+    backButtonContainer.classList.add('back-button-container');
+    titleContainer.appendChild(backButtonContainer);
+
+    const backBtn = document.createElement('button');
+    backBtn.classList.add('back-button');
+    backBtn.textContent = 'BACK';
+    backBtn.ariaLabel = 'Click to go back to previous page';
+    backButtonContainer.appendChild(backBtn);
+
+    backBtn.addEventListener('click', () => {
+        navigateBack();
+    });
+
+    const titleMiddleContainer = document.createElement('div');
+    titleMiddleContainer.classList.add('title-middle-container');
+    titleContainer.appendChild(titleMiddleContainer);
+
+    const h1 = document.createElement('h1');
+    h1.textContent = 'LOG IN';
+    titleMiddleContainer.appendChild(h1);
+
+    const titleRightContainer = document.createElement('div');
+    titleRightContainer.classList.add('title-right-container');
+    titleContainer.appendChild(titleRightContainer);
 
     const formContainer = document.createElement('form');
     formContainer.classList.add('form-container');

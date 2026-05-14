@@ -15,6 +15,7 @@ export const loginContainer = document.getElementById('login-container');
 export const toastContainer = document.getElementById('toast-container');
 export const checkoutContainer = document.getElementById('checkout-container');
 export const successContainer = document.getElementById('success-container');
+export const titleContainer = document.getElementById('title-container');
 
 // Static HTML elements
 export const footer = document.getElementById('footer');

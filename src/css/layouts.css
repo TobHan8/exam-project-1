@@ -53,12 +53,6 @@ header {
     color: var(--color-primary);
 }
 
-.title-container {
-    grid-row: 1;
-    grid-column: 1 / -1;
-    justify-self: center;
-}
-
 /* ### INDEX PAGE / ALL PRODUCTS PAGE ### */
 
 .all-products-container {

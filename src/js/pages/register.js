@@ -2,11 +2,42 @@ import { loadingIndicator, registerContainer } from '../constants.js';
 
 import { registerUser } from '../api.js';
 
-import { displayToast, isLoggedIn, getCurrentUser, getSessionToken } from '../utils.js';
+import { displayToast, isLoggedIn, getCurrentUser, getSessionToken, navigateBack } from '../utils.js';
 
 
 function displayRegister() {
     
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    registerContainer.appendChild(titleContainer);
+
+    const backButtonContainer = document.createElement('div');
+    backButtonContainer.classList.add('back-button-container');
+    titleContainer.appendChild(backButtonContainer);
+
+    const backBtn = document.createElement('button');
+    backBtn.classList.add('back-button');
+    backBtn.textContent = 'BACK';
+    backBtn.ariaLabel = 'Click to go back to previous page';
+    backButtonContainer.appendChild(backBtn);
+
+    backBtn.addEventListener('click', () => {
+        navigateBack();
+    });
+
+    const titleMiddleContainer = document.createElement('div');
+    titleMiddleContainer.classList.add('title-middle-container');
+    titleContainer.appendChild(titleMiddleContainer);
+
+    const title = document.createElement('h1');
+    title.id = 'title';
+    title.textContent = 'REGISTER NEW ACCOUNT';
+    titleMiddleContainer.appendChild(title);
+
+    const titleRightContainer = document.createElement('div');
+    titleRightContainer.classList.add('title-right-container');
+    titleContainer.appendChild(titleRightContainer);
+
     const formContainer = document.createElement('div');
     formContainer.classList.add('form-container');
     registerContainer.appendChild(formContainer);
