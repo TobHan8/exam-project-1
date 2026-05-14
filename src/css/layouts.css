@@ -270,7 +270,7 @@ strong {
     width: 275px;
     height: 175px;
     overflow: hidden;
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .cart-product-image-container:hover {
@@ -307,7 +307,7 @@ strong {
     margin-right: 3px;
     border: none;
     background: transparent;
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .remove-btn:hover {
@@ -334,7 +334,7 @@ strong {
     height: 25px;
     width: 30px;
     box-shadow: var(--outer-shadow-xtrasmall);
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .quantity-btns:hover {

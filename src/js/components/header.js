@@ -1,8 +1,6 @@
 import { header, footer, successContainer } from '../constants.js';
 
 import { isLoggedIn, getCurrentUser, getSessionToken, logOut } from '../utils.js';
- 
-let currentState = 0;
 
 function displayHeader() {
 
@@ -134,6 +132,15 @@ function displayHeader() {
         loginBtn.style.display = 'none';
         registerBtn.style.display = 'none';
 
+        const profileButton = document.createElement('a');
+        profileButton.href = '/profile.html';
+        profileButton.classList.add('header-profile-btn');
+        buttonsRight.appendChild(profileButton);
+        
+        const profileIcon2 = document.createElement('i');
+        profileIcon2.classList.add('fa-regular', 'fa-circle-user')
+        profileButton.appendChild(profileIcon2);
+
         const profileLink = document.createElement('a');
         profileLink.href = '/profile.html';
         profileLink.textContent = 'VIEW PROFILE';
@@ -159,6 +166,8 @@ function displayHeader() {
     }
 
 }
+
+let currentState = 0;
 
 function headerToggle() {
     const toggleBtn = document.getElementById('toggle-btn');

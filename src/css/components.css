@@ -8,26 +8,28 @@
     padding: 2rem;
 }
 
+.header-buttons i {
+    font-size: 44px;
+}
+
 .toggleBtn-container {
     display: flex;
     flex: 1;
 }
 
 .toggle-btn,
-.cart-button {
+.cart-button,
+.header-profile-btn {
     background: transparent;
     border: none;
     transition: 0.3s ease;
 }
 
 .toggle-btn:hover,
-.cart-button:hover {
+.cart-button:hover,
+.header-profile-btn:hover {
     opacity: 30%;
     cursor: pointer;
-}
-
-.toggle-btn i {
-    font-size: 44px;
 }
 
 .dropdown-nav {
