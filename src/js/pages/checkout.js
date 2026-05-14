@@ -26,7 +26,7 @@ function displayCheckout() {
         loadingIndicator.style.display = 'none';
 
         const titleContainer = document.createElement('div');
-        titleContainer.classList.add('title-container');
+        titleContainer.classList.add('checkout-title-container');
         checkoutContainer.appendChild(titleContainer);
     
         const backButtonContainer = document.createElement('div');

@@ -174,7 +174,7 @@ nav a:hover {
     margin-top: 5px;
     border: none;
     background: transparent;
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .close-btn i {
@@ -338,7 +338,7 @@ nav a:hover {
     border: none;
     cursor: pointer;
     box-shadow: var(--outer-shadow-small);
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .carousel-add-to-cart-btn:hover {
@@ -356,7 +356,7 @@ nav a:hover {
     border: none;
     cursor: pointer;
     box-shadow: var(--outer-shadow-small);
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
@@ -375,7 +375,7 @@ nav a:hover {
     height: 45px;
     width: 45px;
     box-shadow: var(--outer-shadow-small);
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .share-btn:hover {
@@ -398,7 +398,7 @@ nav a:hover {
     border: none;
     cursor: pointer;
     box-shadow: var(--outer-shadow-xtrasmall);
-    transition: 0.3s, ease;
+    transition: 0.3s ease;
 }
 
 .remove-all-button:hover {
@@ -417,6 +417,14 @@ nav a:hover {
 .success-title-container {
     margin-top: -15px;
     margin-bottom: -10px;
+}
+
+.checkout-title-container {
+    display: flex;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 1 / -1;
+    padding: 15px 0px 15px 0px;
 }
 
 
@@ -450,7 +458,7 @@ nav a:hover {
     width: 100%;
 }
 
-.back-button-container{
+.back-button-container {
     display: flex;
     width: fit-content
 }
@@ -473,6 +481,24 @@ nav a:hover {
     cursor: pointer;
     background-color: var(--color-primary);
     color: var(--color-secondary);
+}
+
+.profile-log-out-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--outer-shadow-xtrasmall);
+    transition: 0.3s ease;
+}
+
+.profile-log-out-btn:hover {
+    opacity: 30%;
+    cursor: pointer;
 }
 
 .footer-buttons a {

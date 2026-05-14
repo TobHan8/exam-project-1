@@ -52,3 +52,12 @@ input {
 .success-span2 {
     font-size: 18px;
 }
+
+.profile-title-span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile-span {
+    font-size: 18px;
+}
