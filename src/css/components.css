@@ -33,6 +33,7 @@
 }
 
 .dropdown-nav {
+    z-index: 5;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -49,6 +50,7 @@
 }
 
 .dropdown-nav a {
+    z-index: 5;
     display: flex;
     gap: 10px;
     margin: 2rem;
@@ -235,8 +237,8 @@ nav a:hover {
     max-width: 1200px;
     height: 250px;
     margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .carousel-left-btn,
@@ -265,7 +267,6 @@ nav a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     height: auto;
-    margin-bottom: 2rem;
     padding: 0;
     background-color: var(--color-secondary);
     border: 1rem solid var(--color-secondary);
@@ -335,7 +336,8 @@ nav a:hover {
 .add-to-cart-btn-medium,
 .add-to-cart-btn-large,
 .all-products-add-to-cart-btn,
-.all-products-add-to-cart-btn-mobile {
+.all-products-add-to-cart-btn-mobile,
+.single-prod-add-to-cart-btn {
     background-color: var(--color-secondary);
     color: var(--color-white);
     font-weight: bold;
@@ -346,7 +348,10 @@ nav a:hover {
 
 .add-to-cart-btn-small:hover,
 .add-to-cart-btn-medium:hover,
-.add-to-cart-btn-large:hover {
+.add-to-cart-btn-large:hover,
+.all-products-add-to-cart-btn:hover,
+.all-products-add-to-cart-btn-mobile:hover,
+.single-prod-add-to-cart-btn:hover {
     opacity: 30%;
     cursor: pointer;
 }
@@ -375,7 +380,8 @@ nav a:hover {
     box-shadow: var(--outer-shadow-small);
 }
 
-.add-to-cart-btn-large {
+.add-to-cart-btn-large,
+.single-prod-add-to-cart-btn {
     padding: var(--button-padding-large);
     font-size: var(--button-text-large);
     box-shadow: var(--outer-shadow-small);

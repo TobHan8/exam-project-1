@@ -152,13 +152,14 @@ export async function displayCart () {
             cartProductContainer.classList.add("cart-product-container");
             cartContentLeftContainer.appendChild(cartProductContainer);
 
-            const cartProductImgContainer = document.createElement("div");
+            const cartProductImgContainer = document.createElement("a");
             cartProductImgContainer.classList.add("cart-product-image-container");
+            cartProductImgContainer.href = `single-product.html?id=${product.id}`;
             cartProductContainer.appendChild(cartProductImgContainer);
 
             const cartProductImg = document.createElement("img");
             cartProductImg.src = product.image.url;
-            cartProductImg.alt = product.image.alt;
+            cartProductImg.alt = product.description;
             cartProductImgContainer.appendChild(cartProductImg);
 
             const cartProductSideContainer = document.createElement("div");

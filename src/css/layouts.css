@@ -8,6 +8,7 @@ body {
 }
 
 header {
+    z-index: 5;
     display: flex;
     position: relative;
     width: 100vw;
@@ -15,7 +16,6 @@ header {
     font-size: 1.5rem;
     background-color: var(--color-secondary);
     height: 100px;
-    margin-bottom: 2rem;
 }
 
 .hero-container {
@@ -64,7 +64,7 @@ header {
     gap: 30px;
     height: auto;
     margin: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 140px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
@@ -134,9 +134,9 @@ header {
     display: grid;
     justify-items: center;
     width: 700px;
-    height: auto;
+    height: 100%;
     margin: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 140px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
@@ -165,14 +165,14 @@ header {
     width: 633px;
     height: 100%;
     padding: 0px 40px 25px 40px;
-    gap: 15px;
+    gap: 30px;
     background-color: var(--color-tertiary);
     box-shadow: var(--inner-shadow-large);
 }
 
 .single-product-desc-container p {
     width: 100%;
-    margin: 0;
+    margin-top: 0;
     text-align: center;
 }
 
@@ -547,11 +547,14 @@ header {
 /* ### FOOTER ### */
 
 footer {
+    z-index: 5;
     display: flex;
-    position: relative;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
     background-color: var(--color-secondary);
     height: 100px;
-    margin-top: 2rem;
 }
 
 .footer-buttons {
