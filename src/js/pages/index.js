@@ -60,36 +60,53 @@ function displayAllProducts(allProductsData) {
     descContainerBottom.appendChild(priceSpan);
 
     const discountedProduct = isOnSale(product);
+    
+    const addToCartBtn = document.createElement("button");
+    addToCartBtn.classList.add("all-products-add-to-cart-btn");
+    addToCartBtn.textContent = "ADD TO CART";
+    descContainerBottom.appendChild(addToCartBtn);
+
+    const descContainerMobile = document.createElement('div');
+    descContainerMobile.classList.add('desc-container-mobile');
+    productContainer.appendChild(descContainerMobile);
+
+    const titleMobile = document.createElement("h3");
+    titleMobile.textContent = product.title;
+    titleMobile.classList.add('h3-mobile')
+    descContainerMobile.appendChild(titleMobile);
+
+    const priceSpanMobile = document.createElement("span");
+    priceSpanMobile.classList.add('price-span-mobile');
+    priceSpanMobile.textContent = 'Price: ';
+    descContainerMobile.appendChild(priceSpanMobile);
+
+    const addToCartBtnMobile = document.createElement("button");
+    addToCartBtnMobile.classList.add("all-products-add-to-cart-btn-mobile");
+    addToCartBtnMobile.textContent = "ADD TO CART";
+    descContainerMobile.appendChild(addToCartBtnMobile);
+
+    addToCartBtn.addEventListener("click", () => {
+      addToCart(product);
+    });
+
+    addToCartBtnMobile.addEventListener("click", () => {
+      addToCart(product);
+    });
 
     if (discountedProduct) {
         const priceStrong = document.createElement("strong");
         priceStrong.textContent = `${product.discountedPrice}$`;
         priceSpan.appendChild(priceStrong);
 
+        const priceStrongMobile = document.createElement("strong");
+        priceStrongMobile.textContent = `${product.discountedPrice}$`;
+        priceSpanMobile.appendChild(priceStrongMobile);
+
     } else {
         priceSpan.textContent = `Price: ${product.price}$`;
+        priceSpanMobile.textContent = `Price: ${product.price}$`;
     }
-    
-    const addToCartBtn = document.createElement("button");
-    addToCartBtn.classList.add("add-to-cart-btn-medium");
-    addToCartBtn.textContent = "ADD TO CART";
-    descContainerBottom.appendChild(addToCartBtn);
 
-    addToCartBtn.addEventListener("click", () => {
-      addToCart(product);
-    });
-
-    const mobileMedia = window.matchMedia( '(max-width: 780px)' );
-
-    if (mobileMedia) {
-      descContainerTop.style.display = 'none';
-      descContainerBottom.style.display = 'none';
-      descContainer.appendChild(title);
-      descContainer.appendChild(priceSpan);
-      descContainer.appendChild(addToCartBtn);
-      addToCartBtn.classList.remove('add-to-cart-btn-medium');
-      addToCartBtn.classList.add('add-to-cart-btn-xtrasmall');
-    }
   });
 };
 

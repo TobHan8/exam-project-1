@@ -333,7 +333,9 @@ nav a:hover {
 .add-to-cart-btn-xtrasmall,
 .add-to-cart-btn-small,
 .add-to-cart-btn-medium,
-.add-to-cart-btn-large {
+.add-to-cart-btn-large,
+.all-products-add-to-cart-btn,
+.all-products-add-to-cart-btn-mobile {
     background-color: var(--color-secondary);
     color: var(--color-white);
     font-weight: bold;
@@ -366,7 +368,8 @@ nav a:hover {
 }
 
 
-.add-to-cart-btn-medium {
+.add-to-cart-btn-medium,
+.all-products-add-to-cart-btn {
     padding: var(--button-padding-medium);
     font-size: var(--button-text-medium);
     box-shadow: var(--outer-shadow-small);

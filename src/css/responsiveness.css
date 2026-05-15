@@ -2,10 +2,23 @@
 
 @media (max-width: 1200px) {
 
+    .header-login-btn,
+    .header-register-btn {
+        display: none;
+    }
+
     .all-products-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (max-width: 950px) {
+    
+    .carousel-container {
+        display: none;
+    }
+}
+
 
 @media (max-width: 780px) {
 
@@ -18,28 +31,39 @@
         margin-bottom: 1rem;
     }
 
-    nav {
+    .dropdown-nav {
         width: 100vw;
+        padding-left: 5px;
+    }
+
+    .dropdown-nav a {
+        margin: 20px;
+        font-size: 20px;
     }
 
     .header-buttons {
         padding: 1rem;
     }
 
-    .hamburger-icon {
+    .header-buttons i {
         font-size: 33px;
     }
 
-    .header-logo {
+    .header-logo-img {
         display: none;
     }
 
-    .cart-button {
+    .header-logo-img-mobile {
+        display: flex;
+    }
+
+    .header-login-btn,
+    .header-register-btn {
+        display: none;
+    }
+
+    .cart-button i {
         font-size: 28px;
-    }
-
-    .carousel-container {
-        display: none;
     }
 
     /* --- INDEX PAGE --- */
@@ -47,50 +71,61 @@
     .all-products-container {
         grid-template-columns: repeat(1, 1fr);
         margin-top: 2rem;
-        gap: 15px;
-        border: 15px solid var(--color-secondary);
+        gap: 30px;
+        border: 30px solid var(--color-secondary);
     }
 
     .product-container {
         flex-direction: row;
-        width: 250px;
-        height: 140px;
+        width: 350px;
+        height: 196px;
     }
 
     .product-image-container {
-        height: 140px;
-        width: 125px;
+        height: 196px;
+        width: 175px;
     }
 
     .product-desc-container {
+        display: none;
+    }
+
+    .desc-container-mobile {
         display: flex;
         flex-direction: column;
-        height: 140px;
-        width: 125px;
+        height: 196px;
+        width: 175px;
         align-items: center;
-        gap: 10px;
+        background-color: var(--color-tertiary);
+        box-shadow: var(--inner-shadow-small);
+        gap: 20px;
         padding: 5px;
         box-shadow: var(--inner-shadow-xtrasmall);
     }
 
+    .all-products-add-to-cart-btn-mobile {
+        display: flex;
+        padding: var(--button-padding-small);
+        font-size: var(--button-text-small);
+        box-shadow: var(--outer-shadow-small);
+    }
+
+
     h1 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     h3 {
-        font-size: 12px;
-    }
-
-    .price-span {
-    font-size: 10px;
-    }
-
-    .price-span strong {
         font-size: 15px;
     }
 
+    .price-span-mobile {
+    font-size: 15px;
+    }
 
-
+    .price-span-mobile strong {
+        font-size: 20px;
+    }
 
     footer {
         height: 60px;
@@ -106,17 +141,85 @@
 
     .footer-socials {
     display: flex;
-    font-size: 25px;
+    gap: 80px;
     }
 
     .footer-socials i {
-    font-size: 25px;
+    font-size: 30px;
     }   
 
 }
 
-@media (min-width: 780px) {
-    .header-logo-mobile {
+
+@media (max-width: 480px) {
+    .all-products-container {
+        margin-top: 2rem;
+        gap: 15px;
+        border: 15px solid var(--color-secondary);
+    }
+
+    .product-container {
+        flex-direction: row;
+        width: 250px;
+        height: 137px;
+    }
+
+    .product-image-container {
+        height: 137px;
+        width: 125px;
+    }
+
+    .desc-container-mobile {
+        height: 137px;
+        width: 125px;
+        gap: 12px;
+        padding: 5px;
+        box-shadow: var(--inner-shadow-xtrasmall);
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 10px;
+    }
+
+    .price-span-mobile {
+    font-size: 12px;
+    }
+
+    .price-span-mobile strong {
+        font-size: 12px;
+    }
+
+    .all-products-add-to-cart-btn-mobile {
+        display: flex;
+        padding: var(--button-padding-xtrasmall);
+        font-size: var(--button-text-xtrasmall);
+        box-shadow: var(--outer-shadow-xtrasmall);
+    }
+
+
+    /* --- FOOTER -- */
+    .footer-socials {
+    display: flex;
+    gap: 50px;
+    }
+
+    .footer-socials i {
+    font-size: 25px;
+    }
+}
+
+@media (min-width: 781px) {
+    .header-logo-img-mobile {
+        display: none;
+    }
+
+    .desc-container-mobile,
+    .all-products-add-to-cart-btn-mobile,
+    .price-span-mobile {
         display: none;
     }
 }

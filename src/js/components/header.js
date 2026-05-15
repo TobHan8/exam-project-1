@@ -38,12 +38,13 @@ function displayHeader() {
     const logoImg = document.createElement('img');
     logoImg.src = 'assets/images/desktop/desktop-logo.png';
     logoImg.alt = 'Online Shop clickable logo';
+    logoImg.classList.add('header-logo-img');
     headerLogo.appendChild(logoImg);
 
     const logoImgMobile = document.createElement('img');
     logoImgMobile.src = 'assets/images/mobile/mobile-logo.png';
     logoImgMobile.alt = 'Online Shop clickable logo';
-    logoImgMobile.classList.add('logo-img-mobile');
+    logoImgMobile.classList.add('header-logo-img-mobile');
     headerLogo.appendChild(logoImgMobile);
 
     const buttonsRight = document.createElement('div');
