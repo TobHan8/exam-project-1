@@ -12,6 +12,7 @@
   --font-main: 'Segoe UI', sans-serif;
 
   /* --- SHADOWS --- */
+  --inner-shadow-xtrasmall: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
   --inner-shadow-small: inset 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
   --inner-shadow-large: inset 8px 8px 8px 0px rgba(0, 0, 0, 0.5);
   --outer-shadow-xtrasmall: 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
@@ -19,10 +20,12 @@
   --outer-shadow-large: 8px 8px 8px 0px rgba(0, 0, 0, 0.5);
 
   /* --- BUTTONS --- */
+  --button-padding-xtrasmall: 11px 16px;
   --button-padding-small: 13px 18px;
   --button-padding-medium: 15px 20px;
   --button-padding-large: 20px 25px;
 
+  --button-text-xtrasmall: 8px;
   --button-text-small: 10px;
   --button-text-medium: 12px;
   --button-text-large: 20px;

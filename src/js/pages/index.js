@@ -79,8 +79,18 @@ function displayAllProducts(allProductsData) {
       addToCart(product);
     });
 
-  });
+    const mobileMedia = window.matchMedia( '(max-width: 780px)' );
 
+    if (mobileMedia) {
+      descContainerTop.style.display = 'none';
+      descContainerBottom.style.display = 'none';
+      descContainer.appendChild(title);
+      descContainer.appendChild(priceSpan);
+      descContainer.appendChild(addToCartBtn);
+      addToCartBtn.classList.remove('add-to-cart-btn-medium');
+      addToCartBtn.classList.add('add-to-cart-btn-xtrasmall');
+    }
+  });
 };
 
 //Calling main function to start program

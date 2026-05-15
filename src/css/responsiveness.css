@@ -42,10 +42,55 @@
         display: none;
     }
 
+    /* --- INDEX PAGE --- */
+
     .all-products-container {
         grid-template-columns: repeat(1, 1fr);
         margin-top: 2rem;
+        gap: 15px;
+        border: 15px solid var(--color-secondary);
     }
+
+    .product-container {
+        flex-direction: row;
+        width: 250px;
+        height: 140px;
+    }
+
+    .product-image-container {
+        height: 140px;
+        width: 125px;
+    }
+
+    .product-desc-container {
+        display: flex;
+        flex-direction: column;
+        height: 140px;
+        width: 125px;
+        align-items: center;
+        gap: 10px;
+        padding: 5px;
+        box-shadow: var(--inner-shadow-xtrasmall);
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+    .price-span {
+    font-size: 10px;
+    }
+
+    .price-span strong {
+        font-size: 15px;
+    }
+
+
+
 
     footer {
         height: 60px;

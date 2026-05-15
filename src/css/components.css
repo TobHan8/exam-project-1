@@ -330,6 +330,7 @@ nav a:hover {
     
 }
 
+.add-to-cart-btn-xtrasmall,
 .add-to-cart-btn-small,
 .add-to-cart-btn-medium,
 .add-to-cart-btn-large {
@@ -346,6 +347,12 @@ nav a:hover {
 .add-to-cart-btn-large:hover {
     opacity: 30%;
     cursor: pointer;
+}
+
+.add-to-cart-btn-xtrasmall {
+    padding: var(--button-padding-xtrasmall);
+    font-size: var(--button-text-xtrasmall);
+    box-shadow: var(--outer-shadow-xtrasmall);
 }
 
 .add-to-cart-btn-small {
