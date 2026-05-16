@@ -365,13 +365,13 @@ function checkoutMain() {
 
        if (!shippingForm.checkValidity()) {
         shippingForm.reportValidity();
-        displayToast('Error!', 'Make sure to fill in correct details', 'error');
+        displayToast('Attention!', 'Make sure to fill in correct details', 'error');
         return
        }
 
        if (!paymentForm.checkValidity()) {
         paymentForm.reportValidity();
-        displayToast('Error!', 'Make sure to fill in correct details', 'error');
+        displayToast('Attention!', 'Make sure to fill in correct details', 'error');
         return
        }
         loadingIndicator.style.display = 'flex';
