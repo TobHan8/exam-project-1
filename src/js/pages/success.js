@@ -27,7 +27,7 @@ function displaySuccess() {
     successContentContainer.appendChild(span2);
 
     const seeAllBtn = document.createElement('button');
-    seeAllBtn.classList.add('add-to-cart-btn');
+    seeAllBtn.classList.add('see-all-btn');
     seeAllBtn.textContent = 'SEE ALL PRODUCTS';
     successContentContainer.appendChild(seeAllBtn);
 

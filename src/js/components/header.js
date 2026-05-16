@@ -1,6 +1,6 @@
 import { header, footer, successContainer } from '../constants.js';
 
-import { isLoggedIn, getCurrentUser, getSessionToken, logOut } from '../utils.js';
+import { isLoggedIn, getCurrentUser, getSessionToken, logOut, displayToast } from '../utils.js';
 
 function displayHeader() {
 
