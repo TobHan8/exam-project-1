@@ -40,7 +40,7 @@ function displayLogin() {
             titleContainer.appendChild(titleRightContainer);
 
             const formContainer = document.createElement('form');
-            formContainer.classList.add('form-container');
+            formContainer.classList.add('form-container', 'login-form-container');
             loginContainer.appendChild(formContainer);
 
             const form = document.createElement('form');

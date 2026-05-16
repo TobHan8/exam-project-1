@@ -39,7 +39,7 @@ function displayRegister() {
     titleContainer.appendChild(titleRightContainer);
 
     const formContainer = document.createElement('div');
-    formContainer.classList.add('form-container');
+    formContainer.classList.add('form-container', 'register-form-container');
     registerContainer.appendChild(formContainer);
 
     const form = document.createElement('form');
