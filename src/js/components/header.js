@@ -62,7 +62,7 @@ function displayHeader() {
     cartButton.appendChild(cartIcon);
 
     const loginBtn = document.createElement('a');
-    loginBtn.href = '/login.html';
+    loginBtn.href = 'login.html';
     loginBtn.textContent = 'LOG IN';
     loginBtn.classList.add('header-login-btn');
     buttonsRight.appendChild(loginBtn);
@@ -78,13 +78,13 @@ function displayHeader() {
     header.appendChild(dropdownNav);
 
     const testLink = document.createElement('a');
-    testLink.href = '/test.html';
+    testLink.href = 'test.html';
     testLink.textContent = 'TEST';
     testLink.classList.add('nav-buttons');
     dropdownNav.appendChild(testLink);
 
     const homeLink = document.createElement('a');
-    homeLink.href = '/index.html';
+    homeLink.href = 'index.html';
     homeLink.textContent = 'HOME';
     homeLink.classList.add('nav-buttons');
     dropdownNav.appendChild(homeLink);
@@ -94,7 +94,7 @@ function displayHeader() {
     homeLink.appendChild(homeLinkIcon); 
 
     const cartLink2 = document.createElement('a');
-    cartLink2.href = '/cart.html';
+    cartLink2.href = 'cart.html';
     cartLink2.textContent = 'CART';
     cartLink2.classList.add('header-cart');
     dropdownNav.appendChild(cartLink2);
@@ -108,7 +108,7 @@ function displayHeader() {
     if (!loginCheck) {
 
         const logInLink = document.createElement('a');
-        logInLink.href = '/login.html';
+        logInLink.href = 'login.html';
         logInLink.textContent = 'LOG IN';
         logInLink.classList.add('nav-buttons');
         dropdownNav.appendChild(logInLink);
@@ -118,7 +118,7 @@ function displayHeader() {
         logInLink.appendChild(logInIcon);
 
         const registerLink = document.createElement('a');
-        registerLink.href = '/register.html';
+        registerLink.href = 'register.html';
         registerLink.textContent = 'REGISTER';
         registerLink.classList.add('nav-buttons');
         dropdownNav.appendChild(registerLink);
@@ -134,7 +134,7 @@ function displayHeader() {
         registerBtn.style.display = 'none';
 
         const profileButton = document.createElement('a');
-        profileButton.href = '/profile.html';
+        profileButton.href = 'profile.html';
         profileButton.classList.add('header-profile-btn');
         buttonsRight.appendChild(profileButton);
         
@@ -143,7 +143,7 @@ function displayHeader() {
         profileButton.appendChild(profileIcon2);
 
         const profileLink = document.createElement('a');
-        profileLink.href = '/profile.html';
+        profileLink.href = 'profile.html';
         profileLink.textContent = 'VIEW PROFILE';
         profileLink.classList.add('nav-buttons');
         dropdownNav.appendChild(profileLink);
