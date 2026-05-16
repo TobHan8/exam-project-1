@@ -171,7 +171,7 @@ async function registerMain() {
             if (apiReq) {
                 displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
                 setTimeout(() => {
-                    navigation.navigate('/login.html');
+                    navigation.navigate('login.html');
                 }, 2000);
 
             } else {

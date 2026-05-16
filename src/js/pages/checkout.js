@@ -16,7 +16,7 @@ function displayCheckout() {
         footer.style.bottom = '0';
         footer.style.width = '100vw';
         setTimeout(() => {
-            navigation.navigate('/login.html');
+            navigation.navigate('login.html');
         }, 2000);
 
     } else {
@@ -377,7 +377,7 @@ function checkoutMain() {
         loadingIndicator.style.display = 'flex';
         removeAll();
         setTimeout(() => {
-            navigation.navigate('/success.html');
+            navigation.navigate('success.html');
         }, 2000);
 
     });

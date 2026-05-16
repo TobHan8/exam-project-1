@@ -69,7 +69,7 @@ function displayHeader() {
 
     const registerBtn = document.createElement('a');
     registerBtn.classList.add('header-register-btn');
-    registerBtn.href = '/register.html';
+    registerBtn.href = 'register.html';
     registerBtn.text = 'REGISTER';
     buttonsRight.appendChild(registerBtn);
 

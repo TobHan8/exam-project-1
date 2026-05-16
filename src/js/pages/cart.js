@@ -147,7 +147,7 @@ export async function displayCart () {
 
         checkoutBtn.addEventListener('click', () => {
             if (isLoggedIn(getCurrentUser(), getSessionToken())) {
-                navigation.navigate('/checkout.html');
+                navigation.navigate('checkout.html');
             } else {
                 displayToast('Not logged in!', 'You must be logged in to continue', 'error');
                 return

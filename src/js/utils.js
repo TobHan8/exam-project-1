@@ -172,7 +172,7 @@ export function logOut() {
   localStorage.removeItem('sessionToken');
   displayToast('Success!', 'You have been logged out', 'success');
   setTimeout(() => {
-    navigation.navigate('/index.html');
+    navigation.navigate('index.html');
   },2000);
 }
 

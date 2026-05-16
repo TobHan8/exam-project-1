@@ -32,7 +32,7 @@ function displaySuccess() {
     successContentContainer.appendChild(seeAllBtn);
 
     seeAllBtn.addEventListener('click', () => {
-        navigation.navigate('/index.html');
+        navigation.navigate('index.html');
     });
 }
 
