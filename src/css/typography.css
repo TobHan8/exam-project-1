@@ -57,6 +57,26 @@ strong {
 }
 
 
+/* ### CART PAGE ### */
+
+.quantity-container span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cart-content-right-container span {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.cart-content-right-container strong {
+    padding: 10px;
+    font-size: 22px;
+
+}
+
+
 /* ### CHECKOUT PAGE ### */
 
 .checkout-title-containers {

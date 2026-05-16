@@ -75,6 +75,11 @@
         font-size: var(--button-text-medium);
         box-shadow: var(--outer-shadow-small);
     }
+
+    /* --- CART PAGE 950px MAX --- */
+    .cart-container {
+        margin-top: 60px;
+    }
 }
 
 
@@ -84,11 +89,9 @@
         background-image: url(../../assets/images/mobile/mobile-2-hero-background.jpg);
     }
     
+    /* --- HEADER 780px MAX --- */
     header {
         height: 60px;
-        position: fixed;
-        top: 0;
-        left: 0;
     }
 
     .dropdown-nav {
@@ -98,6 +101,15 @@
 
     .dropdown-nav a {
         margin: 20px;
+        font-size: 20px;
+    }
+
+    .menu-log-out-btn {
+        margin: 20px;
+        font-size: 19px;
+    }
+
+    .menu-log-out-btn i {
         font-size: 20px;
     }
 
@@ -183,11 +195,11 @@
     }
 
 
-    .all-products-container h1 {
+    h1 {
         font-size: 25px;
     }
 
-    h3 {
+    .h3-mobile {
         font-size: 15px;
     }
 
@@ -266,6 +278,57 @@
         box-shadow: var(--outer-shadow-small);
     }
 
+    /* --- CART PAGE 780px MAX --- */
+
+    .cart-container {
+        width: 500px;
+    }
+
+    .empty-cart-content-container {
+        gap: 60px;
+    }
+
+    .cart-content-container {
+        flex-direction: column;
+    }
+
+    .cart-product-side-container {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .cart-product-side-container span {
+        font-size: 20px;
+    }
+
+    .remove-btn i {
+        font-size: 30px;
+    }
+
+    .quantity-container {
+        gap: 20px;
+    }
+
+    .quantity-btns {
+        height: 35px;
+        width: 40px;
+    }
+
+    .quantity-btns i {
+        font-size: 18px;
+    }
+
+    .quantity-container span {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+
+    .cart-content-right-container {
+        width: 100%;
+        gap: 20px;
+    }
+
 
     /* --- FOOTER 780px MAX --- */
     footer {
@@ -291,8 +354,83 @@
 
 }
 
+@media (max-width: 590px) {
+
+    /* --- CART PAGE 590px MAX --- */
+
+    .cart-container {
+        width: 350px;
+        border: 15px solid var(--color-secondary);
+    }
+
+    .empty-cart-content-container {
+        height: 200px;
+        min-height: 0;
+    }
+
+    .empty-cart-content-container span {
+        font-size: 15px;
+        gap: 30px;
+    }
+
+    .see-all-btn {
+        padding: var(--button-padding-medium);
+        font-size: var(--button-text-medium);
+        box-shadow: var(--outer-shadow-small);
+    }
+
+    .cart-content-container {
+        gap: 15px;
+    }
+
+    .cart-content-left-container {
+        gap: 15px;
+    }
+
+    .cart-product-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 320px;
+    background-color: var(--color-white);
+    }
+    
+    .cart-product-side-container {
+        width: 100%;
+        gap: 20px;
+        padding-left: 15px;
+    }
+
+    .cart-product-side-container h3,
+    .cart-product-side-container span {
+        font-size: 15px;
+    }
+
+    .cart-product-side-container span {
+        padding-right: 50px;
+    }
+
+    .quantity-container {
+        padding-right: 15px;
+    }
+
+    .quantity-container span {
+        padding-right: 0;
+        font-size: 25px;
+    }
+
+    .remove-btn i {
+        font-size: 20px;
+    }
+}
+
 
 @media (max-width: 480px) {
+
+    /* --- HEADER --- */
+    .header-profile-btn {
+        display: none;
+    }
 
     /* --- INDEX PAGE 480px MAX --- */
     .all-products-container {
@@ -327,7 +465,7 @@
         font-size: 20px;
     }
 
-    h3 {
+    .h3-mobile {
         font-size: 10px;
     }
 
@@ -430,6 +568,49 @@
 
     .footer-socials i {
     font-size: 25px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    /* --- CART PAGE 420px MAX --- */
+
+    .cart-container {
+        width: 290px;
+        border: 15px solid var(--color-secondary);
+    }
+
+    .empty-cart-content-container {
+        gap: 30px;
+    }
+
+    .cart-product-image-container {
+        height: 180px;
+    }
+
+    .cart-product-container {
+        width: 260px;
+        height: 100%;
+    }
+    
+    .cart-product-side-container {
+        width: 100%;
+        gap: 20px;
+        padding-left: 15px;
+        padding-right: 0px;
+        align-items: center;
+        
+    }
+
+    .cart-product-side-container h3,
+    .cart-product-side-container span {
+        font-size: 15px;
+        padding-right: 40px;
+    }
+
+    .quantity-container span {
+        padding-right: 0;
+        font-size: 20px;
     }
 }
 

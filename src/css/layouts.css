@@ -10,7 +10,8 @@ body {
 header {
     z-index: 5;
     display: flex;
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100vw;
     font-family: var(--font-main);
     font-size: 1.5rem;
@@ -279,11 +280,18 @@ header {
     justify-content: center;
     align-items: flex-start;
     width: 255px;
-    gap: 1rem;
-    padding: 25px;
+    gap: 20px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-top: 5px;
     background-color: var(--color-tertiary);
     width: 100%;
     box-shadow: var(--inner-shadow-small);
+}
+
+.cart-product-side-container h3 {
+    margin: 0;
+    text-align: start;
 }
 
 .remove-btn {
@@ -549,8 +557,7 @@ header {
 footer {
     z-index: 5;
     display: flex;
-    position: fixed;
-    left: 0;
+    position: sticky;
     bottom: 0;
     width: 100vw;
     background-color: var(--color-secondary);

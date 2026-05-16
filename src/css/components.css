@@ -337,7 +337,8 @@ nav a:hover {
 .add-to-cart-btn-large,
 .all-products-add-to-cart-btn,
 .all-products-add-to-cart-btn-mobile,
-.single-prod-add-to-cart-btn {
+.single-prod-add-to-cart-btn,
+.see-all-btn {
     background-color: var(--color-secondary);
     color: var(--color-white);
     font-weight: bold;
@@ -351,7 +352,8 @@ nav a:hover {
 .add-to-cart-btn-large:hover,
 .all-products-add-to-cart-btn:hover,
 .all-products-add-to-cart-btn-mobile:hover,
-.single-prod-add-to-cart-btn:hover {
+.single-prod-add-to-cart-btn:hover,
+.see-all-btn:hover {
     opacity: 30%;
     cursor: pointer;
 }
@@ -381,7 +383,8 @@ nav a:hover {
 }
 
 .add-to-cart-btn-large,
-.single-prod-add-to-cart-btn {
+.single-prod-add-to-cart-btn,
+.see-all-btn {
     padding: var(--button-padding-large);
     font-size: var(--button-text-large);
     box-shadow: var(--outer-shadow-small);

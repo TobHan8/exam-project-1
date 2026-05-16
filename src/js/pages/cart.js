@@ -60,7 +60,7 @@ export async function displayCart () {
         emptyCartContentContainer.appendChild(continueLink);
 
         const continueBtn = document.createElement("button");
-        continueBtn.classList.add("add-to-cart-btn-large");
+        continueBtn.classList.add("see-all-btn");
         continueBtn.textContent = "SEE ALL PRODUCTS";
         continueLink.appendChild(continueBtn);
 
@@ -124,14 +124,21 @@ export async function displayCart () {
         });
 
         const totalItemsSpan = document.createElement("span");
-        totalItemsSpan.textContent = "Total items in cart: " + totalQuantity;
+        totalItemsSpan.textContent = 'Total items: ';
         cartContentRightContainer.appendChild(totalItemsSpan);
+        
+        const totalItemsStrong = document.createElement('strong')
+        totalItemsStrong.textContent = totalQuantity;
+        totalItemsSpan.appendChild(totalItemsStrong);
 
         const totalPriceSpan = document.createElement("span");
-        totalPriceSpan.textContent = "Total price: " + totalPrice + "$";
+        totalPriceSpan.textContent = "Total price: ";
         cartContentRightContainer.appendChild(totalPriceSpan);
 
-        
+        const totalPriceStrong = document.createElement('strong')
+        totalPriceStrong.textContent = totalPrice + '$';
+        totalPriceSpan.appendChild(totalPriceStrong);
+
         const checkoutBtn = document.createElement("button");
         checkoutBtn.classList.add("add-to-cart-btn-medium");
         checkoutBtn.ariaLabel = 'Click to continue to checkout';
