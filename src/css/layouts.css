@@ -134,10 +134,10 @@ header {
     z-index: 2;
     display: grid;
     justify-items: center;
-    width: 700px;
+    width: 725px;
     height: 100%;
     margin: auto;
-    margin-bottom: 60px;
+    margin-bottom: 160px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
@@ -146,7 +146,7 @@ header {
 
 .single-product-img-container {
     position: relative;
-    width: 633px;
+    width: 100%;
     height: 560px;
     overflow: hidden;
 }
@@ -163,7 +163,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: top;
-    width: 633px;
+    width: 100%;
     height: 100%;
     padding: 0px 40px 25px 40px;
     gap: 30px;
@@ -209,9 +209,9 @@ header {
 
 .cart-container {
     display: grid;
-    width: 700px;
+    width: 725px;
     margin: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 160px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
@@ -388,7 +388,7 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    max-width: 1600px;
+    max-width: 1200px;
     gap: 30px;
     height: auto;
     margin: auto;
@@ -459,9 +459,11 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 700px;
+    width: 725px;
     gap: 15px;
     margin: auto;
+    margin-top: 160px;
+    margin-bottom: 160px;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
     box-shadow: var(--outer-shadow-large);
@@ -483,9 +485,9 @@ header {
 
 .register-container {
     display: grid;
-    width: 700px;
+    width: 725px;
     margin: auto;
-    margin-bottom: 150px;
+    margin-bottom: 160px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
@@ -510,9 +512,9 @@ header {
 
 .login-container {
     display: grid;
-    width: 700px;
+    width: 725px;
     margin: auto;
-    margin-bottom: 150px;
+    margin-bottom: 160px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);
@@ -526,9 +528,9 @@ header {
 
 .profile-container {
     display: grid;
-    width: 700px;
+    width: 725px;
     margin: auto;
-    margin-bottom: 150px;
+    margin-bottom: 160px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);

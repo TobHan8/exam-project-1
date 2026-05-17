@@ -117,6 +117,7 @@
 
     .menu-log-out-btn {
         margin: 20px;
+        margin-left: 18px;
         font-size: 19px;
     }
 
@@ -249,7 +250,7 @@
     .single-product-desc-container {
         width: 320px;
         height: 100%;
-        padding: 0px 25px 10px 25px;
+        padding: 0px 25px 10px 35px;
         gap: 10px;
     }
 
@@ -589,7 +590,7 @@
 
     /* --- SINGLE PRODUCT PAGE 480px MAX --- */
     .single-product-container {
-        width: 246px;
+        width: 300px;
         height: 100%;
         border: 15px solid var(--color-secondary);
     }
@@ -604,7 +605,7 @@
 
     .single-product-img-container {
         position: relative;
-        width: 216px;
+        width: 270px;
         height: 196px;
         overflow: hidden;
     }
@@ -620,9 +621,9 @@
     }
 
     .single-product-desc-container {
-        width: 216px;
+        width: 270px;
         height: 100%;
-        padding: 0px 15px 5px 15px;
+        padding: 0px 15px 5px 25px;
         gap: 10px;
     }
 
@@ -742,7 +743,8 @@
     }
 
     .form-container {
-        padding: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .checkout-title-containers h3 {
