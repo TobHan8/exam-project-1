@@ -111,7 +111,7 @@ function displaySingleProduct(product) {
 
     if (discountedProduct) {
         const priceStrong = document.createElement("strong");
-        priceStrong.textContent = `${product.price}$`;
+        priceStrong.textContent = `${product.discountedPrice}$`;
         titleSpan.appendChild(priceStrong);
 
         price.style.textDecoration = 'line-through';
