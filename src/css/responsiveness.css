@@ -210,7 +210,7 @@
         font-size: 25px;
     }
 
-    .h3-mobile {
+    .h2-mobile {
         font-size: 15px;
     }
 
@@ -478,7 +478,7 @@
         padding-left: 15px;
     }
 
-    .cart-product-side-container h3,
+    .cart-product-side-container h2,
     .cart-product-side-container span {
         font-size: 15px;
     }
@@ -567,7 +567,7 @@
         font-size: 20px;
     }
 
-    .h3-mobile {
+    .h2-mobile {
         font-size: 10px;
     }
 
@@ -720,7 +720,7 @@
         
     }
 
-    .cart-product-side-container h3,
+    .cart-product-side-container h2,
     .cart-product-side-container span {
         font-size: 15px;
         padding-right: 40px;
@@ -746,7 +746,7 @@
         padding-right: 15px;
     }
 
-    .checkout-title-containers h3 {
+    .checkout-title-containers h2 {
         font-size: 15px;
     }
 }

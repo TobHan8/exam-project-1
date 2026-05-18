@@ -75,7 +75,7 @@ function displayCheckout() {
         shippingTitleContainer.classList.add('checkout-title-containers');
         shippingContainer.appendChild(shippingTitleContainer);
 
-        const shippingTitle = document.createElement('h3');
+        const shippingTitle = document.createElement('h2');
         shippingTitle.textContent = 'SHIPPING DETAILS';
         shippingTitleContainer.appendChild(shippingTitle);
 
@@ -220,7 +220,7 @@ function displayCheckout() {
         paymentTitleContainer.classList.add('checkout-title-containers');
         paymentContainer.appendChild(paymentTitleContainer);
 
-        const paymentTitle = document.createElement('h3');
+        const paymentTitle = document.createElement('h2');
         paymentTitle.textContent = 'SELECT PAYMENT OPTION';
         paymentTitleContainer.appendChild(paymentTitle);
 
@@ -317,7 +317,7 @@ function displayCheckout() {
         summaryTitleContainer.classList.add('checkout-title-containers');
         summaryContainer.appendChild(summaryTitleContainer);
 
-        const summaryTitle = document.createElement('h3');
+        const summaryTitle = document.createElement('h2');
         summaryTitle.textContent = 'ORDER SUMMARY';
         summaryTitleContainer.appendChild(summaryTitle);
 

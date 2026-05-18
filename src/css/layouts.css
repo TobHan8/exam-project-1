@@ -289,7 +289,7 @@ header {
     box-shadow: var(--inner-shadow-small);
 }
 
-.cart-product-side-container h3 {
+.cart-product-side-container h2 {
     margin: 0;
     text-align: start;
 }
@@ -392,8 +392,8 @@ header {
     gap: 30px;
     height: auto;
     margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 160px;
     padding: 0;
     background-color: var(--color-secondary);
     border: 30px solid var(--color-secondary);

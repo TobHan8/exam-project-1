@@ -46,7 +46,7 @@ function displayAllProducts(allProductsData) {
     descContainerTop.classList.add('desc-container-top');
     descContainer.appendChild(descContainerTop);
 
-    const title = document.createElement("h3");
+    const title = document.createElement("h2");
     title.textContent = product.title;
     descContainerTop.appendChild(title);
 
@@ -70,9 +70,9 @@ function displayAllProducts(allProductsData) {
     descContainerMobile.classList.add('desc-container-mobile');
     productContainer.appendChild(descContainerMobile);
 
-    const titleMobile = document.createElement("h3");
+    const titleMobile = document.createElement("h2");
     titleMobile.textContent = product.title;
-    titleMobile.classList.add('h3-mobile')
+    titleMobile.classList.add('h2-mobile');
     descContainerMobile.appendChild(titleMobile);
 
     const priceSpanMobile = document.createElement("span");

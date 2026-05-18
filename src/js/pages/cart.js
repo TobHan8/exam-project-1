@@ -174,7 +174,7 @@ export async function displayCart () {
             cartProductSideContainer.classList.add("cart-product-side-container");
             cartProductContainer.appendChild(cartProductSideContainer);
 
-            const productTitle = document.createElement("h3");
+            const productTitle = document.createElement("h2");
             productTitle.textContent = product.title;
             cartProductSideContainer.appendChild(productTitle);
 
