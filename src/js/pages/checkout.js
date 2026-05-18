@@ -7,7 +7,9 @@ import { calculateTotalQuantity,
 
 function displayCheckout() {
 
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
+
     if (!loginCheck) {
         displayToast('Must be logged in!', 'Please log in to continue to checkout', 'error');
         loadingIndicator.style.display = 'none';
@@ -19,8 +21,18 @@ function displayCheckout() {
             navigation.navigate('login.html');
         }, 2000);
 
+    } else if (cart.length === 0) {
+        displayToast('The cart is empty!', 'Please add items to cart before accessing this page', 'error');
+        loadingIndicator.style.display = 'none';
+        checkoutContainer.style.display = 'none';
+        footer.style.position = 'absolute';
+        footer.style.bottom = '0';
+        footer.style.width = '100vw';
+        setTimeout(() => {
+            navigation.navigate('index.html');
+        }, 2000);
+
     } else {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const totalPrice = calculateTotalPrice(cart);
 
         loadingIndicator.style.display = 'none';
