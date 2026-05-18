@@ -26,8 +26,7 @@
     .single-product-container {
         width: 500px;
         height: 100%;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 60px;
     }
 
     .single-product-container h1 {
@@ -77,13 +76,8 @@
         box-shadow: var(--outer-shadow-small);
     }
 
-    .cart-container,
-    .success-container,
-    .register-container,
-    .login-container,
-    .profile-container {
-        margin-top: 40px;
-        margin-bottom: 100px;
+    .cart-container {
+        margin-top: 60px;
     }
 }
 
@@ -161,11 +155,12 @@
         padding-bottom: 30px;
     }
 
-    /* --- INDEX PAGE --- */
+    /* --- INDEX PAGE 780px MAX --- */
 
     .all-products-container {
         grid-template-columns: repeat(1, 1fr);
         margin-top: 40px;
+        margin-bottom: 100px;
         gap: 30px;
         border: 30px solid var(--color-secondary);
     }
@@ -229,6 +224,8 @@
         width: 350px;
         height: 100%;
         border: 15px solid var(--color-secondary);
+        margin-top: 40px;
+        margin-bottom: 100px;
     }
 
     .single-product-container h1 {
@@ -292,6 +289,11 @@
     .cart-container,
     .success-container {
         width: 500px;
+    }
+
+    .cart-container {
+        margin-top: 40px;
+        margin-bottom: 100px;
     }
 
     .cart-container h1,
