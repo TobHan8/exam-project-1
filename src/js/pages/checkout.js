@@ -103,7 +103,7 @@ function displayCheckout() {
         shippingForm.appendChild(emailInput);
 
         const phoneLabel = document.createElement('label');
-        phoneLabel.for = 'phone';
+        phoneLabel.htmlFor = 'phone';
         phoneLabel.textContent = 'Phone Number';
         shippingForm.appendChild(phoneLabel);
 
@@ -147,7 +147,7 @@ function displayCheckout() {
 
         const addr1Label = document.createElement('label')
         addr1Label.textContent = 'Address Line';
-        addr1Label.for = 'addr1';
+        addr1Label.htmlFor = 'addr1';
         shippingForm.appendChild(addr1Label);
 
         const addr1Input = document.createElement('input');
@@ -161,7 +161,7 @@ function displayCheckout() {
 
         const addr2Label = document.createElement('label')
         addr2Label.textContent = 'Apartment, Building, PO box';
-        addr2Label.for = 'addr2';
+        addr2Label.htmlFor = 'addr2';
         shippingForm.appendChild(addr2Label);
 
         const addr2Input = document.createElement('input');
@@ -182,7 +182,7 @@ function displayCheckout() {
 
         const cityLabel = document.createElement('label')
         cityLabel.textContent = 'City';
-        cityLabel.for = 'city';
+        cityLabel.htmlFor = 'city';
         cityContainer.appendChild(cityLabel);
 
         const cityInput = document.createElement('input');
@@ -199,7 +199,7 @@ function displayCheckout() {
 
         const postalLabel = document.createElement('label')
         postalLabel.textContent = 'Postal Code';
-        postalLabel.for = 'postal';
+        postalLabel.htmlFor = 'postal';
         postalContainer.appendChild(postalLabel);
 
         const postalInput = document.createElement('input');
@@ -235,12 +235,13 @@ function displayCheckout() {
         paymentFormContainer.appendChild(paymentForm);
 
         const paymentCards = document.createElement('img')
-        paymentCards.src ='../../../assets/images/payment-cards.png'
+        paymentCards.src ='/assets/images/payment-cards.png'
+        paymentCards.alt = 'Selection of payment options';
         paymentForm.appendChild(paymentCards);
 
         const ownerLabel = document.createElement('label')
         ownerLabel.textContent = 'Full Name of Card Owner';
-        ownerLabel.for = 'card-owner';
+        ownerLabel.htmlFor = 'card-owner';
         paymentForm.appendChild(ownerLabel);
 
         const ownerInput = document.createElement('input');
@@ -254,7 +255,7 @@ function displayCheckout() {
 
         const cardNumberLabel = document.createElement('label')
         cardNumberLabel.textContent = 'Card Number';
-        cardNumberLabel.for = 'card-number';
+        cardNumberLabel.htmlFor = 'card-number';
         paymentForm.appendChild(cardNumberLabel);
 
         const cardNumberInput = document.createElement('input');
@@ -276,7 +277,7 @@ function displayCheckout() {
 
         const expirationLabel = document.createElement('label');
         expirationLabel.textContent = 'Expiration';
-        expirationLabel.for = 'expiration';
+        expirationLabel.htmlFor = 'expiration';
         expirationContainer.appendChild(expirationLabel);
 
         const expirationInput = document.createElement('input');
@@ -294,7 +295,7 @@ function displayCheckout() {
 
         const cvcLabel = document.createElement('label');
         cvcLabel.textContent = 'CVC';
-        cvcLabel.for = 'cvc';
+        cvcLabel.htmlFor = 'cvc';
         cvcContainer.appendChild(cvcLabel);
 
         const cvcInput = document.createElement('input');

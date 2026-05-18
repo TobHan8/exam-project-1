@@ -39,7 +39,7 @@ input {
 }
 
 strong {
-    color: red;
+    color: var(--color-red);
 }
 
 /* ### INDEX PAGE ### */
