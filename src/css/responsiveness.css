@@ -76,7 +76,11 @@
         box-shadow: var(--outer-shadow-small);
     }
 
-    .cart-container {
+    .cart-container,
+    .success-container,
+    .register-container,
+    .login-container,
+    .profile-container {
         margin-top: 60px;
     }
 }
