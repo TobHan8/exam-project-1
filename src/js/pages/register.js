@@ -48,13 +48,13 @@ function displayRegister() {
     formContainer.appendChild(form)
 
     const usernameLabel = document.createElement('label');
-    usernameLabel.htmlFor = 'username';
-    usernameLabel.textContent = 'Username';
+    usernameLabel.htmlFor = 'name';
+    usernameLabel.textContent = 'name';
     form.appendChild(usernameLabel);
 
     const usernameInput = document.createElement('input');
-    usernameInput.id = 'username';
-    usernameInput.name = 'username';
+    usernameInput.id = 'name';
+    usernameInput.name = 'name';
     usernameInput.type = 'text';
     usernameInput.placeholder = 'Select a username';
     usernameInput.maxLength = '20';

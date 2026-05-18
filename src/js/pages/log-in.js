@@ -132,7 +132,7 @@ async function loginMain() {
             if (apiReq) {
                 displayToast('Success!', 'You have been logged in.', 'success');
                 setTimeout(() => {
-                    navigation.navigate('cart.html');
+                    navigation.navigate('index.html');
                 }, 2000);
 
             } else {
