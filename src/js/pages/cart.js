@@ -55,14 +55,15 @@ export async function displayCart () {
         clickBelowMessage.textContent = "Click below to see all products";
         emptyCartContentContainer.appendChild(clickBelowMessage);
 
-        const continueLink = document.createElement("a");
-        continueLink.href = "index.html";
-        emptyCartContentContainer.appendChild(continueLink);
+        const seeAllBtn = document.createElement("button");
+        seeAllBtn.classList.add("see-all-btn");
+        seeAllBtn.ariaLabel = 'Click to see all products';
+        seeAllBtn.textContent = "SEE ALL PRODUCTS";
+        emptyCartContentContainer.appendChild(seeAllBtn);
 
-        const continueBtn = document.createElement("button");
-        continueBtn.classList.add("see-all-btn");
-        continueBtn.textContent = "SEE ALL PRODUCTS";
-        continueLink.appendChild(continueBtn);
+        seeAllBtn.addEventListener('click', () => {
+            navigation.navigate('index.html');
+        });
 
     //If the cart is not empty
     } else {

@@ -368,6 +368,7 @@ function displayCheckout() {
 
         const completeBtn = document.createElement('button');
         completeBtn.textContent = 'COMPLETE PURCHASE';
+        completeBtn.ariaLabel = 'Click to complete purchase';
         completeBtn.id = 'complete-btn';
         completeBtn.htmlFor = 'checkout-form';
         completeBtn.classList.add('add-to-cart-btn-medium');

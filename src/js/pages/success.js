@@ -28,6 +28,7 @@ function displaySuccess() {
 
     const seeAllBtn = document.createElement('button');
     seeAllBtn.classList.add('see-all-btn');
+    seeAllBtn.ariaLabel = 'Click to see all products';
     seeAllBtn.textContent = 'SEE ALL PRODUCTS';
     successContentContainer.appendChild(seeAllBtn);
 
