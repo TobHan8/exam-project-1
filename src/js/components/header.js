@@ -15,6 +15,8 @@ function displayHeader() {
     const toggleBtn = document.createElement('button');
     toggleBtn.classList.add('toggle-btn');
     toggleBtn.id = 'toggle-btn';
+    toggleBtn.name = 'Menu toggle button';
+    toggleBtn.ariaLabel = 'Click to open menu';
     toggleBtnContainer.appendChild(toggleBtn);
 
     const toggleBtnIcon = document.createElement('i');

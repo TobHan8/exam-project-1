@@ -86,6 +86,7 @@ function displayLogin() {
 
             const registerText = document.createElement('span');
             registerText.classList.add('login-text');
+            registerText.ariaLabel = 'Click here to navigate to registration page';
             registerText.textContent = 'Need an an account? Click here to register';
             registerLink.appendChild(registerText);
         }

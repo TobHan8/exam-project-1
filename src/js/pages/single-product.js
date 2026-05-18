@@ -1,7 +1,7 @@
 
 import { fetchSingleProduct } from "../api.js";
 
-import { singleProductContainer } from "../constants.js";
+import { singleProductContainer, BASE_SITE_URL } from "../constants.js";
 
 import { addToCart, displayToast, isOnSale, navigateBack } from "../utils.js";
 
@@ -13,6 +13,24 @@ async function main() {
 
 //Function to display single product via HTML elements
 function displaySingleProduct(product) {
+
+    const metaTitle = document.getElementById('meta-title');
+    metaTitle.content = `${product.title}`;
+
+    const metaDesc = document.getElementById('meta-desc');
+    metaDesc.content = `${product.description}`; 
+
+    const ogTitle = document.getElementById('og-title');
+    ogTitle.content = `${product.title}`;
+
+    const ogDesc = document.getElementById('og-desc');
+    ogDesc.content = `${product.description}`;
+
+    const ogUrl = document.getElementById('og-url');
+    ogUrl.content = BASE_SITE_URL + `single-product.html?id=${product.id}`;
+
+    const ogImg = document.getElementById('og-img');
+    ogImg.content = `${product.image.url}`;
 
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
@@ -126,7 +144,7 @@ function displaySingleProduct(product) {
 
     shareBtn.addEventListener('click', async () => { // Asynchronous programming added for Clipboard API
         try {
-            await navigator.clipboard.writeText(window.location.href); // Use of Clipboard API to copy URL from window object
+            await navigator.clipboard.writeText(BASE_SITE_URL + `single-product.html?id=${product.id}`);
             displayToast('Success!', 'Product link copied to clipboard!', 'success');
         } catch (error) {
             displayToast('Error!','Failed to copy product link to clipboard! Try again later.')

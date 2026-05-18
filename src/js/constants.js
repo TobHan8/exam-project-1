@@ -5,6 +5,9 @@ export const SINGLE_PRODUCT_URL = `${ALL_PRODUCTS_URL}/`;
 export const AUTH_REGISTER_URL = `${BASE_API_URL}/auth/register`;
 export const AUTH_LOGIN_URL = `${BASE_API_URL}/auth/login`;
 
+// Website URL
+export const BASE_SITE_URL = 'https://tobhan8.github.io/exam-project-1/';
+
 // Static HTML containers
 export const carouselContainer = document.getElementById('carousel-container');
 export const allProductsContainer = document.getElementById("all-products-container");

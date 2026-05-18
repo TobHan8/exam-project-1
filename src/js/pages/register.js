@@ -53,8 +53,8 @@ function displayRegister() {
     form.appendChild(usernameLabel);
 
     const usernameInput = document.createElement('input');
-    usernameInput.id = 'name';
-    usernameInput.name = 'name';
+    usernameInput.id = 'username';
+    usernameInput.name = 'username';
     usernameInput.type = 'text';
     usernameInput.placeholder = 'Select a username';
     usernameInput.maxLength = '20';
@@ -115,6 +115,7 @@ function displayRegister() {
 
     const logInText = document.createElement('span');
     logInText.classList.add('login-text');
+    logInText.ariaLabel = 'Click here to navigate to log in page'
     logInText.textContent = 'Already have an account? Click here to log in';
     logInLink.appendChild(logInText);
 
