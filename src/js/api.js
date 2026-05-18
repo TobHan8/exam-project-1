@@ -37,11 +37,11 @@ export async function fetchAllProducts() {
     return json.data;
   } catch (error) {
     if (error instanceof HttpError) {
-        displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
+        displayToast('Server error!', `${error.statusCode}. Please try again.`, 'error');
     } else if (error instanceof NetworkError) {
-        displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
+        displayToast('Network error!', 'You appear to be offline. Check you internet connection.', 'error');
     } else {
-        displayToast("Something went wrong. Unknown Error. Please try again.", "error");
+        displayToast('Something went wrong!', 'Unknown Error. Please try again.', 'error');
     }
   } finally {
     if (loadingIndicator) {
@@ -65,11 +65,11 @@ export async function fetchSingleProduct() {
     return json.data;
   } catch (error) {
     if (error instanceof HttpError) {
-        displayToast(`Server error: ${error.statusCode}. Please try again later.`, "error");
+        displayToast('Server error!', `${error.statusCode}`, 'error');
     } else if (error instanceof NetworkError) {
-        displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
+        displayToast('Network error!', 'You appear to be offline. Check you internet connection.', 'error');
     } else {
-        displayToast("Something went wrong. Unknown Error. Please try again.", "error");
+        displayToast('Something went wrong!', 'Unknown Error. Please try again.', 'error');
     }
   } finally {
     if (loadingIndicator) {
@@ -101,11 +101,11 @@ export async function registerUser (formData) {
 
     } catch (error) {
         if (error instanceof HttpError) {
-        displayToast('Server error!', `${error.statusCode}. Please try again later.`, "error");
+        displayToast('Server error!', `${error.statusCode}. Please try again.`, "error");
         } else if (error instanceof NetworkError) {
-        displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
+        displayToast('Network error!', 'You appear to be offline. Check you internet connection.', 'error');
         } else {
-        displayToast("Something went wrong. Unknown Error. Please try again.", "error");
+        displayToast('Something went wrong!', 'Unknown Error. Please try again.', 'error');
         }
     } finally {
         if (loadingIndicator) {
@@ -154,9 +154,9 @@ export async function loginUser (formData) {
         if (error instanceof HttpError) {
         displayToast('Failed to log in!', error.statusCode, "error");
         } else if (error instanceof NetworkError) {
-        displayToast("Network error. You appear to be offline. Check you internet connection.", "error");
+        displayToast('Network error!', 'You appear to be offline. Check you internet connection.', 'error');
         } else {
-        displayToast("Something went wrong. Unknown Error. Please try again.", "error");
+        displayToast('Something went wrong!', 'Unknown Error. Please try again.', 'error');
         }
     } finally {
         if (loadingIndicator) {
