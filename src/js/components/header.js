@@ -79,12 +79,6 @@ function displayHeader() {
     dropdownNav.classList.add('dropdown-nav')
     header.appendChild(dropdownNav);
 
-    const testLink = document.createElement('a');
-    testLink.href = 'test.html';
-    testLink.textContent = 'TEST';
-    testLink.classList.add('nav-buttons');
-    dropdownNav.appendChild(testLink);
-
     const homeLink = document.createElement('a');
     homeLink.href = 'index.html';
     homeLink.textContent = 'HOME';
@@ -137,6 +131,7 @@ function displayHeader() {
 
         const profileButton = document.createElement('a');
         profileButton.href = 'profile.html';
+        profileButton.ariaLabel = 'Click to view profile';
         profileButton.classList.add('header-profile-btn');
         buttonsRight.appendChild(profileButton);
         
