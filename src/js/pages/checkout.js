@@ -165,10 +165,10 @@ function displayCheckout() {
         shippingForm.appendChild(addr2Label);
 
         const addr2Input = document.createElement('input');
-        addr2Label.id = 'addr2';
-        addr2Label.name = 'addr2';
-        addr2Label.type = 'text';
-        addr2Label.pattern = '[\\w ]+';
+        addr2Input.id = 'addr2';
+        addr2Input.name = 'addr2';
+        addr2Input.type = 'text';
+        addr2Input.pattern = '[\\w ]+';
         addr2Input.placeholder = '1A';
         addr2Input.required = false;
         shippingForm.appendChild(addr2Input);
