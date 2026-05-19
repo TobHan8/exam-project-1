@@ -45,6 +45,7 @@ function displayRegister() {
     const form = document.createElement('form');
     form.classList.add('form-group');
     form.id = 'register-form';
+    form.name = 'register-form';
     formContainer.appendChild(form)
 
     const usernameLabel = document.createElement('label');
@@ -110,6 +111,7 @@ function displayRegister() {
 
     const logInLink = document.createElement('a');
     logInLink.classList.add('login-link');
+    logInLink.ariaLabel = 'Click to go to log in page';
     logInLink.href = 'login.html'
     formContainer.appendChild(logInLink);
 

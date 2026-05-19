@@ -7,7 +7,7 @@ function displayProfile() {
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
 
     if(!loginCheck) {
-        displayToast('Must be logged in!', 'Please log in to continue to checkout', 'error');
+        displayToast('Must be logged in!', 'Please log in to continue to view this page', 'error');
         loadingIndicator.style.display = 'none';
         profileContainer.style.display = 'none';
         footer.style.position = 'absolute';
@@ -92,6 +92,7 @@ function displayProfile() {
 
         const logOutBtn = document.createElement('button');
         logOutBtn.classList.add('profile-log-out-btn');
+        logOutBtn.ariaLabel = 'Click to log out';
         logOutBtn.textContent = 'LOG OUT';
         contentContainer.appendChild(logOutBtn);
 

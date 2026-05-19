@@ -115,6 +115,7 @@ export async function displayCart () {
 
         const removeAllBtn = document.createElement('button');
         removeAllBtn.classList.add('remove-all-button');
+        removeAllBtn.ariaLabel = 'Click to remove all items from cart';
         removeAllBtn.textContent = 'REMOVE ALL';
         cartContentRightContainer.appendChild(removeAllBtn);
 
@@ -184,7 +185,7 @@ export async function displayCart () {
 
             const removeBtn = document.createElement("button");
             removeBtn.classList.add('remove-btn');
-            removeBtn.ariaLabel = 'Click to remove product completely';
+            removeBtn.ariaLabel = 'Click to remove this product completely';
             cartProductSideContainer.appendChild(removeBtn);
             
             const removeIcon = document.createElement('i');

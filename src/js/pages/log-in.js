@@ -46,6 +46,7 @@ function displayLogin() {
             const form = document.createElement('form');
             form.classList.add('form-group');
             form.id = 'login-form';
+            form.name = 'login-form';
             formContainer.appendChild(form)
 
             const emailLabel = document.createElement('label');
@@ -76,11 +77,13 @@ function displayLogin() {
 
             const loginBtn = document.createElement('button');
             loginBtn.classList.add('add-to-cart-btn-medium');
+            loginBtn.ariaLabel = 'Click to log in';
             loginBtn.textContent = 'LOG IN';
             form.appendChild(loginBtn);
 
             const registerLink = document.createElement('a');
             registerLink.classList.add('login-link');
+            registerLink.ariaLabel = 'Click to go to registration page';
             registerLink.href = 'register.html'
             formContainer.appendChild(registerLink);
 

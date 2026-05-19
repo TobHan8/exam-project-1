@@ -65,6 +65,7 @@ function displayHeader() {
 
     const loginBtn = document.createElement('a');
     loginBtn.href = 'login.html';
+    loginBtn.ariaLabel = 'Go to log in page';
     loginBtn.textContent = 'LOG IN';
     loginBtn.classList.add('header-login-btn');
     buttonsRight.appendChild(loginBtn);
@@ -72,6 +73,7 @@ function displayHeader() {
     const registerBtn = document.createElement('a');
     registerBtn.classList.add('header-register-btn');
     registerBtn.href = 'register.html';
+    registerBtn.ariaLabel = 'Go to register page';
     registerBtn.text = 'REGISTER';
     buttonsRight.appendChild(registerBtn);
 
@@ -82,6 +84,7 @@ function displayHeader() {
     const homeLink = document.createElement('a');
     homeLink.href = 'index.html';
     homeLink.textContent = 'HOME';
+    homeLink.ariaLabel = 'Go to home page';
     homeLink.classList.add('nav-buttons');
     dropdownNav.appendChild(homeLink);
 
@@ -92,6 +95,7 @@ function displayHeader() {
     const cartLink2 = document.createElement('a');
     cartLink2.href = 'cart.html';
     cartLink2.textContent = 'CART';
+    cartLink2.ariaLabel = 'View items in cart';
     cartLink2.classList.add('header-cart');
     dropdownNav.appendChild(cartLink2);
 
@@ -105,6 +109,7 @@ function displayHeader() {
 
         const logInLink = document.createElement('a');
         logInLink.href = 'login.html';
+        logInLink.ariaLabel = 'Go to log in page';
         logInLink.textContent = 'LOG IN';
         logInLink.classList.add('nav-buttons');
         dropdownNav.appendChild(logInLink);
@@ -115,6 +120,7 @@ function displayHeader() {
 
         const registerLink = document.createElement('a');
         registerLink.href = 'register.html';
+        registerLink.ariaLabel = 'Go to register page';
         registerLink.textContent = 'REGISTER';
         registerLink.classList.add('nav-buttons');
         dropdownNav.appendChild(registerLink);
@@ -142,6 +148,7 @@ function displayHeader() {
         const profileLink = document.createElement('a');
         profileLink.href = 'profile.html';
         profileLink.textContent = 'VIEW PROFILE';
+        profileLink.ariaLabel = 'Click to view profile';
         profileLink.classList.add('nav-buttons');
         dropdownNav.appendChild(profileLink);
 
@@ -151,6 +158,7 @@ function displayHeader() {
 
         const menuLogOutBtn = document.createElement('button');
         menuLogOutBtn.classList.add('menu-log-out-btn');
+        menuLogOutBtn.ariaLabel = 'Click to log out';
         menuLogOutBtn.textContent = 'LOG OUT';
         dropdownNav.appendChild(menuLogOutBtn);
 

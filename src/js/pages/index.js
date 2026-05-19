@@ -63,6 +63,7 @@ function displayAllProducts(allProductsData) {
     
     const addToCartBtn = document.createElement("button");
     addToCartBtn.classList.add("all-products-add-to-cart-btn");
+    addToCartBtn.ariaLabel = `Add 1x ${product.title} to the cart`;
     addToCartBtn.textContent = "ADD TO CART";
     descContainerBottom.appendChild(addToCartBtn);
 
@@ -82,6 +83,7 @@ function displayAllProducts(allProductsData) {
 
     const addToCartBtnMobile = document.createElement("button");
     addToCartBtnMobile.classList.add("all-products-add-to-cart-btn-mobile");
+    addToCartBtnMobile.ariaLabel = `Add 1x ${product.title} to the cart`;
     addToCartBtnMobile.textContent = "ADD TO CART";
     descContainerMobile.appendChild(addToCartBtnMobile);
 

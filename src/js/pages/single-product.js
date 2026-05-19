@@ -15,22 +15,22 @@ async function main() {
 function displaySingleProduct(product) {
 
     const metaTitle = document.getElementById('meta-title');
-    metaTitle.content = `${product.title}`;
+    metaTitle.content = product.title;
 
     const metaDesc = document.getElementById('meta-desc');
-    metaDesc.content = `${product.description}`; 
+    metaDesc.content = product.description; 
 
     const ogTitle = document.getElementById('og-title');
-    ogTitle.content = `${product.title}`;
+    ogTitle.content = product.title;
 
     const ogDesc = document.getElementById('og-desc');
-    ogDesc.content = `${product.description}`;
+    ogDesc.content = product.description;
 
     const ogUrl = document.getElementById('og-url');
     ogUrl.content = BASE_SITE_URL + `single-product.html?id=${product.id}`;
 
     const ogImg = document.getElementById('og-img');
-    ogImg.content = `${product.image.url}`;
+    ogImg.content = product.image.url;
 
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
@@ -77,6 +77,7 @@ function displaySingleProduct(product) {
 
     const img = document.createElement("img");
     img.src = product.image.url;
+    img.alt = product.description;
     imgContainer.appendChild(img);
 
     const singleProductDescContainer = document.createElement("div");
