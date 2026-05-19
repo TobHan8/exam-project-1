@@ -235,7 +235,7 @@ function displayCheckout() {
         paymentFormContainer.appendChild(paymentForm);
 
         const paymentCards = document.createElement('img')
-        paymentCards.src ='/assets/images/payment-cards.png'
+        paymentCards.src ='assets/images/payment-cards.png'
         paymentCards.alt = 'Selection of payment options';
         paymentForm.appendChild(paymentCards);
 
