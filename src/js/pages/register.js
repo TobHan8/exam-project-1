@@ -6,127 +6,137 @@ import { displayToast, isLoggedIn, getCurrentUser, getSessionToken, navigateBack
 
 
 function displayRegister() {
+
+    const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
+    if (loginCheck) {
+            displayToast('Error!', 'Log out to register a new account', 'error');
+             setTimeout(() => {
+                navigateTo('profile.html');
+            }, 2000);
+
+
+        } else {
     
-    const titleContainer = document.createElement('div');
-    titleContainer.classList.add('title-container');
-    registerContainer.appendChild(titleContainer);
+            const titleContainer = document.createElement('div');
+            titleContainer.classList.add('title-container');
+            registerContainer.appendChild(titleContainer);
 
-    const backButtonContainer = document.createElement('div');
-    backButtonContainer.classList.add('back-button-container');
-    titleContainer.appendChild(backButtonContainer);
+            const backButtonContainer = document.createElement('div');
+            backButtonContainer.classList.add('back-button-container');
+            titleContainer.appendChild(backButtonContainer);
 
-    const backBtn = document.createElement('button');
-    backBtn.classList.add('back-button');
-    backBtn.textContent = 'BACK';
-    backBtn.ariaLabel = 'Click to go back to previous page';
-    backButtonContainer.appendChild(backBtn);
+            const backBtn = document.createElement('button');
+            backBtn.classList.add('back-button');
+            backBtn.textContent = 'BACK';
+            backBtn.ariaLabel = 'Click to go back to previous page';
+            backButtonContainer.appendChild(backBtn);
 
-    backBtn.addEventListener('click', () => {
-        navigateBack();
-    });
+            backBtn.addEventListener('click', () => {
+                navigateBack();
+            });
 
-    const titleMiddleContainer = document.createElement('div');
-    titleMiddleContainer.classList.add('title-middle-container');
-    titleContainer.appendChild(titleMiddleContainer);
+            const titleMiddleContainer = document.createElement('div');
+            titleMiddleContainer.classList.add('title-middle-container');
+            titleContainer.appendChild(titleMiddleContainer);
 
-    const title = document.createElement('h1');
-    title.id = 'title';
-    title.textContent = 'REGISTER NEW ACCOUNT';
-    titleMiddleContainer.appendChild(title);
+            const title = document.createElement('h1');
+            title.id = 'title';
+            title.textContent = 'REGISTER NEW ACCOUNT';
+            titleMiddleContainer.appendChild(title);
 
-    const titleRightContainer = document.createElement('div');
-    titleRightContainer.classList.add('title-right-container');
-    titleContainer.appendChild(titleRightContainer);
+            const titleRightContainer = document.createElement('div');
+            titleRightContainer.classList.add('title-right-container');
+            titleContainer.appendChild(titleRightContainer);
 
-    const formContainer = document.createElement('div');
-    formContainer.classList.add('form-container', 'register-form-container');
-    registerContainer.appendChild(formContainer);
+            const formContainer = document.createElement('div');
+            formContainer.classList.add('form-container', 'register-form-container');
+            registerContainer.appendChild(formContainer);
 
-    const form = document.createElement('form');
-    form.classList.add('form-group');
-    form.id = 'register-form';
-    form.name = 'register-form';
-    formContainer.appendChild(form)
+            const form = document.createElement('form');
+            form.classList.add('form-group');
+            form.id = 'register-form';
+            form.name = 'register-form';
+            formContainer.appendChild(form)
 
-    const usernameLabel = document.createElement('label');
-    usernameLabel.htmlFor = 'name';
-    usernameLabel.textContent = 'name';
-    form.appendChild(usernameLabel);
+            const usernameLabel = document.createElement('label');
+            usernameLabel.htmlFor = 'name';
+            usernameLabel.textContent = 'name';
+            form.appendChild(usernameLabel);
 
-    const usernameInput = document.createElement('input');
-    usernameInput.id = 'name';
-    usernameInput.name = 'name';
-    usernameInput.type = 'text';
-    usernameInput.placeholder = 'Select a username';
-    usernameInput.maxLength = '20';
-    usernameInput.pattern = '[\\w_]+';
-    usernameInput.required = true;
-    form.appendChild(usernameInput);
+            const usernameInput = document.createElement('input');
+            usernameInput.id = 'name';
+            usernameInput.name = 'name';
+            usernameInput.type = 'text';
+            usernameInput.placeholder = 'Select a username';
+            usernameInput.maxLength = '20';
+            usernameInput.pattern = '[\\w_]+';
+            usernameInput.required = true;
+            form.appendChild(usernameInput);
 
-    const emailLabel = document.createElement('label');
-    emailLabel.htmlFor = 'email';
-    emailLabel.textContent = 'Email (valid Noroff address)';
-    form.appendChild(emailLabel);
+            const emailLabel = document.createElement('label');
+            emailLabel.htmlFor = 'email';
+            emailLabel.textContent = 'Email (valid Noroff address)';
+            form.appendChild(emailLabel);
 
-    const emailInput = document.createElement('input');
-    emailInput.id = 'email';
-    emailInput.name = 'email';
-    emailInput.type = 'email';
-    emailInput.placeholder = 'example.stud@noroff.no';
-    emailInput.required = true;
-    form.appendChild(emailInput);
+            const emailInput = document.createElement('input');
+            emailInput.id = 'email';
+            emailInput.name = 'email';
+            emailInput.type = 'email';
+            emailInput.placeholder = 'example.stud@noroff.no';
+            emailInput.required = true;
+            form.appendChild(emailInput);
 
-    const passwordLabel = document.createElement('label');
-    passwordLabel.htmlFor = 'password';
-    passwordLabel.textContent = 'Password';
-    form.appendChild(passwordLabel);
+            const passwordLabel = document.createElement('label');
+            passwordLabel.htmlFor = 'password';
+            passwordLabel.textContent = 'Password';
+            form.appendChild(passwordLabel);
 
-    const passwordInput = document.createElement('input');
-    passwordInput.id = 'password';
-    passwordInput.name = 'password';
-    passwordInput.type = 'password';
-    passwordInput.placeholder = 'Choose a password';
-    passwordInput.minLength = '8';
-    passwordInput.required = true;
-    form.appendChild(passwordInput);
+            const passwordInput = document.createElement('input');
+            passwordInput.id = 'password';
+            passwordInput.name = 'password';
+            passwordInput.type = 'password';
+            passwordInput.placeholder = 'Choose a password';
+            passwordInput.minLength = '8';
+            passwordInput.required = true;
+            form.appendChild(passwordInput);
 
-    const password2Label = document.createElement('label');
-    password2Label.htmlFor = 'password2';
-    password2Label.textContent = 'Confirm password';
-    form.appendChild(password2Label);
+            const password2Label = document.createElement('label');
+            password2Label.htmlFor = 'password2';
+            password2Label.textContent = 'Confirm password';
+            form.appendChild(password2Label);
 
-    const password2Input = document.createElement('input');
-    password2Input.id = 'password2';
-    password2Input.name = 'password2';
-    password2Input.type = 'password';
-    password2Input.placeholder = 'Repeat password';
-    password2Input.minLength = '8';
-    password2Input.required = true;
-    form.appendChild(password2Input);
+            const password2Input = document.createElement('input');
+            password2Input.id = 'password2';
+            password2Input.name = 'password2';
+            password2Input.type = 'password';
+            password2Input.placeholder = 'Repeat password';
+            password2Input.minLength = '8';
+            password2Input.required = true;
+            form.appendChild(password2Input);
 
-    const submitBtn = document.createElement('button');
-    submitBtn.classList.add('add-to-cart-btn-medium');
-    submitBtn.textContent = 'SUBMIT';
-    form.appendChild(submitBtn);
+            const submitBtn = document.createElement('button');
+            submitBtn.classList.add('add-to-cart-btn-medium');
+            submitBtn.textContent = 'SUBMIT';
+            form.appendChild(submitBtn);
 
-    const logInLink = document.createElement('a');
-    logInLink.classList.add('login-link');
-    logInLink.ariaLabel = 'Click to go to log in page';
-    logInLink.href = 'login.html'
-    formContainer.appendChild(logInLink);
+            const logInLink = document.createElement('a');
+            logInLink.classList.add('login-link');
+            logInLink.ariaLabel = 'Click to go to log in page';
+            logInLink.href = 'login.html'
+            formContainer.appendChild(logInLink);
 
-    const logInText = document.createElement('span');
-    logInText.classList.add('login-text');
-    logInText.ariaLabel = 'Click here to navigate to log in page'
-    logInText.textContent = 'Already have an account? Click here to log in';
-    logInLink.appendChild(logInText);
+            const logInText = document.createElement('span');
+            logInText.classList.add('login-text');
+            logInText.ariaLabel = 'Click here to navigate to log in page'
+            logInText.textContent = 'Already have an account? Click here to log in';
+            logInLink.appendChild(logInText);
 
-    usernameInput.addEventListener('input', () => {
-        if (!usernameInput.checkValidity()) {
-            displayToast('Attention!', 'Username can only be letters, numbers and underscores', 'error');
+            usernameInput.addEventListener('input', () => {
+                if (!usernameInput.checkValidity()) {
+                    displayToast('Attention!', 'Username can only be letters, numbers and underscores', 'error');
+                }
+            });
         }
-    });
-
 }
 
 function validateEmail(email) {
@@ -151,36 +161,39 @@ function validatePassword(password, password2) {
 }
 
 async function registerMain() {
-    displayRegister();
 
-    const registerForm = document.getElementById('register-form');
+    window.addEventListener('pageshow', (event) => {
+        displayRegister();
 
-    registerForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
+        const registerForm = document.getElementById('register-form');
 
-        loadingIndicator.style.display = 'flex';
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-        const formData = new FormData(event.target);
-        const formObject = Object.fromEntries(formData);
+            loadingIndicator.style.display = 'flex';
 
-        if (!validatePassword(formData.get('password'), formData.get('password2')) 
-            || (!validateEmail(formData.get('email')))) {
-            return
+            const formData = new FormData(event.target);
+            const formObject = Object.fromEntries(formData);
 
-        } else {
-            
-            const apiReq =  await registerUser(formObject);
-    
-            if (apiReq) {
-                displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
-                setTimeout(() => {
-                    navigateTo('login.html');
-                }, 2000);
+            if (!validatePassword(formData.get('password'), formData.get('password2')) 
+                || (!validateEmail(formData.get('email')))) {
+                return
 
             } else {
-                return
+                
+                const apiReq =  await registerUser(formObject);
+        
+                if (apiReq) {
+                    displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
+                    setTimeout(() => {
+                        navigateTo('login.html');
+                    }, 2000);
+
+                } else {
+                    return
+                }
             }
-        }
+        });
     });
 }
 

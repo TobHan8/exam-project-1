@@ -1,12 +1,16 @@
 import { loginContainer, loadingIndicator, titleContainer } from '../constants.js';
-import { displayToast, navigateBack, isLoggedIn, getCurrentUser, getSessionToken, navigateTo } from '../utils.js';
+import { displayToast, navigateBack, navigateTo, isLoggedIn, getCurrentUser, getSessionToken } from '../utils.js';
 import { loginUser } from '../api.js';
 
 function displayLogin() {
 
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
     if (loginCheck) {
-            navigateBack();
+            displayToast('Error!', 'You are already logged in', 'error');
+             setTimeout(() => {
+                navigateTo('profile.html');
+            }, 2000);
+
 
         } else {
             const titleContainer = document.createElement('div');
@@ -114,34 +118,37 @@ function validatePassword(password) {
 }
 
 async function loginMain() {
-    displayLogin();
 
-    const loginForm = document.getElementById('login-form');
+    window.addEventListener('pageshow', (event) => {
+        displayLogin();
 
-    loginForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
+        const loginForm = document.getElementById('login-form');
 
-        loadingIndicator.style.display = 'flex';
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-        const formData = new FormData(event.target);
-        const formObject = Object.fromEntries(formData);
+            loadingIndicator.style.display = 'flex';
 
-        if (!validateEmail(formData.get('email'))
-            || (!validatePassword(formData.get('password')))) {
-            return
+            const formData = new FormData(event.target);
+            const formObject = Object.fromEntries(formData);
 
-        } else {
-            const apiReq = await loginUser(formObject);
-            if (apiReq) {
-                displayToast('Success!', 'You have been logged in.', 'success');
-                setTimeout(() => {
-                    navigateTo('index.html');
-                }, 2000);
+            if (!validateEmail(formData.get('email'))
+                || (!validatePassword(formData.get('password')))) {
+                return
 
             } else {
-                return
+                const apiReq = await loginUser(formObject);
+                if (apiReq) {
+                    displayToast('Success!', 'You have been logged in.', 'success');
+                    setTimeout(() => {
+                        navigateTo('index.html');
+                    }, 2000);
+
+                } else {
+                    return
+                }
             }
-        }
+        });
     });
 }
 

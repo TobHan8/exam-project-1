@@ -102,4 +102,11 @@ function displayProfile() {
     }
 }
 
-displayProfile();
+
+function profileMain() {
+    window.addEventListener('pageshow', (event) => {
+        displayProfile();
+    });
+}
+
+profileMain();

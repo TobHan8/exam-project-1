@@ -52,4 +52,10 @@ function displaySuccess() {
     }
 }
 
-displaySuccess();
+function successMain() {
+    window.addEventListener('pageshow', (event) => {
+        displaySuccess();
+    });
+}
+
+successMain();
