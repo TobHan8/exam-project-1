@@ -379,33 +379,34 @@ function displayCheckout() {
 
 function checkoutMain() {
     
-    displayCheckout();
+    window.addEventListener('pageshow', (event) => {
+        displayCheckout();
 
-    const shippingForm = document.getElementById('shipping-form');
-    const paymentForm = document.getElementById('payment-form');
-    const completeBtn = document.getElementById('complete-btn');
+        const shippingForm = document.getElementById('shipping-form');
+        const paymentForm = document.getElementById('payment-form');
+        const completeBtn = document.getElementById('complete-btn');
 
-    completeBtn.addEventListener('click', (event) => {
-        event.preventDefault();
+        completeBtn.addEventListener('click', (event) => {
+            event.preventDefault();
 
-       if (!shippingForm.checkValidity()) {
-        shippingForm.reportValidity();
-        displayToast('Attention!', 'Make sure to fill in correct details', 'error');
-        return
-       }
+        if (!shippingForm.checkValidity()) {
+            shippingForm.reportValidity();
+            displayToast('Attention!', 'Make sure to fill in correct details', 'error');
+            return
+        }
 
-       if (!paymentForm.checkValidity()) {
-        paymentForm.reportValidity();
-        displayToast('Attention!', 'Make sure to fill in correct details', 'error');
-        return
-       }
-        loadingIndicator.style.display = 'flex';
-        removeAll();
-        setTimeout(() => {
-            navigateTo('success.html');
-        }, 2000);
-
-    });
+        if (!paymentForm.checkValidity()) {
+            paymentForm.reportValidity();
+            displayToast('Attention!', 'Make sure to fill in correct details', 'error');
+            return
+        }
+            loadingIndicator.style.display = 'flex';
+            removeAll();
+            setTimeout(() => {
+                navigateTo('success.html');
+            }, 2000);
+        });
+    }); 
 }
 
 checkoutMain();
