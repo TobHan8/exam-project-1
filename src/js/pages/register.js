@@ -2,7 +2,7 @@ import { loadingIndicator, registerContainer } from '../constants.js';
 
 import { registerUser } from '../api.js';
 
-import { displayToast, isLoggedIn, getCurrentUser, getSessionToken, navigateBack } from '../utils.js';
+import { displayToast, isLoggedIn, getCurrentUser, getSessionToken, navigateBack, navigateTo } from '../utils.js';
 
 
 function displayRegister() {
@@ -174,7 +174,7 @@ async function registerMain() {
             if (apiReq) {
                 displayToast('Success!', 'Account registered! Please log in to your new account', 'success');
                 setTimeout(() => {
-                    navigation.navigate('login.html');
+                    navigateTo('login.html');
                 }, 2000);
 
             } else {

@@ -2,7 +2,7 @@ import { removeFromCart, addToCart, removeAll, removeAllQuantity,
         calculateSingleProductTotalPrice, 
         calculateTotalQuantity, 
         calculateTotalPrice, isLoggedIn, getCurrentUser, getSessionToken, 
-        displayToast, navigateBack } from "../utils.js";
+        displayToast, navigateBack, navigateTo } from "../utils.js";
 
 import { cartContainer } from '../constants.js';
 
@@ -62,7 +62,7 @@ export async function displayCart () {
         emptyCartContentContainer.appendChild(seeAllBtn);
 
         seeAllBtn.addEventListener('click', () => {
-            navigation.navigate('index.html');
+            navigateTo('index.html');
         });
 
     //If the cart is not empty
@@ -149,7 +149,7 @@ export async function displayCart () {
 
         checkoutBtn.addEventListener('click', () => {
             if (isLoggedIn(getCurrentUser(), getSessionToken())) {
-                navigation.navigate('checkout.html');
+                navigateTo('checkout.html');
             } else {
                 displayToast('Not logged in!', 'You must be logged in to continue', 'error');
                 return

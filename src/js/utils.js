@@ -176,6 +176,14 @@ export function logOut() {
   },2000);
 }
 
+export async function navigateTo(path) {
+  try  {
+    await navigation.navigate(path).finished;
+  } catch (error) {
+    displayToast('Error!', 'Navigation failed. Please try again later', 'error');
+  }
+}
+
 export async function navigateBack() {
   if (navigation.canGoBack) {
     await navigation.back().finished;

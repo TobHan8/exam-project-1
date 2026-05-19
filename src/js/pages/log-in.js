@@ -1,5 +1,5 @@
 import { loginContainer, loadingIndicator, titleContainer } from '../constants.js';
-import { displayToast, navigateBack, isLoggedIn, getCurrentUser, getSessionToken } from '../utils.js';
+import { displayToast, navigateBack, isLoggedIn, getCurrentUser, getSessionToken, navigateTo } from '../utils.js';
 import { loginUser } from '../api.js';
 
 function displayLogin() {
@@ -135,7 +135,7 @@ async function loginMain() {
             if (apiReq) {
                 displayToast('Success!', 'You have been logged in.', 'success');
                 setTimeout(() => {
-                    navigation.navigate('index.html');
+                    navigateTo('index.html');
                 }, 2000);
 
             } else {

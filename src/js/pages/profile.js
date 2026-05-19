@@ -1,6 +1,6 @@
 import { profileContainer, loadingIndicator, footer } from '../constants.js';
 
-import { navigateBack, isLoggedIn, getCurrentUser, getSessionToken, displayToast, logOut } from '../utils.js';
+import { navigateBack, isLoggedIn, getCurrentUser, getSessionToken, displayToast, logOut, navigateTo } from '../utils.js';
 
 function displayProfile() {
 
@@ -14,7 +14,7 @@ function displayProfile() {
         footer.style.bottom = '0';
         footer.style.width = '100vw';
         setTimeout(() => {
-            navigation.navigate('login.html');
+            navigateTo('login.html');
         }, 2000);
 
     } else {

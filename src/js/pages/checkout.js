@@ -3,7 +3,7 @@ import { checkoutContainer, loadingIndicator, footer } from '../constants.js';
 import { calculateTotalQuantity, 
     calculateTotalPrice, removeAll,
     calculateSingleProductTotalPrice, isLoggedIn, 
-    getCurrentUser, getSessionToken, displayToast, navigateBack } from '../utils.js';
+    getCurrentUser, getSessionToken, displayToast, navigateBack, navigateTo } from '../utils.js';
 
 function displayCheckout() {
 
@@ -18,7 +18,7 @@ function displayCheckout() {
         footer.style.bottom = '0';
         footer.style.width = '100vw';
         setTimeout(() => {
-            navigation.navigate('login.html');
+            navigateTo('login.html');
         }, 2000);
 
     } else if (cart.length === 0) {
@@ -29,7 +29,7 @@ function displayCheckout() {
         footer.style.bottom = '0';
         footer.style.width = '100vw';
         setTimeout(() => {
-            navigation.navigate('index.html');
+            navigateTo('index.html');
         }, 2000);
 
     } else {
@@ -402,7 +402,7 @@ function checkoutMain() {
         loadingIndicator.style.display = 'flex';
         removeAll();
         setTimeout(() => {
-            navigation.navigate('success.html');
+            navigateTo('success.html');
         }, 2000);
 
     });

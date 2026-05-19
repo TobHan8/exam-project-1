@@ -1,6 +1,6 @@
 import { successContainer, loadingIndicator, footer } from '../constants.js';
 
-import { getCurrentUser, getSessionToken, isLoggedIn, displayToast } from '../utils.js';
+import { getCurrentUser, getSessionToken, isLoggedIn, displayToast, navigateTo } from '../utils.js';
 
 function displaySuccess() {
 
@@ -12,7 +12,7 @@ function displaySuccess() {
             loadingIndicator.style.display = 'none';
             successContainer.style.display = 'none';
             setTimeout(() => {
-                navigation.navigate('index.html');
+                navigateTo('index.html');
             }, 2000);
 
     } else {
@@ -47,7 +47,7 @@ function displaySuccess() {
         successContentContainer.appendChild(seeAllBtn);
 
         seeAllBtn.addEventListener('click', () => {
-            navigation.navigate('index.html');
+            navigateTo('index.html');
         });
     }
 }
