@@ -12,7 +12,7 @@ header {
     display: flex;
     position: sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
     font-family: var(--font-main);
     font-size: 1.5rem;
     background-color: var(--color-secondary);
@@ -569,7 +569,7 @@ footer {
     display: flex;
     position: fixed;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     background-color: var(--color-secondary);
     height: 100px;
 }
