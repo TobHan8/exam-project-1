@@ -51,6 +51,13 @@ strong {
 }
 
 
+/* ### SINGLE PRODUCT PAGE ### */
+
+.single-product-desc-container h2 {
+    font-size: 35px;
+}
+
+
 /* ### CART PAGE ### */
 
 .quantity-container span {
