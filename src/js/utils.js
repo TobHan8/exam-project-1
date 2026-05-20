@@ -7,10 +7,16 @@ export function addToCart(product) {
 
   const existingItem = cart.find(item => item.id === product.id);
 
-  //If the item already is in cart, increase quantity by +1
+  // Max quantity
+  if (existingItem && existingItem.quantity > 98) {
+    displayToast('Max reached!', 'You cannot put more than 99 of this item in the cart', 'error');
+    return
+  }
+   //If the item already is in cart, increase quantity by +1
   if (existingItem) {
     existingItem.quantity += 1;
     displayToast('Quantity added!', existingItem.quantity + "x " + product.title + " in the cart!", "success");
+
   } else {
     //If not, push key values with quantity set to 1
     cart.push({ ...product, quantity: 1 });

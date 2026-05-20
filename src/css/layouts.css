@@ -583,7 +583,7 @@ header {
 footer {
     z-index: 5;
     display: flex;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: var(--color-secondary);
