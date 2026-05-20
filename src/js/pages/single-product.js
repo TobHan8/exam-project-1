@@ -97,9 +97,47 @@ function displaySingleProduct(product) {
     singleProductDescContainer.appendChild(detailsContainer);
 
     const rating = document.createElement("span");
-    rating.textContent = `Rating: ${product.rating}`;
+    rating.textContent = 'Rating: ';
     rating.classList.add("rating");
     detailsContainer.appendChild(rating);
+
+    if (product.rating === 0 ) {
+        rating.textContent = 'Rating: No rating yet';
+    }
+
+    const isInteger = Number.isInteger(product.rating);
+    const decimal = product.rating % 1;
+
+    if (product.rating !== 0 && !isInteger) {
+        
+        for (let i = 0; i < product.rating - decimal; i++) {
+
+            const star = document.createElement('i');
+            star.classList.add('fa-solid', 'fa-star', 'star');
+            rating.appendChild(star);
+        }
+
+    } if (decimal >= 0.25) {
+        const halfStar = document.createElement('i');
+        halfStar.classList.add('fa-solid', 'fa-star-half', 'star');
+        rating.appendChild(halfStar);
+
+    } if (decimal >= 0.75) {
+        const star = document.createElement('i');
+        star.classList.add('fa-solid', 'fa-star', 'star');
+        rating.appendChild(star);
+
+    } else { 
+        if (product.rating !== 0 && isInteger) {
+
+            for (let i = 0; i < product.rating; i++) {
+
+                const star = document.createElement('i');
+                star.classList.add('fa-solid', 'fa-star', 'star');
+                rating.appendChild(star);
+            }
+        }
+    }
 
     const tags = document.createElement("span");
     tags.classList.add('tags');
@@ -156,6 +194,82 @@ function displaySingleProduct(product) {
     addToCart(product);
     });
 
+    const reviewContainer = document.createElement('div');
+    reviewContainer.classList.add('review-container');
+    singleProductDescContainer.appendChild(reviewContainer);
+
+    const reviewTitle = document.createElement('span');
+    reviewTitle.classList.add('review-title');
+    reviewTitle.textContent = 'REVIEWS';
+    reviewContainer.appendChild(reviewTitle);
+
+
+    const reviews = product.reviews;
+
+    if (reviews.length === 0) {
+        const noReview = document.createElement('span');
+        noReview.classList.add('no-review');
+        noReview.textContent = 'No reviews for this product yet';
+        reviewContainer.appendChild(noReview);
+        
+    } else {
+        reviews.forEach(review => {
+
+            const reviewContentContainer = document.createElement('div');
+            reviewContentContainer.classList.add('review-content-container');
+            reviewContainer.appendChild(reviewContentContainer);
+
+            const reviewName = document.createElement('span');
+            reviewName.classList.add('review-name');
+            reviewName.textContent = review.username;
+            reviewContentContainer.appendChild(reviewName);
+
+            const reviewRating = document.createElement('span');
+            reviewRating.textContent = 'Rating: ';
+            reviewRating.classList.add('review-rating');
+            reviewContentContainer.appendChild(reviewRating);
+
+
+            const isInteger2 = Number.isInteger(review.rating);
+            const decimal2 = review.rating % 1;
+
+            if (review.rating !== 0 && !isInteger2) {
+                
+                for (let i = 0; i < review.rating - decimal2; i++) {
+
+                    const star = document.createElement('i');
+                    star.classList.add('fa-solid', 'fa-star', 'star');
+                    reviewRating.appendChild(star);
+                }
+
+            } if (decimal2 >= 0.25) {
+                const halfStar = document.createElement('i');
+                halfStar.classList.add('fa-solid', 'fa-star-half', 'star');
+                reviewRating.appendChild(halfStar);
+
+            } if (decimal2 >= 0.75) {
+                const star = document.createElement('i');
+                star.classList.add('fa-solid', 'fa-star', 'star');
+                reviewRating.appendChild(star);
+
+            } else { 
+                if (review.rating !== 0 && isInteger2) {
+
+                    for (let i = 0; i < review.rating; i++) {
+
+                        const star = document.createElement('i');
+                        star.classList.add('fa-solid', 'fa-star', 'star');
+                        reviewRating.appendChild(star);
+                    }
+                }
+            }
+
+            const reviewDesc = document.createElement('span');
+            reviewDesc.textContent = `"${review.description}"`;
+            reviewDesc.classList.add('review');
+            reviewContentContainer.appendChild(reviewDesc);
+        });
+    }
 };
 
 main();

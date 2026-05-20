@@ -165,8 +165,8 @@ header {
     justify-content: top;
     width: 100%;
     height: 100%;
-    padding: 0px 40px 25px 40px;
-    gap: 30px;
+    padding: 0px 40px 40px 40px;
+    gap: 40px;
     background-color: var(--color-tertiary);
     box-shadow: var(--inner-shadow-large);
 }
@@ -202,6 +202,37 @@ header {
 
 .single-product-bottom-container strong {
     font-size: 30px;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border: 3px solid var(--color-secondary);
+    width: 100%;
+    height: auto;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.review-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.no-review {
+    font-size: 18px;
+}
+
+.review-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.review {
+    font-style: italic;
 }
 
 
