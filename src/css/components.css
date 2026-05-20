@@ -214,11 +214,11 @@ nav a:hover {
 }
 
 .toast-title.error {
-    color: red;
+    color: var(--color-red);
 }
 
 .toast-title.removed {
-    color: red;
+    color: var(--color-red);
 }
 
 .toast-message {

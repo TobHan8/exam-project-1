@@ -21,7 +21,14 @@ function displayHeader() {
 
     const toggleBtnIcon = document.createElement('i');
     toggleBtnIcon.classList.add('fa-solid', 'fa-bars');
+    toggleBtnIcon.id = 'toggle-icon';
     toggleBtn.appendChild(toggleBtnIcon);
+
+    const toggleBtnIcon2 = document.createElement('i');
+    toggleBtnIcon2.classList.add('fa-solid', 'fa-xmark');
+    toggleBtnIcon2.id = 'toggle-icon2';
+    toggleBtnIcon2.style.display = 'none';
+    toggleBtn.appendChild(toggleBtnIcon2);
 
     toggleBtn.addEventListener('click', () => {
         headerToggle();
@@ -177,16 +184,22 @@ let currentState = 0;
 
 function headerToggle() {
     const toggleBtn = document.getElementById('toggle-btn');
+    const toggleBtnIcon = document.getElementById('toggle-icon');
+    const toggleBtnIcon2 = document.getElementById('toggle-icon2');
     const dropdown = document.querySelector('.dropdown-nav');
 
         if(currentState === 0) {
             dropdown.style.maxHeight = '600px';
             dropdown.style.overflow = 'auto';
+            toggleBtnIcon.style.display = 'none';
+            toggleBtnIcon2.style.display = 'flex';
             currentState = 1;
 
         } else {
             dropdown.style.maxHeight = '0';
             dropdown.style.overflow = 'hidden';
+            toggleBtnIcon2.style.display = 'none'
+            toggleBtnIcon.style.display = 'flex'
             currentState = 0;
         }
 }
