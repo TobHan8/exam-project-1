@@ -57,6 +57,36 @@ strong {
     font-size: 35px;
 }
 
+.single-product-desc-container p {
+    width: 100%;
+    margin-top: 0;
+}
+
+.single-product-title-span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.single-product-bottom-container strong,
+.single-product-price-normal {
+    font-size: 30px;
+}
+
+.rating {
+    font-size: 25px;
+}
+
+.review-title {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.no-review {
+    font-size: 18px;
+}
+
 
 /* ### CART PAGE ### */
 

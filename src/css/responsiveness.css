@@ -47,33 +47,38 @@
     .single-product-desc-container {
         width: 440px;
         height: 100%;
-        padding: 0px 30px 15px 30px;
-        gap: 10px;
+        padding: 0px 30px 30px 30px;
     }
 
     .single-product-desc-container p {
         font-size: 15px;
     }
 
-    .single-product-details-container {
-        gap: 25px;
+    .tags,
+    .product-id {
+        font-size: 12px;
     }
 
-    .single-product-details-container span {
-        font-size: 12px;
+     .rating {
+        font-size: 18px;
     }
 
     .single-product-title-span {
         font-size: 15px;
     }
 
-    .single-product-bottom-container strong {
-        font-size: 20px;
+    .single-product-price {
+        font-size: 12px;
     }
+
     .single-prod-add-to-cart-btn {
         padding: var(--button-padding-medium);
         font-size: var(--button-text-medium);
         box-shadow: var(--outer-shadow-small);
+    }
+
+    .review-title {
+        font-size: 20px;
     }
 
     .cart-container,
@@ -250,8 +255,11 @@
     .single-product-desc-container {
         width: 320px;
         height: 100%;
-        padding: 0px 25px 10px 35px;
+        padding: 0px 25px 25px 25px;
         gap: 10px;
+        box-shadow: var(--inner-shadow-small);
+        align-items: center;
+        text-align: center;
     }
 
     .single-product-desc-container p {
@@ -272,6 +280,10 @@
         font-size: 15px;
     }
 
+    .single-product-price-discounted {
+        font-size: 12px;
+    }
+
     .single-product-bottom-container {
         flex-direction: column;
         gap: 25px;
@@ -279,13 +291,36 @@
         padding-bottom: 15px;
     }
 
-    .single-product-bottom-container strong {
+    .single-product-bottom-container strong,
+    .single-product-price-normal {
         font-size: 20px;
     }
     .single-prod-add-to-cart-btn {
         padding: var(--button-padding-small);
         font-size: var(--button-text-small);
         box-shadow: var(--outer-shadow-small);
+    }
+
+    .review-container {
+        margin-top: 0;
+        gap: 0;
+    }
+
+    .review-title {
+        font-size: 15px;
+    }
+
+    .review-content-container {
+        padding: 10px;
+    }
+
+    .review-name {
+        font-size: 15px;
+    }
+
+    .review-rating,
+    .review {
+        font-size: 10px;
     }
 
     /* --- CART AND SUCCESS PAGE 780px MAX --- */
@@ -628,7 +663,7 @@
     .single-product-desc-container {
         width: 270px;
         height: 100%;
-        padding: 0px 15px 5px 25px;
+        padding: 0px 15px 15px 15px;
         gap: 10px;
     }
 
@@ -663,6 +698,10 @@
         padding: var(--button-padding-small);
         font-size: var(--button-text-small);
         box-shadow: var(--outer-shadow-small);
+    }
+
+    .review-container {
+        padding: 10px;
     }
 
     /* --- FOOTER  480px MAX --- */

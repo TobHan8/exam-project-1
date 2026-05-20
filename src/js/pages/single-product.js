@@ -160,19 +160,26 @@ function displaySingleProduct(product) {
     titleSpan.textContent = 'Price: ';
     bottomContainer.appendChild(titleSpan);
 
-    const price = document.createElement('span');
-    price.classList.add('single-product-price');
-    price.textContent = `${product.price}$`;
-    price.style.fontWeight = 'bold';
-    titleSpan.appendChild(price);
 
     if (discountedProduct) {
+        
+        const priceDiscounted = document.createElement('span');
+        priceDiscounted.classList.add('single-product-price-discounted');
+        priceDiscounted.textContent = `${product.price}$`;
+        priceDiscounted.style.fontWeight = 'normal';
+        priceDiscounted.style.textDecoration = 'line-through';
+        titleSpan.appendChild(priceDiscounted);
+
         const priceStrong = document.createElement("strong");
         priceStrong.textContent = `${product.discountedPrice}$`;
         titleSpan.appendChild(priceStrong);
 
-        price.style.textDecoration = 'line-through';
-        price.style.fontWeight = 'normal';
+    } else {
+        const priceNormal = document.createElement('span');
+        priceNormal.classList.add('single-product-price-normal');
+        priceNormal.textContent = `${product.price}$`;
+        priceNormal.style.fontWeight = 'bold';
+        titleSpan.appendChild(priceNormal);
     }
     
     const addToCartBtn = document.createElement("button");
@@ -200,7 +207,7 @@ function displaySingleProduct(product) {
 
     const reviewTitle = document.createElement('span');
     reviewTitle.classList.add('review-title');
-    reviewTitle.textContent = 'REVIEWS';
+    reviewTitle.textContent = 'Customer reviews';
     reviewContainer.appendChild(reviewTitle);
 
 
