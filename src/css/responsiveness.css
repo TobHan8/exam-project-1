@@ -303,11 +303,13 @@
 
     .review-container {
         margin-top: 0;
-        gap: 0;
+        gap: 15px;
+        
     }
 
     .review-title {
         font-size: 15px;
+        margin-bottom: -15px;
     }
 
     .review-content-container {
