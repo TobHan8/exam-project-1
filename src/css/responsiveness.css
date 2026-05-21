@@ -531,7 +531,9 @@
     }
 
     .quantity-container {
-        padding-right: 15px;
+        padding-right: 5px;
+        align-self: center;
+        gap: 15px;
     }
 
     .quantity-container span {
@@ -761,7 +763,7 @@
     .cart-product-side-container {
         width: 100%;
         gap: 20px;
-        padding-left: 15px;
+        padding-left: 10px;
         padding-right: 0px;
         align-items: center;
         
@@ -773,8 +775,14 @@
         padding-right: 40px;
     }
 
+    .quantity-container {
+        gap: 5px;
+        padding: 10px;
+        padding-left: 0;
+    }
+
     .quantity-container span {
-        padding-right: 0;
+        padding: 0;
         font-size: 20px;
     }
 

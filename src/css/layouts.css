@@ -19,6 +19,13 @@ header {
     height: 100px;
 }
 
+main {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
 .hero-container {
   z-index: -1;
   position: fixed;
@@ -328,7 +335,7 @@ header {
 
 .remove-btn i {
     font-size: 20px;
-    text-shadow:color(from color srgb r g b); /* Fix this later, cant use box-shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .quantity-container {
@@ -583,8 +590,6 @@ header {
 footer {
     z-index: 5;
     display: flex;
-    position: relative;
-    bottom: 0;
     width: 100%;
     background-color: var(--color-secondary);
     height: 100px;

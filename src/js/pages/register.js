@@ -60,7 +60,7 @@ function displayRegister() {
 
             const usernameLabel = document.createElement('label');
             usernameLabel.htmlFor = 'name';
-            usernameLabel.textContent = 'name';
+            usernameLabel.textContent = 'Username';
             form.appendChild(usernameLabel);
 
             const usernameInput = document.createElement('input');
