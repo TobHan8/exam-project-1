@@ -83,6 +83,8 @@ function displayRegister() {
             emailInput.name = 'email';
             emailInput.type = 'email';
             emailInput.placeholder = 'example.stud@noroff.no';
+            emailInput.maxLength = '30';
+            emailInput.pattern = '[\\w@.]+'
             emailInput.required = true;
             form.appendChild(emailInput);
 
@@ -133,7 +135,13 @@ function displayRegister() {
 
             usernameInput.addEventListener('input', () => {
                 if (!usernameInput.checkValidity()) {
-                    displayToast('Attention!', 'Username can only be letters, numbers and underscores', 'error');
+                    displayToast('Attention!', 'Username can only contain letters, numbers and underscores', 'error');
+                }
+            });
+
+            emailInput.addEventListener('input', () => {
+                if (!emailInput.checkValidity()) {
+                    displayToast('Attention!', 'Email can only contain letters and numbers. Must end with @stud.noroff.no', 'error');
                 }
             });
         }
@@ -169,8 +177,6 @@ async function registerMain() {
 
         registerForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
-            loadingIndicator.style.display = 'flex';
 
             const formData = new FormData(event.target);
             const formObject = Object.fromEntries(formData);

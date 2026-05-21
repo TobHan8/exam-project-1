@@ -63,6 +63,8 @@ function displayLogin() {
             emailInput.name = 'email';
             emailInput.type = 'email';
             emailInput.placeholder = 'example@stud.noroff.no';
+            emailInput.maxLength = '30';
+            emailInput.pattern = '[\\w@.]+'
             emailInput.required = true;
             form.appendChild(emailInput);
 
@@ -96,6 +98,12 @@ function displayLogin() {
             registerText.ariaLabel = 'Click here to navigate to registration page';
             registerText.textContent = 'Need an an account? Click here to register';
             registerLink.appendChild(registerText);
+
+            emailInput.addEventListener('input', () => {
+                if (!emailInput.checkValidity()) {
+                    displayToast('Attention!', 'Email can only contain letters and numbers. Must end with @stud.noroff.no', 'error');
+                }
+            });
         }
 }
 

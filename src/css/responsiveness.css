@@ -342,10 +342,6 @@
         font-size: 25px;
     }
 
-    .empty-cart-content-container {
-        gap: 60px;
-    }
-
     .cart-content-container {
         flex-direction: column;
     }
