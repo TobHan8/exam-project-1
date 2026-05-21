@@ -342,6 +342,7 @@ main {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    width: 135px;
 }
 
 .quantity-btns {
