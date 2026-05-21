@@ -135,8 +135,6 @@ async function loginMain() {
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            loadingIndicator.style.display = 'flex';
-
             const formData = new FormData(event.target);
             const formObject = Object.fromEntries(formData);
 
@@ -145,7 +143,9 @@ async function loginMain() {
                 return
 
             } else {
+                loadingIndicator.style.display = 'block';
                 const apiReq = await loginUser(formObject);
+                
                 if (apiReq) {
                     displayToast('Success!', 'You have been logged in.', 'success');
                     setTimeout(() => {

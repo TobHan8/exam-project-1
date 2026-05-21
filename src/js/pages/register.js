@@ -186,7 +186,7 @@ async function registerMain() {
                 return
 
             } else {
-                
+                loadingIndicator.style.display = 'block';
                 const apiReq =  await registerUser(formObject);
         
                 if (apiReq) {
