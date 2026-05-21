@@ -25,10 +25,10 @@ label {
 input {
     height: 40px;
     width: 220px;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 15px;
     padding: 10px;
-    box-shadow: var(--inner-shadow-small), var(--outer-shadow-xtrasmall);
+    box-shadow: var(--inner-shadow-xtrasmall), var(--outer-shadow-xtrasmall);
     border: 1px solid #4D4D4D;
 }
 
