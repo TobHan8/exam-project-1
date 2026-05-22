@@ -113,7 +113,7 @@ main {
     width: 300px;
     background-color: var(--color-tertiary);
     object-fit: contain;
-    box-shadow: var(--inner-shadow-small);
+    box-shadow: var(--inner-shadow-medium);
 }
 
 .desc-container-top {
@@ -309,7 +309,7 @@ main {
     padding-top: 5px;
     background-color: var(--color-tertiary);
     width: 100%;
-    box-shadow: var(--inner-shadow-small);
+    box-shadow: var(--inner-shadow-medium);
 }
 
 .cart-product-side-container h2 {
@@ -352,7 +352,7 @@ main {
     border-radius: 5px;
     height: 25px;
     width: 30px;
-    box-shadow: var(--outer-shadow-xtrasmall);
+    box-shadow: var(--outer-shadow-small);
     transition: 0.3s ease;
 }
 

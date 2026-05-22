@@ -169,7 +169,7 @@ nav a:hover {
     padding: 15px;
     border: 15px solid var(--color-secondary);
     background-color: var(--color-primary);
-    box-shadow: var(--inner-shadow-small), var(--outer-shadow-large);
+    box-shadow: var(--inner-shadow-small), var(--outer-shadow-medium);
 }
 
 .close-btn {
@@ -310,7 +310,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     background-color: var(--color-tertiary);
-    box-shadow: var(--inner-shadow-small);
+    box-shadow: var(--inner-shadow-medium);
     gap: 1rem;
 }
 
@@ -362,13 +362,13 @@ nav a:hover {
 .add-to-cart-btn-xtrasmall {
     padding: var(--button-padding-xtrasmall);
     font-size: var(--button-text-xtrasmall);
-    box-shadow: var(--outer-shadow-xtrasmall);
+    box-shadow: var(--outer-shadow-small);
 }
 
 .add-to-cart-btn-small {
     padding: var(--button-padding-small);
     font-size: var(--button-text-small);
-    box-shadow: var(--outer-shadow-xtrasmall);
+    box-shadow: var(--outer-shadow-small);
 }
 
 .carousel-add-to-cart-btn:hover {
@@ -380,7 +380,7 @@ nav a:hover {
 .all-products-add-to-cart-btn {
     padding: var(--button-padding-medium);
     font-size: var(--button-text-medium);
-    box-shadow: var(--outer-shadow-small);
+    box-shadow: var(--outer-shadow-medium);
 }
 
 .add-to-cart-btn-large,
@@ -388,7 +388,7 @@ nav a:hover {
 .see-all-btn {
     padding: var(--button-padding-large);
     font-size: var(--button-text-large);
-    box-shadow: var(--outer-shadow-small);
+    box-shadow: var(--outer-shadow-medium);
 }
 
 .share-btn {
@@ -402,7 +402,7 @@ nav a:hover {
     border-radius: 5px;
     height: 45px;
     width: 45px;
-    box-shadow: var(--outer-shadow-small);
+    box-shadow: var(--outer-shadow-medium);
     transition: 0.3s ease;
 }
 
@@ -425,7 +425,7 @@ nav a:hover {
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    box-shadow: var(--outer-shadow-xtrasmall);
+    box-shadow: var(--outer-shadow-small);
     transition: 0.3s ease;
 }
 
@@ -520,7 +520,7 @@ nav a:hover {
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    box-shadow: var(--outer-shadow-xtrasmall);
+    box-shadow: var(--outer-shadow-small);
     transition: 0.3s ease;
 }
 

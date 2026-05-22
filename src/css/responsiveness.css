@@ -1,3 +1,9 @@
+@media (max-width: 1650px) {
+    .hero-background-image {
+        background-image: url(../../assets/images/desktop/desktop-laptop-background.jpg);
+    }
+}
+
 
 
 @media (max-width: 1200px) {
@@ -196,10 +202,10 @@
         width: 175px;
         align-items: center;
         background-color: var(--color-tertiary);
-        box-shadow: var(--inner-shadow-small);
+        box-shadow: var(--inner-shadow-medium);
         gap: 20px;
         padding: 5px;
-        box-shadow: var(--inner-shadow-xtrasmall);
+        box-shadow: var(--inner-shadow-small);
     }
 
     .all-products-add-to-cart-btn-mobile {
@@ -257,7 +263,7 @@
         height: 100%;
         padding: 0px 25px 25px 25px;
         gap: 10px;
-        box-shadow: var(--inner-shadow-small);
+        box-shadow: var(--inner-shadow-medium);
         align-items: center;
         text-align: center;
     }
@@ -601,7 +607,7 @@
         width: 125px;
         gap: 12px;
         padding: 5px;
-        box-shadow: var(--inner-shadow-xtrasmall);
+        box-shadow: var(--inner-shadow-medium);
     }
 
     .all-products-container h1 {
@@ -624,7 +630,7 @@
         display: flex;
         padding: var(--button-padding-xtrasmall);
         font-size: var(--button-text-xtrasmall);
-        box-shadow: var(--outer-shadow-xtrasmall);
+        box-shadow: var(--outer-shadow-small);
     }
 
 
@@ -653,7 +659,7 @@
     .share-btn {
         width: 30px;
         height: 30px;
-        box-shadow: var(--outer-shadow-xtrasmall);
+        box-shadow: var(--outer-shadow-small);
     }
 
     .share-btn i {
@@ -724,12 +730,12 @@
     .register-form-container,
     .login-form-container {
         padding: 30px 20px 20px 20px;
-        box-shadow: var(--inner-shadow-small);
+        box-shadow: var(--inner-shadow-medium);
     }
 
     .profile-content-container {
         padding: 20px 10px 20px 10px;
-        box-shadow: var(--inner-shadow-small);
+        box-shadow: var(--inner-shadow-medium);
     }
 
     .profile-title-span,
