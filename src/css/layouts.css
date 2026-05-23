@@ -24,6 +24,7 @@ main {
     position: relative;
     z-index: 2;
     margin: auto;
+    min-height: 100vh;
 }
 
 .hero-container {
