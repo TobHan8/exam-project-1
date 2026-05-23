@@ -96,7 +96,7 @@ nav a:hover {
 .header-register-btn {
     background-color: var(--color-secondary);
     color: var(--color-primary);
-    box-shadow:0px 0px 0px 3px var(--color-primary) inset;
+    box-shadow: 0px 0px 0px 3px var(--color-primary) inset;
     border-radius: 25px;
     padding: 12px 25px;
     font-size: 15px;

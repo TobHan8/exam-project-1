@@ -69,7 +69,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    max-width: 1200px;
+    width: 1020px;
     gap: 30px;
     height: auto;
     margin: auto;
