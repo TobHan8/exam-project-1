@@ -146,8 +146,10 @@
         display: none;
     }
 
-    .header-logo-img-mobile {
+    .header-logo-img {
         display: flex;
+        height: 30px;
+        width: 100%;
     }
 
     .header-login-btn,
@@ -746,6 +748,11 @@
 
 @media (max-width: 420px) {
 
+    /* --- HEADER --- */
+    .header-logo-img {
+        height: 25px;
+    }
+
     /* --- CART PAGE 420px MAX --- */
 
     .cart-container,
@@ -803,9 +810,6 @@
 
 
 @media (min-width: 781px) {
-    .header-logo-img-mobile {
-        display: none;
-    }
 
     .desc-container-mobile,
     .all-products-add-to-cart-btn-mobile,

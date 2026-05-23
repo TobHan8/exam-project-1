@@ -50,12 +50,6 @@ function displayHeader() {
     logoImg.classList.add('header-logo-img');
     headerLogo.appendChild(logoImg);
 
-    const logoImgMobile = document.createElement('img');
-    logoImgMobile.src = 'assets/images/mobile/mobile-logo.png';
-    logoImgMobile.alt = 'Online Shop clickable logo';
-    logoImgMobile.classList.add('header-logo-img-mobile');
-    headerLogo.appendChild(logoImgMobile);
-
     const buttonsRight = document.createElement('div');
     buttonsRight.classList.add('header-buttons-right');
     headerNav.appendChild(buttonsRight);
