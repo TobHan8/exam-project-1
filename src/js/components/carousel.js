@@ -76,6 +76,7 @@ function displayCarousel(allProductsData) {
         carouselProductContainer.appendChild(imageLink);
 
         const img = document.createElement('img');
+        img.fetchPriority = 'high';
         img.src = product.image.url;
         img.alt = `${product.description}`;
         imageLink.appendChild(img);

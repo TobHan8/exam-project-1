@@ -235,7 +235,7 @@ nav a:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
+    width: 824px;
     height: 250px;
     margin: auto;
     margin-top: 60px;
