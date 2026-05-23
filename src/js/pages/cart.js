@@ -167,6 +167,7 @@ export async function displayCart () {
             cartProductContainer.appendChild(cartProductImgContainer);
 
             const cartProductImg = document.createElement("img");
+            cartProductImg.fetchPriority = 'high';
             cartProductImg.src = product.image.url;
             cartProductImg.alt = product.description;
             cartProductImgContainer.appendChild(cartProductImg);

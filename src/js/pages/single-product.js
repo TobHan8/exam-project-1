@@ -76,6 +76,7 @@ function displaySingleProduct(product) {
     shareBtn.appendChild(shareIcon);
 
     const img = document.createElement("img");
+    img.fetchPriority = 'high';
     img.src = product.image.url;
     img.alt = product.description;
     imgContainer.appendChild(img);
