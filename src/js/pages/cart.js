@@ -245,7 +245,11 @@ export async function displayCart () {
 
 }
 
-//Calling function to start program
-if (document.getElementById('cart-container')) {
-    displayCart();
+
+function cartMain() {
+    if (document.getElementById('cart-container')) {
+        displayCart();
+    }
 }
+
+cartMain();
