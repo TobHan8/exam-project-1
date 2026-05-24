@@ -6,7 +6,6 @@
   --color-tertiary: #CBAC38;
   --color-red: #8A0000;
   --color-white: #ffffff;
-  --color-grey: #f5f5f5;
   --color-grey2: #4D4D4D;
 
   /* --- FONT STACK --- */
@@ -16,6 +15,7 @@
   --inner-shadow-small: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
   --inner-shadow-medium: inset 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
   --inner-shadow-large: inset 8px 8px 8px 0px rgba(0, 0, 0, 0.5);
+  
   --outer-shadow-small: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
   --outer-shadow-medium: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
   --outer-shadow-large: 8px 8px 8px 0px rgba(0, 0, 0, 0.5);

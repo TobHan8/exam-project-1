@@ -25,13 +25,6 @@
     transition: 0.3s ease;
 }
 
-.toggle-btn:hover,
-.cart-button:hover,
-.header-profile-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .dropdown-nav {
     z-index: 5;
     position: absolute;
@@ -61,10 +54,6 @@
     transition: 0.3s ease;
 }
 
-nav a:hover {
-    opacity: 30%;
-}
-
 .header-logo-img-mobile {
     display:none;
 }
@@ -88,11 +77,6 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.header-login-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .header-register-btn {
     background-color: var(--color-secondary);
     color: var(--color-primary);
@@ -105,12 +89,22 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.header-register-btn:hover {
+ @media (hover: hover) {
+    .header-register-btn:hover {
+        opacity: 100%;
+        cursor: pointer;
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
+    }
+ }
+
+ .header-register-btn:active {
     opacity: 100%;
     cursor: pointer;
     background-color: var(--color-primary);
     color: var(--color-secondary);
-}
+ }
+
 
 .cart-button i {
     font-size: 37px;
@@ -130,11 +124,6 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.menu-log-out-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .menu-log-out-btn i {
     font-size: 25px;
 }
@@ -145,11 +134,6 @@ nav a:hover {
 
 .cart-button {
     transition: 0.3s ease;
-}
-
-.header-logo:hover,
-.cart-button:hover {
-    opacity: 30%;
 }
 
 
@@ -187,11 +171,6 @@ nav a:hover {
     text-shadow:color(from color srgb r g b); /* Fix this later, cant use box-shadow */
 }
 
-.close-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .toast {
     position: relative;
     display: flex;
@@ -200,8 +179,6 @@ nav a:hover {
     word-break: break-word;
     font-weight: bold;
     gap: 20px;
-
-
 }
 
 .toast-title {
@@ -290,11 +267,6 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.carousel-image-container:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .carousel-image-container img {
     display: block;
     width: 100%;
@@ -348,17 +320,6 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.add-to-cart-btn-small:hover,
-.add-to-cart-btn-medium:hover,
-.add-to-cart-btn-large:hover,
-.all-products-add-to-cart-btn:hover,
-.all-products-add-to-cart-btn-mobile:hover,
-.single-prod-add-to-cart-btn:hover,
-.see-all-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .add-to-cart-btn-xtrasmall {
     padding: var(--button-padding-xtrasmall);
     font-size: var(--button-text-xtrasmall);
@@ -370,11 +331,6 @@ nav a:hover {
     font-size: var(--button-text-small);
     box-shadow: var(--outer-shadow-small);
 }
-
-.carousel-add-to-cart-btn:hover {
-    opacity: 30%;
-}
-
 
 .add-to-cart-btn-medium,
 .all-products-add-to-cart-btn {
@@ -406,11 +362,6 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.share-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .share-btn i {
     color: var(--color-primary);
     font-size: 30px;
@@ -429,68 +380,6 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.remove-all-button:hover {
-    opacity: 33%;
-    cursor: pointer;
-}
-
-.index-title-container {
-    display: grid;
-    grid-row: 1;
-    grid-column: 1 / -1;
-    margin-top: -15px;
-    margin-bottom: -15px;
-}
-
-.success-title-container {
-    margin-top: -15px;
-    margin-bottom: -10px;
-}
-
-.checkout-title-container {
-    display: flex;
-    align-items: center;
-    grid-row: 1;
-    grid-column: 1 / -1;
-    padding: 15px 0px 15px 0px;
-}
-
-
-.title-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-bottom: 30px;
-    height: fit-content;
-    text-align: center;
-}
-
-
-.title-middle-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-}
-
-.title-middle-container h1 {
-    text-align: center;
-    white-space: nowrap;
-}
-
-.title-right-container {
-    display: flex;
-    width: 100%;
-}
-
-.back-button-container {
-    display: flex;
-    width: fit-content
-}
-
 .back-button {
     background-color: var(--color-secondary);
     color: var(--color-primary);
@@ -504,7 +393,16 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.back-button:hover {
+@media(hover: hover) {
+    .back-button:hover {
+        opacity: 100%;
+        cursor: pointer;
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
+    }
+}
+
+.back-button:active {
     opacity: 100%;
     cursor: pointer;
     background-color: var(--color-primary);
@@ -524,19 +422,69 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.profile-log-out-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 .footer-buttons a {
     transition: 0.3s ease;
 }
 
-.footer-buttons a:hover {
-    opacity: 30%;
-}
 
 .footer-socials i {
     font-size: 1.5em;
+}
+
+
+/* --- ALL HOVER EFFECTS WHEN SUPPORTED --- */
+@media (hover: hover) {
+    .toggle-btn:hover,
+    .cart-button:hover,
+    .header-profile-btn:hover,
+    nav a:hover,
+    .header-login-btn:hover,
+    .menu-log-out-btn:hover,
+    .profile-log-out-btn:hover,
+    .footer-buttons a:hover,
+    .share-btn:hover,
+    .remove-all-button:hover,
+    .carousel-add-to-cart-btn:hover,
+    .add-to-cart-btn-small:hover,
+    .add-to-cart-btn-medium:hover,
+    .add-to-cart-btn-large:hover,
+    .all-products-add-to-cart-btn:hover,
+    .all-products-add-to-cart-btn-mobile:hover,
+    .single-prod-add-to-cart-btn:hover,
+    .see-all-btn:hover,
+    .carousel-image-container:hover,
+    .close-btn:hover,
+    .header-logo:hover,
+    .cart-button:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
+}
+
+
+/* --- ACTIVE/CLICK EFFECT FOR MOBILE --- */
+.toggle-btn:active,
+.cart-button:active,
+.header-profile-btn:active,
+nav a:active,
+.header-login-btn:active,
+.menu-log-out-btn:active,
+.profile-log-out-btn:active,
+.footer-buttons a:active,
+.share-btn:active,
+.remove-all-button:active,
+.carousel-add-to-cart-btn:active,
+.add-to-cart-btn-small:active,
+.add-to-cart-btn-medium:active,
+.add-to-cart-btn-large:active,
+.all-products-add-to-cart-btn:active,
+.all-products-add-to-cart-btn-mobile:active,
+.single-prod-add-to-cart-btn:active,
+.see-all-btn:active,
+.carousel-image-container:active,
+.close-btn:active,
+.header-logo:active,
+.cart-button:active {
+    opacity: 30%;
+    cursor: pointer;
 }

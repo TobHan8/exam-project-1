@@ -148,8 +148,8 @@ export async function loginUser (formData) {
             setCurrentUser('currentUser', loggedInUser); // Store currentUser in localStorage
         }
         
-
         return json.data;
+        
     } catch (error) {
         if (error instanceof HttpError) {
         displayToast('Failed to log in!', error.statusCode, "error");

@@ -62,6 +62,63 @@ main {
     color: var(--color-primary);
 }
 
+.index-title-container {
+    display: grid;
+    grid-row: 1;
+    grid-column: 1 / -1;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+.success-title-container {
+    margin-top: -15px;
+    margin-bottom: -10px;
+}
+
+.checkout-title-container {
+    display: flex;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 1 / -1;
+    padding: 15px 0px 15px 0px;
+}
+
+
+.title-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 30px;
+    height: fit-content;
+    text-align: center;
+}
+
+
+.title-middle-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+
+.title-middle-container h1 {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.title-right-container {
+    display: flex;
+    width: 100%;
+}
+
+.back-button-container {
+    display: flex;
+    width: fit-content
+}
+
 /* ### INDEX PAGE / ALL PRODUCTS PAGE ### */
 
 .all-products-container {
@@ -97,7 +154,14 @@ main {
     transition: 0.3s ease;
 }
 
-.product-image-container:hover {
+@media(hover: hover) {
+    .product-image-container:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
+}
+
+.product-image-container:active {
     opacity: 30%;
     cursor: pointer;
 }
@@ -285,10 +349,17 @@ main {
     transition: 0.3s ease;
 }
 
-.cart-product-image-container:hover {
-    opacity: 30%;
-    cursor: pointer;
+@media(hover: hover) {
+    .cart-product-image-container:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
 }
+
+.cart-product-image-container:active {
+        opacity: 30%;
+        cursor: pointer;
+    }
 
 .cart-product-image-container img {
     display: block;
@@ -329,10 +400,17 @@ main {
     transition: 0.3s ease;
 }
 
-.remove-btn:hover {
-    opacity: 30%;
-    cursor: pointer;
+@media(hover:hover) {
+    .remove-btn:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
 }
+
+.remove-btn:active {
+        opacity: 30%;
+        cursor: pointer;
+    }
 
 .remove-btn i {
     font-size: 20px;
@@ -357,10 +435,18 @@ main {
     transition: 0.3s ease;
 }
 
-.quantity-btns:hover {
+@media (hover: hover) {
+    .quantity-btns:hover {
+    opacity: 30%;
+    cursor: pointer;
+    }
+}
+
+.quantity-btns:active {
     opacity: 30%;
     cursor: pointer;
 }
+
 
 .cart-content-right-container {
     display: flex;
