@@ -401,7 +401,6 @@ function checkoutMain() {
             return
         }
             loadingIndicator.style.display = 'flex';
-            removeAll();
             setTimeout(() => {
                 navigateTo('success.html');
             }, 2000);

@@ -1,6 +1,6 @@
 import { successContainer, loadingIndicator, footer } from '../constants.js';
 
-import { getCurrentUser, getSessionToken, isLoggedIn, displayToast, navigateTo } from '../utils.js';
+import { getCurrentUser, getSessionToken, isLoggedIn, displayToast, navigateTo, removeAll } from '../utils.js';
 
 function displaySuccess() {
 
@@ -18,6 +18,7 @@ function displaySuccess() {
 
     } else {
         loadingIndicator.style.display = 'none';
+        removeAll();
 
         const titleContainer = document.createElement('div');
         titleContainer.classList.add('success-title-container');
