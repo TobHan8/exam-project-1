@@ -22,7 +22,7 @@ export const titleContainer = document.getElementById('title-container');
 export const profileContainer = document.getElementById('profile-container');
 
 // Static HTML elements
-export const footer = document.getElementById('footer');
+export const footer = document.querySelector('footer');
 
 // Dynamic elements
 export const header = document.getElementById('header');
