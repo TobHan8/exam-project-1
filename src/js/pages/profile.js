@@ -8,6 +8,9 @@ function displayProfile() {
 
     if(!loginCheck) {
         displayToast('Must be logged in!', 'Please log in to continue to view this page', 'error');
+        loadingIndicator.display.style = 'none';
+        footer.style.display = 'none';
+        profileContainer.style.display = 'none';
         setTimeout(() => {
             navigateTo('login.html');
         }, 2000);
