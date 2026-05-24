@@ -166,7 +166,14 @@
 
 .close-btn i {
     font-size: 20px;
-    text-shadow:color(from color srgb r g b); /* Fix this later, cant use box-shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media(hover: hover) {
+    .close-btn:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
 }
 
 .toast {
