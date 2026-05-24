@@ -10,6 +10,8 @@ function displaySuccess() {
     if (!loginCheck || cart.length !== 0) {
         displayToast('Error!', 'You cannot view this page before logging in and completing checkout', 'error');
         loadingIndicator.style.display = 'none';
+        successContainer.style.display = 'none';
+        footer.style.display = 'none';
         setTimeout(() => {
             navigateTo('index.html');
         }, 2000);

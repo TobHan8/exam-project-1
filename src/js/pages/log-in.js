@@ -1,4 +1,4 @@
-import { loginContainer, loadingIndicator, titleContainer } from '../constants.js';
+import { loginContainer, loadingIndicator, titleContainer, footer } from '../constants.js';
 import { displayToast, navigateBack, navigateTo, isLoggedIn, getCurrentUser, getSessionToken } from '../utils.js';
 import { loginUser } from '../api.js';
 
@@ -7,6 +7,8 @@ function displayLogin() {
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
     if (loginCheck) {
             displayToast('Error!', 'You are already logged in', 'error');
+            loginContainer.style.display = 'none';
+            footer.style.display = 'none';
              setTimeout(() => {
                 navigateTo('profile.html');
             }, 2000);

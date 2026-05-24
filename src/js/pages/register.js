@@ -1,4 +1,4 @@
-import { loadingIndicator, registerContainer } from '../constants.js';
+import { loadingIndicator, registerContainer, footer } from '../constants.js';
 
 import { registerUser } from '../api.js';
 
@@ -10,6 +10,9 @@ function displayRegister() {
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
     if (loginCheck) {
             displayToast('Error!', 'Log out to register a new account', 'error');
+            registerContainer.style.display = 'none';
+            footer.style.display = 'none';
+
              setTimeout(() => {
                 navigateTo('profile.html');
             }, 2000);
