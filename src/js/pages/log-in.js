@@ -134,6 +134,10 @@ async function loginMain() {
 
         const loginForm = document.getElementById('login-form');
 
+        if (!loginForm) {
+            return
+        }
+
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 

@@ -178,6 +178,10 @@ async function registerMain() {
 
         const registerForm = document.getElementById('register-form');
 
+        if (!registerForm) {
+            return
+        }
+
         registerForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
