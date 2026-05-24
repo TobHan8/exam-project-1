@@ -322,6 +322,10 @@
         margin-bottom: -15px;
     }
 
+    .no-review {
+        font-size: 10px;
+    }
+
     .review-content-container {
         padding: 10px;
     }
@@ -442,17 +446,14 @@
     font-size: 30px;
     }
 
-    /* --- CHANGE FROM HOVER EFFECT --- */
-    .toggle-btn:active,
-    .cart-button:active,
-    .header-profile-btn:active {
-    opacity: 30%;
-    cursor: pointer;
-}
-
 }
 
 @media (max-width: 590px) {
+
+    /* --- HEADER --- */
+    .header-profile-btn {
+        display: none;
+    }
 
     /* --- TOAST 590px MAX --- */
     .toast-container {
@@ -581,11 +582,6 @@
 
 
 @media (max-width: 480px) {
-
-    /* --- HEADER --- */
-    .header-profile-btn {
-        display: none;
-    }
 
     /* --- TOAST 480px MAX --- */
     .toast-container {

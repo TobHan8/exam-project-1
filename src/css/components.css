@@ -54,10 +54,6 @@
     transition: 0.3s ease;
 }
 
-.header-logo-img-mobile {
-    display:none;
-}
-
 .header-buttons-right {
     display: flex;
     justify-content: flex-end;
@@ -129,6 +125,8 @@
 }
 
 .header-logo {
+    height: 46px;
+    width: 100%;
     transition: 0.3s ease;
 }
 
