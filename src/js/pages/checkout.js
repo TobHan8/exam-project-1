@@ -382,6 +382,10 @@ function checkoutMain() {
         const paymentForm = document.getElementById('payment-form');
         const completeBtn = document.getElementById('complete-btn');
 
+        if (!completeBtn) { // Without this, defensive programming throws an error when executed
+            return
+        }
+
         completeBtn.addEventListener('click', (event) => {
             event.preventDefault();
 
