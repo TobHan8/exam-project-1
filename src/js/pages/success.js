@@ -7,7 +7,7 @@ function displaySuccess() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
 
-    if (!loginCheck || cart.length !== 0) {
+    if (!loginCheck || cart.length === 0) {
         displayToast('Error!', 'You cannot view this page before logging in and completing checkout', 'error');
         loadingIndicator.style.display = 'none';
         successContainer.style.display = 'none';
