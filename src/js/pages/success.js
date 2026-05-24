@@ -7,8 +7,17 @@ function displaySuccess() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const loginCheck = isLoggedIn(getCurrentUser(), getSessionToken());
 
-    if (!loginCheck || cart.length === 0) {
+    if (!loginCheck) {
         displayToast('Error!', 'You cannot view this page before logging in and completing checkout', 'error');
+        loadingIndicator.style.display = 'none';
+        successContainer.style.display = 'none';
+        footer.style.display = 'none';
+        setTimeout(() => {
+            navigateTo('index.html');
+        }, 2000);
+        
+    } else if (cart.length === 0) {
+        displayToast('The cart is empty!', 'Please add items to cart before accessing this page', 'error');
         loadingIndicator.style.display = 'none';
         successContainer.style.display = 'none';
         footer.style.display = 'none';
