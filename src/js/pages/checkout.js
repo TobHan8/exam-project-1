@@ -27,7 +27,7 @@ function displayCheckout() {
         checkoutContainer.style.display = 'none';
         footer.style.position = 'absolute';
         footer.style.bottom = '0';
-        footer.style.width = '100vw';
+        footer.style.width = '100%';
         setTimeout(() => {
             navigateTo('index.html');
         }, 2000);
