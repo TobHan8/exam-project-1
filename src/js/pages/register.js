@@ -85,7 +85,7 @@ function displayRegister() {
             emailInput.id = 'email';
             emailInput.name = 'email';
             emailInput.type = 'email';
-            emailInput.placeholder = 'example.stud@noroff.no';
+            emailInput.placeholder = 'example@stud.noroff.no';
             emailInput.maxLength = '30';
             emailInput.pattern = '[\\w@.]+'
             emailInput.required = true;
